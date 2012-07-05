@@ -83,6 +83,7 @@ a:focus {
 a:hover,
 a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
 	outline: 0;
+	text-decoration: none;
 }
 a img {
 	border: 0;
