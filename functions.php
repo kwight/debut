@@ -185,3 +185,68 @@ function _s_category_transient_flusher() {
 }
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post', '_s_category_transient_flusher' );
+
+/**
+ * Generate comment HTML
+ * Based on the P2 theme by Automattic
+ * http://wordpress.org/extend/themes/p2
+ *
+ * @since 1.0
+ */
+if ( ! function_exists( 'debut_comment' ) ) {
+
+	function debut_comment( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
+		if ( !is_single() && get_comment_type() != 'comment' )
+			return;
+		$can_edit_post  = current_user_can( 'edit_post', $comment->comment_post_ID );
+		$content_class  = 'comment-content';
+		if ( $can_edit_post )
+			$content_class .= ' comment-edit';
+		?>
+		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+			<article id="comment-<?php comment_ID(); ?>" class="comment">
+
+			<?php echo get_avatar( $comment, 60 ); ?>
+			<div class="comment-meta">
+				<div class="perma-reply-edit">
+					<a href="<?php echo esc_url( get_comment_link() ); ?>"><?php _e( 'Permalink', 'straightup' ); ?></a>
+					<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '&nbsp;&sdot;&nbsp;' ) ) );
+					if ( $can_edit_post ) { edit_comment_link( __( 'Edit', 'straightup' ), '&nbsp;&sdot;&nbsp;' ); } ?>
+				</div><!-- .perma-reply-edit -->
+				<h4><?php echo get_comment_author_link(); ?></h4>
+				<?php comment_time( 'F j, Y \a\t g:ia' ); ?><br />
+			</div><!-- .comment-meta -->
+			<div id="comment-content-<?php comment_ID(); ?>" class="<?php echo esc_attr( $content_class ); ?>">
+				<?php if ( $comment->comment_approved == '0' ): ?>
+						<p class="comment-awaiting"><?php esc_html_e( 'Your comment is awaiting moderation.', 'straightup' ); ?></p>
+				<?php endif; ?>
+				<?php echo apply_filters( 'comment_text', $comment->comment_content ); ?>	
+			</div>
+			</article>
+		</li>
+		
+	<?php }
+
+}
+
+/**
+ * Change HTML for comment form fields
+ *
+ * @since 1.0
+ */
+if ( ! function_exists( 'straightup_comment_form_args' ) ) {
+
+	function straightup_comment_form_args( $args ) {
+	$args[ 'fields' ] = array(
+							'author' => '<div class="comment-form-author"><label for="author" class="assistive-text">' . esc_html__( 'Name', 'straightup' ) . '</label><input type="text" class="field" name="author" id="author" aria-required="true" placeholder="' . esc_attr__( 'Name', 'straightup' ) . '" /></div><!-- .comment-form-author -->',
+							'email' => '<div class="comment-form-email"><label for="email" class="assistive-text">' . esc_html__( 'Email', 'straightup' ) . '</label><input type="text" class="field" name="email" id="email" aria-required="true" placeholder="' . esc_attr__( 'Email', 'straightup' ) . '" /></div><!-- .comment-form-email -->',
+							'url' => '<div class="comment-form-url"><label for="url" class="assistive-text">' . esc_html__( 'Website', 'straightup' ) . '</label><input type="text" class="field" name="url" id="url" placeholder="' . esc_attr__( 'Website', 'straightup' ) . '" /></div><!-- .comment-form-url -->'
+						);
+	$args[ 'comment_field' ] = '<div class="comment-form-comment"><label for="comment" class="assistive-text">' . esc_html__( 'Comment', 'straightup' ) . '</label><textarea id="comment" name="comment" rows="8" aria-required="true" placeholder="' . esc_attr__( 'Comment', 'straightup' ) . '"></textarea></div><!-- .comment-form-comment -->';
+	$args[ 'comment_notes_before' ] = '<p class="comment-notes">' . esc_html__( 'Your email will not be published. Name and Email fields are required.', 'straightup' ) . '</p>';
+	return $args;
+	}
+
+}
+add_filter( 'comment_form_defaults', 'straightup_comment_form_args' );
