@@ -89,6 +89,98 @@ a img {
 	border: 0;
 }
 
+/* =Structure
+Based on a 12-column, 960px grid, 10px margins
+----------------------------------------------- */
+/* Containers */
+#page {
+	margin: 0 auto;
+	padding: 10px 0;
+	position: relative;
+	width: 960px;
+}
+/* Elements */
+#masthead hgroup,
+#searchform,
+.main-navigation,
+#primary,
+#secondary,
+#colophon {
+	display: inline;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+/* 12 columns */
+.main-navigation,
+#colophon {
+	width: 940px;
+}
+/* 11 columns */
+#dummy {
+	width: 860px;
+}
+/* 10 columns */
+#dummy {
+	width: 780px;
+}
+/* 9 columns */
+#dummy {
+	width: 700px;
+}
+/* 8 columns */
+#masthead hgroup,
+#primary {
+	width: 620px;
+}
+/* 6 columns */
+#dummy {
+	width: 460px;
+}
+/* 5 columns */
+#dummy {
+	width: 380px;
+}
+/* 4 columns */
+#searchform,
+#secondary {
+	width: 300px;
+}
+/* 3 columns */
+#dummy {
+	width: 220px;
+}
+/* 2 columns */
+#dummy {
+	width: 140px;
+}
+/* 1 column */
+#dummy {
+	width: 60px;
+}
+/* Vertical spacing */
+#dummy {
+	margin-bottom: 20px;
+}
+/* Nested margin corrections */
+#dummy {
+	margin-left: 0;
+}
+#dummy {
+	margin-right: 0;
+}
+/* Clearfix */
+#masthead:after,
+#main:after,
+#colophon:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: '\0020';
+	clear: both;
+	height: 0;
+}
+
 
 /* =Global
 ----------------------------------------------- */
@@ -347,12 +439,6 @@ a:active {
 /* =Menu
 ----------------------------------------------- */
 
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-}
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
