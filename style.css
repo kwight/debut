@@ -979,3 +979,38 @@ object {
 .dev-credit {
 	text-align: right;
 }
+
+
+/* =Responsive
+----------------------------------------------- */
+
+@media screen and ( max-width: 480px ) {
+	#masthead hgroup,
+	#primary,
+	#secondary,
+	#tertiary,
+	.wp-credit,
+	.dev-credit {
+		width: 100%;
+	}
+	#masthead,
+	#masthead hgroup,
+	#primary,
+	#secondary,
+	#tertiary,
+	.wp-credit,
+	.dev-credit  {
+		margin: 0;
+	}
+	.site-description {
+		margin-bottom: 1.5em;
+	}
+	#secondary,
+	#tertiary {
+		padding: 0;
+	}
+	.wp-credit,
+	.dev-credit  {
+		text-align: center;
+	}
+}
