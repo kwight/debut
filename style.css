@@ -586,6 +586,7 @@ a:visited {
     color: #bbb;
     content: '\a0 \a0 \a0 \25bc';
     font-size: 8px;
+    font-size: .8rem;
     vertical-align: 1px;
 }
 .sub-menu .menu-item-parent > a:after {
