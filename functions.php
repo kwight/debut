@@ -258,3 +258,42 @@ if ( ! function_exists( 'straightup_comment_form_args' ) ) {
 
 }
 add_filter( 'comment_form_defaults', 'straightup_comment_form_args' );
+
+/**
+ * Add CSS class to menus for submenu indicator
+ *
+ * Side note: there's gotta be a better way to do all this sub-menu stuff. Or maybe another way that I
+ * understand (I really should learn this PHP class stuff).
+ *
+ * @since 1.0
+ */
+class StraightUp_Page_Navigation_Walker extends Walker_Nav_Menu {
+    function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+    	$id_field = $this->db_fields['id'];
+        if ( !empty( $children_elements[ $element->$id_field ] ) ) { 
+            $element->classes[] = 'menu-item-parent';
+        }
+        Walker_Nav_Menu::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+    }
+}
+
+/**
+ * Filter wp_nav_menu() arguments to specify the above walker
+ *
+ * @since 1.0
+ */
+if ( ! function_exists( 'straightup_nav_menu_args' ) ) {
+
+	function straightup_nav_menu_args( $args ) {
+		/**
+		 * Set our new walker only if a child theme hasn't
+		 * modified it to one level (naughty child theme...)
+		 */
+		if ( 1 !== $args[ 'depth' ] ) {
+			$args[ 'walker' ] = new StraightUp_Page_Navigation_Walker;
+		}
+		return $args;
+	}
+
+}
+add_filter( 'wp_nav_menu_args', 'straightup_nav_menu_args' );
