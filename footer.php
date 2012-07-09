@@ -2,24 +2,23 @@
 /**
  * The template for displaying the footer.
  *
- * Contains the closing of the id=main div and all content after
+ * Don't like all that Pordwress-theme-code-y crap down there? Replace it
+ * with whatever you like, or remove it all together :)
  *
- * @package _s
- * @since _s 1.0
+ * @since 1.0 
  */
 ?>
 
 	</div><!-- #main -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( '_s_credits' ); ?>
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '_s' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', '_s' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- .site-footer .site-footer -->
-</div><!-- #page .hfeed .site -->
+		<div class="wp-credit">
+			<?php printf( __( 'Proudly powered by %s.', 'straightup' ), '<a href="http://wordpress.org/" target="_blank">WordPress</a>' ); ?>
+		</div><!-- .wp-credit -->
+		<div class="dev-credit">
+			<?php printf( __( '%1$s theme by %2$s.', 'straightup' ), '<a href="https://github.com/kwight/debut/" target="_blank">Debut</a>', '<a href="http://kwight.ca/" rel="designer" target="_blank">kwight</a>' ); ?>
+		</div><!-- .dev-credit -->
+	</footer><!-- #colophon .site-footer -->
 
 <?php wp_footer(); ?>
 
