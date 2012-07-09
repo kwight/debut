@@ -192,8 +192,7 @@ Based on a 12-column, 960px grid, 10px margins
 	width: 380px;
 }
 /* 4 columns */
-#searchform,
-#secondary {
+#dummy {
 	width: 300px;
 }
 /* 3 columns */
@@ -684,6 +683,13 @@ object {
 /* =Widgets
 ----------------------------------------------- */
 
+#secondary,
+#tertiary {
+	font-size: 14px;
+	font-size: 1.4rem;
+	padding-left: 20px;
+	width: 280px;
+}
 .widget {
 	margin: 0 0 1.5em;
 }
