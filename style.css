@@ -110,25 +110,40 @@ q:before, q:after {
 blockquote, q {
 	quotes: "" "";
 }
+a {
+	text-decoration: none;
+}
 a:focus {
 	outline: thin dotted;
 }
 a:hover,
 a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
 	outline: 0;
-	text-decoration: none;
 }
 a img {
 	border: 0;
 }
+
+/* =Colors
+----------------------------------------------- */
+
+/*
+Red: red #ff0000
+Dark Grey Text: #333
+Light Grey Text: #666
+Border Grey: #ddd
+Light Grey: #efefef
+Black: #000
+White: #fff
+*/
+
 
 /* =Structure
 Based on a 12-column, 960px grid, 10px margins
 ----------------------------------------------- */
 /* Containers */
 #page {
-	margin: 0 auto;
-	padding: 10px 0;
+	margin: 2.5em auto;
 	position: relative;
 	width: 960px;
 }
@@ -192,8 +207,11 @@ Based on a 12-column, 960px grid, 10px margins
 	width: 60px;
 }
 /* Vertical spacing */
-#dummy {
-	margin-bottom: 20px;
+#masthead,
+.main-navigation,
+.hentry,
+.widget {
+	margin-bottom: 2.5em;
 }
 /* Nested margin corrections */
 #dummy {
