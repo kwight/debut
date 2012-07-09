@@ -865,8 +865,8 @@ object {
 #tertiary {
 	font-size: 14px;
 	font-size: 1.4rem;
-	padding-left: 20px;
-	width: 280px;
+	padding-left: 2%;
+	width: 29.333%;
 }
 .widget {
 	word-wrap: break-word;
