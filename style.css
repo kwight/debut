@@ -140,13 +140,14 @@ White: #fff
 
 
 /* =Structure
-Based on a 12-column, 960px grid, 10px margins
+Based on a 12-column, fluid grid
 ----------------------------------------------- */
 /* Containers */
 #page {
+	width: 94%;
 	margin: 2.5em auto;
+	max-width: 1000px;
 	position: relative;
-	width: 960px;
 }
 /* Elements */
 #masthead hgroup,
@@ -159,54 +160,58 @@ Based on a 12-column, 960px grid, 10px margins
 .dev-credit {
 	display: inline;
 	float: left;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 1%;
+	margin-right: 1%;
 }
 /* 12 columns */
 .main-navigation {
-	width: 940px;
+	width: 98.0%;
 }
 /* 11 columns */
 #dummy {
-	width: 860px;
+	width: 89.667%;
 }
 /* 10 columns */
 #dummy {
-	width: 780px;
+	width: 81.333%;
 }
 /* 9 columns */
 #dummy {
-	width: 700px;
+	width: 73.0%;
 }
 /* 8 columns */
 #masthead hgroup,
 #primary {
-	width: 620px;
+	width: 64.667%;
+}
+/* 7 columns */
+#dummy {
+	width: 56.333%;
 }
 /* 6 columns */
 .wp-credit,
 .dev-credit {
-	width: 460px;
+	width: 48.0%;
 }
 /* 5 columns */
 #dummy {
-	width: 380px;
+	width: 39.667%;
 }
 /* 4 columns */
 #dummy {
-	width: 300px;
+	width: 31.333%;
 }
 /* 3 columns */
 #dummy {
-	width: 220px;
+	width: 23.0%;
 }
 /* 2 columns */
 #dummy {
-	width: 140px;
+	width: 14.667%;
 }
 /* 1 column */
 #dummy {
-	width: 60px;
+	width: 6.333%;
 }
 /* Vertical spacing */
 #masthead,
