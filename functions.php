@@ -260,6 +260,33 @@ if ( ! function_exists( 'straightup_comment_form_args' ) ) {
 add_filter( 'comment_form_defaults', 'straightup_comment_form_args' );
 
 /**
+ * Remove ridiculous inline width style from captions
+ * Source: http://wordpress.stackexchange.com/questions/4281/how-to-customize-the-default-html-for-wordpress-attachments
+ *
+ * @since 1.0
+ */
+if ( ! function_exists( 'straightup_remove_caption_width' ) ) {
+
+	function straightup_remove_caption_width( $current_html, $attr, $content ) {
+	    extract(shortcode_atts(array(
+	        'id'    => '',
+	        'align' => 'alignnone',
+	        'width' => '',
+	        'caption' => ''
+	    ), $attr));
+	    if ( 1 > (int) $width || empty($caption) )
+	        return $content;
+
+	    if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
+
+	    return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (int) $width . 'px">'
+	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
+	}
+
+}
+add_filter( 'img_caption_shortcode', 'straightup_remove_caption_width', 10, 3 );
+
+/**
  * Add CSS class to menus for submenu indicator
  *
  * Side note: there's gotta be a better way to do all this sub-menu stuff. Or maybe another way that I
