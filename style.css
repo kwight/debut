@@ -243,24 +243,50 @@ div:after,
 /* =Global
 ----------------------------------------------- */
 
+body {
+	border: solid red;
+	border-width: 4px 0;
+}
+
 body,
 button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
+	color: #333;
+	font-family: Helvetica, sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
+	font-weight: 300;
 	line-height: 1.5;
 }
-
 /* Headings */
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
+	font-weight: 700;
+	line-height: 1.1;
+	margin: 0 0 .5em;
+}
+h1 {
+	font-size: 38px;
+	font-size: 3.8rem;
+}
+h2 {
+	font-size: 20px;
+	font-size: 2rem;
+}
+h3 {
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+h4, h5, h6 {
+	font-family: inherit;
+	font-size: 14px;
+	font-size: 1.4rem;
+	text-transform: uppercase;
 }
 hr {
-	background-color: #ccc;
+	background-color: #ddd;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -279,41 +305,49 @@ ul {
 ol {
 	list-style: decimal;
 }
+ol ol {
+	list-style: lower-alpha;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
 ul ul, ol ol, ul ol, ol ul {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
 dt {
-	font-weight: bold;
+	font-weight: 400;
 }
 dd {
 	margin: 0 1.5em 1.5em;
 }
 b, strong {
-	font-weight: bold;
+	font-weight: 400;
 }
 dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
 	margin: 0 1.5em;
+	font-style: italic;
 }
 address {
 	margin: 0 0 1.5em;
 }
 pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
+	background: #efefef;
+	border: 1px solid #ddd;
+	font-family: Courier, monospace;
 	font-size: 15px;
 	font-size: 1.5rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	padding: 1.6em;
 	overflow: auto;
-	max-width: 100%;
+	max-width: 99.9%;
 }
 code, kbd, tt, var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: Courier, monospace;
 }
 abbr, acronym {
 	border-bottom: 1px dotted #666;
@@ -351,7 +385,7 @@ table {
 	width: 100%;
 }
 th {
-	font-weight: bold;
+	font-weight: 400;
 }
 button,
 input,
@@ -371,39 +405,21 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid #ccc;
-	border-color: #ccc #ccc #bbb #ccc;
+	border: 1px solid #ddd;
 	border-radius: 3px;
-	background: #fafafa; /* Old browsers */
-	background: -moz-linear-gradient(top,  #fafafa 60%, #e6e6e6 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(60%,#fafafa), color-stop(100%,#e6e6e6)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* IE10+ */
-	background: linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e6e6e6',GradientType=0 ); /* IE6-9 */
-	box-shadow: inset 0 2px 1px #fff;
-	color: rgba(0,0,0,.8);
+	background: #efefef;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	font-size: 12px;
+	font-size: 14px;
 	font-size: 1.4rem;
-	padding: 1.12em 1.5em .88em;
+	padding: .3em .5em;
 	text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }
 button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background: #f5f5f5; /* Old browsers */
-	background: -moz-linear-gradient(top,  #f5f5f5 60%, #dcdcdc 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(60%,#f5f5f5), color-stop(100%,#dcdcdc)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* IE10+ */
-	background: linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#dcdcdc',GradientType=0 ); /* IE6-9 */
-	border-color: #bbb #bbb #aaa #bbb;
+	background: #ddd;
 }
 button:focus,
 html input[type="button"]:focus,
@@ -413,9 +429,6 @@ button:active,
 html input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb #bbb;
-	box-shadow: inset 0 2px 3px rgba(0,0,0,.15);
-	box-shadow: inset 0 2px 2px rgba(0,0,0,.15);
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -439,34 +452,29 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 input[type=text],
 textarea {
 	color: #666;
-	border: 1px solid #ccc;
+	border: 1px solid #ddd;
 	border-radius: 3px;
+	font-size: 14px;
+	font-size: 1.4rem;
+	padding: 5px;
+	max-width: 96%;
 }
 input[type=text]:focus,
 textarea:focus {
-	color: #111;
-}
-input[type=text] {
-	padding: 3px;
+	color: #333;
 }
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 	padding-left: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
-	width: 98%;
+	width: 99.9%;
 }
 
 /* Links */
-a {
-	color: royalblue;
-}
+a,
 a:visited {
-	color: purple;
-}
-a:hover,
-a:focus,
-a:active {
-	color: midnightblue;
+	color: red;
+	font-weight: 400;
 }
 
 /* Alignment */
