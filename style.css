@@ -153,15 +153,16 @@ Based on a 12-column, 960px grid, 10px margins
 .main-navigation,
 #primary,
 #secondary,
-#colophon {
+#tertiary,
+.wp-credit,
+.dev-credit {
 	display: inline;
 	float: left;
 	margin-left: 10px;
 	margin-right: 10px;
 }
 /* 12 columns */
-.main-navigation,
-#colophon {
+.main-navigation {
 	width: 940px;
 }
 /* 11 columns */
@@ -182,7 +183,8 @@ Based on a 12-column, 960px grid, 10px margins
 	width: 620px;
 }
 /* 6 columns */
-#dummy {
+.wp-credit,
+.dev-credit {
 	width: 460px;
 }
 /* 5 columns */
