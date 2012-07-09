@@ -501,6 +501,17 @@ a:visited {
 	position: absolute !important;
 }
 
+/* =Header
+----------------------------------------------- */
+
+.site-title a {
+	font-weight: 700;
+	letter-spacing: -1px;
+}
+.site-description {
+	font-weight: 400;
+	margin-bottom: 0;
+}
 
 /* =Menu
 ----------------------------------------------- */
