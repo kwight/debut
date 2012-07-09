@@ -759,7 +759,95 @@ object {
 /* =Comments
 ----------------------------------------------- */
 
-.bypostauthor {
+.comments-title,
+#reply-title {
+	padding-top: 1.5em;
+}
+.single .comments-title {
+	border-top: 1px solid #efefef;
+}
+.commentlist {
+	list-style: none;
+	margin-left: 0;
+}
+.commentlist ul.children {
+	list-style: none;
+	margin-left: 80px;
+}
+.depth-1 {
+	padding-top: 1.5em;
+}
+.comment .avatar {
+	float: left;
+}
+.comment-meta,
+.comment-content {
+	margin-left: 80px;
+}
+.comment-meta {
+	color: #aaa;
+	font-size: 12px;
+	font-size: 1.2rem;
+	margin-bottom: 1.5em;
+	position: relative;
+	text-transform: uppercase;
+}
+.perma-reply-edit {
+	float: right;
+	margin: 0 0 .5em .5em;
+}
+.comment-meta h4 {
+	clear: none;
+	color: #555;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.2em;
+	margin-bottom: .2em;
+	text-transform: none;
+}
+.comment-awaiting,
+.nocomments {
+	font-weight: 400;
+	text-align: center;
+}
+/* Reply form */
+#respond {
+	margin-bottom: 1em; /*Correction for Jetpack Comments iframe*/
+}
+#reply-title small a,
+#cancel-comment-reply-link {
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+}
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+	display: inline;
+	float: left;
+	width: 31%;
+}
+.comment-form-author,
+.comment-form-email {
+	margin-right: 1em;
+}
+#commentform div {
+	margin-bottom: 1em;
+}
+#commentform label {
+	display: none;
+}
+#commentform ::-webkit-input-placeholder {
+   color: #aaa;
+}
+#commentform :-moz-placeholder {  
+   color: #aaa;  
+}
+.form-allowed-tags {
+	color: #aaa;
+	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 /* =Widgets
