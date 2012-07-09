@@ -861,10 +861,98 @@ object {
 	width: 280px;
 }
 .widget {
-	margin: 0 0 1.5em;
+	word-wrap: break-word;
 }
-
+.widget-title {
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+.widget > ul,
+.widget_nav_menu ul.menu {
+	list-style: none;
+	margin-left: 0;
+}
+.widget_archive select,
+.widget_categories select {
+	margin-bottom: 1.5em;
+}
 /* Search widget */
+.widget_search .widget-title {
+	display: none;
+}
+.widget_search #searchform {
+	margin: 0;
+	width: 100%;
+}
+.widget_search #searchform input[type="text"] {
+	background-color: #fff;
+	width: 100%;
+}
+/*.widget_search ::-webkit-input-placeholder {
+   color: #aaa;
+}
+.widget_search :-moz-placeholder {  
+   color: #aaa;  
+}*/
 #searchsubmit {
 	display: none;
+}
+/* Calendar widget */
+.widget_calendar caption {
+	text-transform: uppercase;
+	margin-bottom: .3em;
+	padding-bottom: .3em;
+}
+.widget_calendar table {
+	border-collapse: collapse;
+}
+.widget_calendar tfoot td {
+	padding-top: .3em;
+}
+#next {
+	text-align: right;
+}
+/* Recent Comments / Recent Posts */
+.widget.widget_recent_comments > ul,
+.widget.widget_recent_entries > ul {
+	list-style: inherit;
+	margin-left: 1.3em;
+}
+/* RSS widget */
+.widget_rss .widget-title img {
+	box-shadow: none;
+	margin-bottom: 0;
+}
+.widget_rss .rss-date,
+.widget_rss cite {
+	color: #aaa;
+	display: block;
+	font-size: 12px;
+	font-size: 1.2rem;
+	font-style: normal;
+	line-height: 1;
+	text-transform: uppercase;
+	margin: .3em 0;
+}
+.widget_rss li {
+	margin-bottom: 1em;
+}
+.widget_rss li a {
+	line-height: 1;
+}
+/* Nav Menu widget */
+.widget_nav_menu .menu-item-parent > a:after {
+    content: '';
+}
+.widget_nav_menu .sub-menu .menu-item-parent > a:after {
+    content: '';
+}
+/* Error 404 widgets */
+.error404 .entry-content .widget {
+	border: none;
+	margin-bottom: 1.5em;
+	padding: 0;
+}
+.error404 .entry-content .widget_archive select {
+	margin-bottom: 0;
 }
