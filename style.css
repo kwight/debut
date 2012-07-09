@@ -516,6 +516,13 @@ a:visited {
 /* =Menu
 ----------------------------------------------- */
 
+.main-navigation {
+	background-color: #efefef;
+	border: 1px solid #ddd;
+	font-weight: 700;
+	position: relative;
+	z-index: 1;
+}
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
@@ -527,47 +534,59 @@ a:visited {
 }
 .main-navigation a {
 	display: block;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 1;
+	padding: .5em .7em;
 	text-decoration: none;
+	text-shadow: 0 1px 0 rgba( 255, 255, 255, 0.8 );
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+.main-navigation li:hover a,
+.main-navigation a:hover,
+.main-navigation a:focus,
+.main-navigation a:active,
+.main-navigation ul ul,
+.main-navigation ul ul a,
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a,
+.main-navigation li.current-page-ancestor a {
+	background-color: red;
+	color: #fff;
+	text-shadow: 0 1px 0 rgba( 0, 0, 0, 0.8 );
 }
 .main-navigation ul ul {
-	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-	box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+	border: solid #ff4d4d;
+	border-width: 1px 0 0 0;
+	box-shadow: 0 8px 8px -5px rgba(0, 0, 0, .4);
 	display: none;
 	float: left;
 	position: absolute;
-		top: 1.5em;
+		top: 1.8em;
 		left: 0;
 	z-index: 99999;
 }
 .main-navigation ul ul ul {
+	border-width: 0 0 0 1px;
 	left: 100%;
 	top: 0;
-}
-.main-navigation ul ul a {
-	width: 200px;
-}
-.main-navigation ul ul li {
-}
-.main-navigation li:hover > a {
-}
-.main-navigation ul ul :hover > a {
-}
-.main-navigation ul ul a:hover {
-}
-.main-navigation ul li:hover > ul {
+}.main-navigation ul li:hover > ul {
 	display: block;
 }
-.main-navigation li.current_page_item a,
-.main-navigation li.current-menu-item a {
+.menu-item-parent > a:after {
+    color: #bbb;
+    content: '\a0 \a0 \a0 \25bc';
+    font-size: 8px;
+    vertical-align: 1px;
 }
-
-/* Small menu */
-.menu-toggle {
-	cursor: pointer;
+.sub-menu .menu-item-parent > a:after {
+    content: '\a0 \a0 \a0 \a0 \25b6';
 }
-.main-small-navigation .menu {
-	display: none;
+.menu-item-parent:hover > a:after,
+.sub-menu .menu-item-parent > a:after {
+	color: #ff4d4d;
 }
 
 
