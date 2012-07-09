@@ -956,3 +956,18 @@ object {
 .error404 .entry-content .widget_archive select {
 	margin-bottom: 0;
 }
+
+
+/* =Footer
+----------------------------------------------- */
+
+#colophon {
+	border-top: 1px solid #ddd;
+	color: #aaa;
+	font-size: 14px;
+	font-size: 1.4rem;
+	padding-top: 2.5em;
+}
+.dev-credit {
+	text-align: right;
+}
