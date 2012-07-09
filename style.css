@@ -734,17 +734,26 @@ object {
 ----------------------------------------------- */
 
 #content .site-navigation {
-	margin: 0 0 1.5em;
+	border-top: 1px solid #efefef;
+	padding: 1em 0;
 	overflow: hidden;
 }
-#content .nav-previous {
+.comment-navigation {
+	border-bottom: 1px solid #efefef;
+}
+#content .nav-previous,
+#content .previous-image {
 	float: left;
 	width: 50%;
 }
-#content .nav-next {
+#content .nav-next,
+#content .next-image {
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+#image-navigation {
+	margin-top: 1.5em;
 }
 
 /* =Comments
