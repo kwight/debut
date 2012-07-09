@@ -224,6 +224,12 @@ Based on a 12-column, 960px grid, 10px margins
 /* Clearfix */
 #masthead:after,
 #main:after,
+#primary:after,
+p:after,
+div:after,
+#secondary:after,
+#tertiary:after,
+.widget:after,
 #colophon:after {
 	visibility: hidden;
 	display: block;
