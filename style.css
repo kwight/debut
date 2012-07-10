@@ -908,12 +908,12 @@ object {
 	background-color: #fff;
 	width: 100%;
 }
-/*.widget_search ::-webkit-input-placeholder {
-   color: #aaa;
+.widget_search ::-webkit-input-placeholder { /* Change color of placeholder text */
+   /*color: #000;*/
 }
-.widget_search :-moz-placeholder {  
-   color: #aaa;  
-}*/
+.widget_search :-moz-placeholder {  /* Change color of placeholder text */
+   /*color: #000;*/  
+}
 #searchsubmit {
 	display: none;
 }
