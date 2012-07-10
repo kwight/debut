@@ -593,7 +593,8 @@ a:visited {
     content: '\a0 \a0 \a0 \a0 \25b6';
 }
 .menu-item-parent:hover > a:after,
-.sub-menu .menu-item-parent > a:after {
+.sub-menu .menu-item-parent > a:after,
+.current-menu-item a:after {
 	color: #ff4d4d;
 }
 
