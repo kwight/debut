@@ -511,6 +511,11 @@ a:visited {
 /* =Header
 ----------------------------------------------- */
 
+.site-title {
+	font-size: 55px;
+	font-size: 5.5rem;
+	line-height: 1;
+}
 .site-title a {
 	font-weight: 700;
 	letter-spacing: -1px;
