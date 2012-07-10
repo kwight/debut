@@ -993,7 +993,7 @@ object {
 /* =Responsive
 ----------------------------------------------- */
 
-@media screen and ( max-width: 480px ) {
+@media screen and ( max-width: 640px ) {
 	#masthead hgroup,
 	#primary,
 	#secondary,
@@ -1022,6 +1022,9 @@ object {
 	.dev-credit  {
 		text-align: center;
 	}
+}
+
+@media screen and ( max-width: 480px ) {
 	/* Navigation */
 	.main-navigation,
 	.menu {
@@ -1082,5 +1085,4 @@ object {
 	.sub-menu .menu-item-parent > a:after {
 		content: '';
 	}
-
 }
