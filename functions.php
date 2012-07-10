@@ -286,9 +286,6 @@ add_filter( 'img_caption_shortcode', 'debut_remove_caption_width', 10, 3 );
 /**
  * Add CSS class to menus for submenu indicator
  *
- * Side note: there's gotta be a better way to do all this sub-menu stuff. Or maybe another way that I
- * understand (I really should learn this PHP class stuff).
- *
  * @since 1.0
  */
 class Debut_Page_Navigation_Walker extends Walker_Nav_Menu {
