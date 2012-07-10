@@ -2,7 +2,7 @@
 /**
  * The sidebar area on the right side of the header.
  *
- * @since _s 1.0
+ * @since 1.0
  */
 ?>
 		<div id="tertiary" class="widget-area" role="complementary">
