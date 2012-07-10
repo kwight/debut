@@ -11,7 +11,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -44,7 +44,18 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<?php do_action( 'before' ); ?>
+	<?php
+	/**
+	 * Small width navigation - only on screens 480px wide or smaller
+	 */
+	?>
+	<nav role="navigation" class="site-navigation small-navigation">
+		<h1 class="assistive-text"><?php _e( 'Menu', '_s' ); ?></h1>
+		<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a></div>
+		<button class="menu-button">Menu</button>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+	</nav>
+
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

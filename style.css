@@ -47,6 +47,7 @@ and Blueprint http://www.blueprintcss.org/
 =Comments
 =Widgets
 =Footer
+=Responsive
 */
 
 
@@ -139,13 +140,14 @@ White: #fff
 
 
 /* =Structure
-Based on a 12-column, 960px grid, 10px margins
+Based on a 12-column, fluid grid
 ----------------------------------------------- */
 /* Containers */
 #page {
+	width: 94%;
 	margin: 2.5em auto;
+	max-width: 1000px;
 	position: relative;
-	width: 960px;
 }
 /* Elements */
 #masthead hgroup,
@@ -158,54 +160,58 @@ Based on a 12-column, 960px grid, 10px margins
 .dev-credit {
 	display: inline;
 	float: left;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 1%;
+	margin-right: 1%;
 }
 /* 12 columns */
 .main-navigation {
-	width: 940px;
+	width: 98.0%;
 }
 /* 11 columns */
 #dummy {
-	width: 860px;
+	width: 89.667%;
 }
 /* 10 columns */
 #dummy {
-	width: 780px;
+	width: 81.333%;
 }
 /* 9 columns */
 #dummy {
-	width: 700px;
+	width: 73.0%;
 }
 /* 8 columns */
 #masthead hgroup,
 #primary {
-	width: 620px;
+	width: 64.667%;
+}
+/* 7 columns */
+#dummy {
+	width: 56.333%;
 }
 /* 6 columns */
 .wp-credit,
 .dev-credit {
-	width: 460px;
+	width: 48.0%;
 }
 /* 5 columns */
 #dummy {
-	width: 380px;
+	width: 39.667%;
 }
 /* 4 columns */
 #dummy {
-	width: 300px;
+	width: 31.333%;
 }
 /* 3 columns */
 #dummy {
-	width: 220px;
+	width: 23.0%;
 }
 /* 2 columns */
 #dummy {
-	width: 140px;
+	width: 14.667%;
 }
 /* 1 column */
 #dummy {
-	width: 60px;
+	width: 6.333%;
 }
 /* Vertical spacing */
 #masthead,
@@ -580,6 +586,7 @@ a:visited {
     color: #bbb;
     content: '\a0 \a0 \a0 \25bc';
     font-size: 8px;
+    font-size: .8rem;
     vertical-align: 1px;
 }
 .sub-menu .menu-item-parent > a:after {
@@ -734,6 +741,9 @@ object {
 /* =Navigation
 ----------------------------------------------- */
 
+.small-navigation {
+	display: none;
+}
 #content .site-navigation {
 	border-top: 1px solid #efefef;
 	padding: 1em 0;
@@ -858,8 +868,8 @@ object {
 #tertiary {
 	font-size: 14px;
 	font-size: 1.4rem;
-	padding-left: 20px;
-	width: 280px;
+	padding-left: 2%;
+	width: 29.333%;
 }
 .widget {
 	word-wrap: break-word;
@@ -971,4 +981,100 @@ object {
 }
 .dev-credit {
 	text-align: right;
+}
+
+
+/* =Responsive
+----------------------------------------------- */
+
+@media screen and ( max-width: 480px ) {
+	#masthead hgroup,
+	#primary,
+	#secondary,
+	#tertiary,
+	.wp-credit,
+	.dev-credit {
+		width: 100%;
+	}
+	#masthead,
+	#masthead hgroup,
+	#primary,
+	#secondary,
+	#tertiary,
+	.wp-credit,
+	.dev-credit  {
+		margin: 0;
+	}
+	.site-description {
+		margin-bottom: 1.5em;
+	}
+	#secondary,
+	#tertiary {
+		padding: 0;
+	}
+	.wp-credit,
+	.dev-credit  {
+		text-align: center;
+	}
+	/* Navigation */
+	.main-navigation,
+	.menu {
+		display: none;
+	}
+	.menu-button {
+		bottom: -1px;
+		float: right;
+		position: relative;
+	}
+	.small-navigation,
+	.widget .main-navigation,
+	.widget .menu {
+		display: block;
+	}
+	.small-navigation {
+		margin-bottom: 1em;
+	}
+	.small-navigation ul {
+		background: #efefef;
+		border: 1px solid #ddd;
+		border-bottom-width: 0;
+		clear: both;
+		list-style: none;
+		margin: 0;
+	}
+	.small-navigation .sub-menu {
+		border: none;
+	}
+	.small-navigation li {
+	}
+	.small-navigation a {
+		border-bottom: 1px solid #ddd;
+		border-top: 1px solid #fff;
+		display: block;
+		font-size: 14px;
+		font-size: 1.4rem;
+		font-weight: 700;
+		padding: 3% 5%;
+		text-shadow: 0 1px 0 rgba( 255, 255, 255, .8 );
+		text-transform: uppercase;
+	}
+	.small-navigation a:hover {
+		background-color: #ddd;
+	}
+	.small-navigation a:active {
+		background-color: red;
+		color: #fff;
+		text-shadow: 0 1px 0 rgba( 0, 0, 0, .5 );
+	}
+	.small-navigation .sub-menu a {
+		padding-left: 10%;
+	}
+	.small-navigation .sub-menu .sub-menu a {
+		padding-left: 15%;
+	}
+	.menu-item-parent > a:after,
+	.sub-menu .menu-item-parent > a:after {
+		content: '';
+	}
+
 }
