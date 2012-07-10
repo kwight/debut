@@ -5,5 +5,4 @@ jQuery( document ).ready( function( $ ) {
 		$( '.menu' ).slideToggle();
 	})
 	
-
 });
