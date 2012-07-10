@@ -307,10 +307,11 @@ if ( ! function_exists( 'debut_nav_menu_args' ) ) {
 
 	function debut_nav_menu_args( $args ) {
 		/**
-		 * Set our new walker only if a child theme hasn't
-		 * modified it to one level (naughty child theme...)
+		 * Set our new walker only if a menu is assigned,
+		 * and a child theme hasn't modified it to one level
+		 * (naughty child theme...)
 		 */
-		if ( 1 !== $args[ 'depth' ] ) {
+		if ( 1 !== $args[ 'depth' ] && has_nav_menu( 'primary' ) ) {
 			$args[ 'walker' ] = new Debut_Page_Navigation_Walker;
 		}
 		return $args;
