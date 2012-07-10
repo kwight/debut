@@ -741,6 +741,9 @@ object {
 /* =Navigation
 ----------------------------------------------- */
 
+.small-navigation {
+	display: none;
+}
 #content .site-navigation {
 	border-top: 1px solid #efefef;
 	padding: 1em 0;
@@ -1013,4 +1016,65 @@ object {
 	.dev-credit  {
 		text-align: center;
 	}
+	/* Navigation */
+	.main-navigation,
+	.menu {
+		display: none;
+	}
+	.menu-button {
+		bottom: -1px;
+		float: right;
+		position: relative;
+	}
+	.small-navigation,
+	.widget .main-navigation,
+	.widget .menu {
+		display: block;
+	}
+	.small-navigation {
+		margin-bottom: 1em;
+	}
+	.small-navigation ul {
+		background: #efefef;
+		border: 1px solid #ddd;
+		border-bottom-width: 0;
+		clear: both;
+		list-style: none;
+		margin: 0;
+	}
+	.small-navigation .sub-menu {
+		border: none;
+	}
+	.small-navigation li {
+	}
+	.small-navigation a {
+		border-bottom: 1px solid #ddd;
+		border-top: 1px solid #fff;
+		display: block;
+		font-size: 14px;
+		font-size: 1.4rem;
+		font-weight: 700;
+		padding: 3% 5%;
+		text-shadow: 0 1px 0 rgba( 255, 255, 255, .8 );
+		text-transform: uppercase;
+	}
+	.small-navigation a:hover {
+		background-color: #ddd;
+	}
+	.small-navigation a:active {
+		background-color: red;
+		color: #fff;
+		text-shadow: 0 1px 0 rgba( 0, 0, 0, .5 );
+	}
+	.small-navigation .sub-menu a {
+		padding-left: 10%;
+	}
+	.small-navigation .sub-menu .sub-menu a {
+		padding-left: 15%;
+	}
+	.menu-item-parent > a:after,
+	.sub-menu .menu-item-parent > a:after {
+		content: '';
+	}
+
 }
