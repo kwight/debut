@@ -12,7 +12,7 @@
  * @since 1.0
  */
 if ( ! isset( $content_width ) )
-	$content_width = 620; /* pixels */
+	$content_width = 646; /* pixels */
 
 if ( ! function_exists( 'debut_setup' ) ):
 /**
