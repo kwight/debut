@@ -1,3 +1,4 @@
+(edit)
 === Debut ===
 
 [Debut](https://github.com/kwight/debut/) is a solid, sensible, responsive starter or parent theme, based on _s by Automattic. It is translation-ready, and includes a sliding menu for mobile screens.
