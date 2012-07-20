@@ -12,6 +12,10 @@ Make sure to create and set a menu under Appearance > Menus. Once you've made yo
 
 [html5shiv](http://code.google.com/p/html5shiv/) script created by Remy Sharp, and is dual-licensed under the MIT or GPL Version 2 licenses.
 
+== Browser Support ==
+
+Chrome, Firefox, Safari and IE9+ are supported. IE7 and IE8 are not supported, but receive occasional attention as second-class citizens. 
+
 == Changelog ==
 
 = 1.0 =
