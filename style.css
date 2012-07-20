@@ -1089,3 +1089,38 @@ object {
 		content: '';
 	}
 }
+
+/* =Mega-styler
+----------------------------------------------- */
+
+.mega {
+	border: none;
+}
+.mega #page {
+	margin: 0;
+	max-width: none;
+	padding: 0;
+	width: 100%;
+}
+.mega-section {
+	border: 1px solid #efefef;
+	border-width: 1px 1px 0 0;
+	float: left;
+	padding: 2%;
+	position: relative;
+	width: 46%;
+}
+.mega-title {
+	color: #efefef;
+	font: 300 12px/1 Helvetica, Arial, sans-serif;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+#main,
+#primary,
+#secondary {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
