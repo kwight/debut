@@ -155,6 +155,9 @@ Based on a 12-column, fluid grid
 #searchform,
 .main-navigation,
 #primary,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
 #secondary,
 #tertiary,
 .wp-credit,
@@ -222,10 +225,10 @@ Based on a 12-column, fluid grid
 	margin-bottom: 2.5em;
 }
 /* Nested margin corrections */
-#dummy {
+.comment-form-author {
 	margin-left: 0;
 }
-#dummy {
+.comment-form-url {
 	margin-right: 0;
 }
 /* Clearfix */
@@ -465,7 +468,7 @@ textarea {
 	font-size: 14px;
 	font-size: 1.4rem;
 	padding: 5px;
-	max-width: 96%;
+	width: 94%;
 }
 input[type=text]:focus,
 textarea:focus {
@@ -473,9 +476,8 @@ textarea:focus {
 }
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
-	width: 99.9%;
+	width: 97%;
 }
 
 /* Links */
@@ -844,13 +846,11 @@ object {
 .comment-form-author,
 .comment-form-email,
 .comment-form-url {
-	display: inline;
-	float: left;
-	width: 31%;
+	width: 32%;
 }
-.comment-form-author,
-.comment-form-email {
-	margin-right: 1em;
+.comment-form-comment {
+	clear: both;
+	width: 100%;
 }
 #commentform div {
 	margin-bottom: 1em;
@@ -996,7 +996,29 @@ object {
 /* =Responsive
 ----------------------------------------------- */
 
-@media screen and ( max-width: 640px ) {
+@media screen and ( max-width: 920px ) {
+	.depth-3 .comment-form-author,
+	.depth-3 .comment-form-email,
+	.depth-3 .comment-form-url,
+	.depth-4 .comment-form-author,
+	.depth-4 .comment-form-email,
+	.depth-4 .comment-form-url,
+	.depth-5 .comment-form-author,
+	.depth-5 .comment-form-email,
+	.depth-5 .comment-form-url {
+		margin: 0 0 1em;
+		width: 100%;
+	}
+	.depth-3 #commentform input[type="text"],
+	.depth-4 #commentform input[type="text"],
+	.depth-5 #commentform input[type="text"] {
+		width: 97%;
+	}
+
+
+}
+
+@media screen and ( max-width: 680px ) {
 	#masthead hgroup,
 	#primary,
 	#secondary,
@@ -1090,5 +1112,20 @@ object {
 	.menu-item-parent > a:after,
 	.sub-menu .menu-item-parent > a:after {
 		content: '';
+	}
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url,
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url,
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		margin: 0 0 1em;
+		width: 100%;
+	}
+	#commentform input[type="text"] {
+		width: 97%;
 	}
 }
