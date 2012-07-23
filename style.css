@@ -48,6 +48,7 @@ and Blueprint http://www.blueprintcss.org/
 =Comments
 =Widgets
 =Footer
+=IE9 and unsupported
 =Responsive
 */
 
@@ -902,11 +903,12 @@ object {
 }
 .widget_search #searchform {
 	margin: 0;
+	position: relative;
 	width: 100%;
 }
 .widget_search #searchform input[type="text"] {
 	background-color: #fff;
-	width: 100%;
+	width: 96%;
 }
 .widget_search ::-webkit-input-placeholder { /* Change color of placeholder text */
    /*color: #000;*/
@@ -990,6 +992,42 @@ object {
 }
 .dev-credit {
 	text-align: right;
+}
+
+
+/* =IE9 and Unsupported
+----------------------------------------------- */
+     
+/* Correct small gap above submenus */
+#unsupported .menu > li > .sub-menu,
+#ie9 .menu > li > .sub-menu {
+	top: 1.7em;
+}
+/* Show labels, as IE doesn't support placeholder text */
+#unsupported #searchsubmit,
+#ie9 #searchsubmit {
+	background: none;
+	border-color: #ddd;
+	border-radius: 0;
+	border-width: 0 0 0 1px;
+	box-shadow: none;
+	color: #aaa;
+	display: block;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	right: 1%;
+	position: absolute;
+	top: 2px;
+}
+#unsupported #searchform input[type="text"],
+#ie9 #searchform input[type="text"] {
+	padding-right: 24%;
+	width: 74%;
+}
+#unsupported #commentform label,
+#ie9 #commentform label {
+	display: block;
+	font-size: 12px;
+	text-transform: uppercase;
 }
 
 
