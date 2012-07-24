@@ -326,9 +326,13 @@ add_filter( 'wp_nav_menu_args', 'debut_nav_menu_args' );
  *
  * @since 1.0
  */
-function debut_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
+if ( ! function_exists( 'debut_page_menu_args' ) ) {
+
+	function debut_page_menu_args( $args ) {
+		$args['show_home'] = true;
+		return $args;
+	}
+
 }
 add_filter( 'wp_page_menu_args', 'debut_page_menu_args' );
 
@@ -338,13 +342,17 @@ add_filter( 'wp_page_menu_args', 'debut_page_menu_args' );
  *
  * @since 1.0
  */
-function debut_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
+if ( ! function_exists( 'debut_body_classes' ) ) {
+
+	function debut_body_classes( $classes ) {
+		// Adds a class of group-blog to blogs with more than 1 published author
+		if ( is_multi_author() ) {
+			$classes[] = 'group-blog';
+		}
+
+		return $classes;
 	}
 
-	return $classes;
 }
 add_filter( 'body_class', 'debut_body_classes' );
 
@@ -354,14 +362,18 @@ add_filter( 'body_class', 'debut_body_classes' );
  *
  * @since 1.0
  */
-function debut_enhanced_image_navigation( $url, $id ) {
-	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
+if ( ! function_exists( 'debut_enhanced_image_navigation' ) ) {
+
+	function debut_enhanced_image_navigation( $url, $id ) {
+		if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
+			return $url;
+
+		$image = get_post( $id );
+		if ( ! empty( $image->post_parent ) && $image->post_parent != $id )
+			$url .= '#main';
+
 		return $url;
+	}
 
-	$image = get_post( $id );
-	if ( ! empty( $image->post_parent ) && $image->post_parent != $id )
-		$url .= '#main';
-
-	return $url;
 }
 add_filter( 'attachment_link', 'debut_enhanced_image_navigation', 10, 2 );
