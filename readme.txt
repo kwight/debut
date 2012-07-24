@@ -6,6 +6,10 @@
 
 Make sure to create and set a menu under Appearance > Menus. Once you've made your menu, select it under Theme Locations > Primary Menu (this is necessary for the sub-menu indicators to appear).
 
+== Limitations ==
+
+CSS3 Media Queries do not work in IE8 or below.
+
 == Credits ==
 
 [_s](https://github.com/Automattic/_s) theme created by Automattic, and released under the GPL v2.0.
@@ -17,6 +21,15 @@ Make sure to create and set a menu under Appearance > Menus. Once you've made yo
 Chrome, Firefox, Safari and IE9+ are supported. IE7 and IE8 are not supported, but receive occasional attention as second-class citizens. 
 
 == Changelog ==
+
+More detail on the theme [commit page](https://github.com/kwight/debut/commits?page=1).
+
+= 1.0.1 =
+* Bug fix: cleaned up comments and reply form, particularly at narrow screen widths
+* Bug fix: IE displays form field labels, due to lack of placeholder attribute support 
+* Theme review: various fixes for compliance with theme repo requirements
+* Bug fix: fixed excessive page top margins on narrow screen widths
+* Bug fix: ensured all functions can be overridden by child themes
 
 = 1.0 =
 * Initial release.
