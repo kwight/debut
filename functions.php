@@ -80,9 +80,9 @@ add_action( 'widgets_init', 'debut_widgets_init' );
 function debut_scripts() {
 	global $post;
 
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'debut-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'debut', get_template_directory_uri() . '/js/debut.js', array( 'jquery' ) );
+	wp_enqueue_script( 'debut-scripts', get_template_directory_uri() . '/js/debut.js', array( 'jquery' ) );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
