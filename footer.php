@@ -11,9 +11,9 @@
 
 	</div><!-- #main -->
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<?php printf( __( 'Powered by %s.', 'debut' ), '<a href="http://wordpress.org/" target="_blank">WordPress</a>' ); ?>
-		</footer><!-- #colophon .site-footer -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php printf( __( 'Powered by %s.', 'debut' ), '<a href="http://wordpress.org/" target="_blank">WordPress</a>' ); ?>
+	</footer><!-- #colophon .site-footer -->
 
 <?php wp_footer(); ?>
 
