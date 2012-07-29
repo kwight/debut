@@ -31,6 +31,7 @@
 			<span class="cat-links">
 				<?php printf( __( 'Posted in %1$s', 'debut' ), $categories_list ); ?>
 			</span>
+			<span class="sep">&nbsp&nbsp&bull;&nbsp&nbsp</span>
 			<?php endif; // End if categories ?>
 
 			<?php
@@ -38,15 +39,14 @@
 				$tags_list = get_the_tag_list( '', __( ', ', 'debut' ) );
 				if ( $tags_list ) :
 			?>
-			<span class="sep">&nbsp&nbsp&bull;&nbsp&nbsp</span>
 			<span class="tag-links">
 				<?php printf( __( 'Tagged %1$s', 'debut' ), $tags_list ); ?>
 			</span>
+			<span class="sep">&nbsp&nbsp&bull;&nbsp&nbsp</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="sep">&nbsp&nbsp&bull;&nbsp&nbsp</span>
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'debut' ), __( '1 Comment', 'debut' ), __( '% Comments', 'debut' ) ); ?></span>
 		<?php endif; ?>
 
