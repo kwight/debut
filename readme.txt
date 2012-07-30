@@ -24,6 +24,9 @@ Chrome, Firefox, Safari and IE9+ are supported. IE7 and IE8 are not supported, b
 
 More detail on the theme [commit page](https://github.com/kwight/debut/commits?page=1).
 
+= 1.0.2 =
+* Theme review: fixed footer credit link in accordance with theme review guidelines
+
 = 1.0.1 =
 * Bug fix: cleaned up comments and reply form, particularly at narrow screen widths
 * Bug fix: IE displays form field labels, due to lack of placeholder attribute support 
