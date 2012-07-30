@@ -12,7 +12,7 @@
 	</div><!-- #main -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php printf( __( 'Powered by %s.', 'debut' ), '<a href="http://wordpress.org/" target="_blank">WordPress</a>' ); ?>
+		<?php printf( __( 'Code by %s.', 'debut' ), '<a href="http://kwight.ca/" target="_blank">kwight</a>' ); ?>
 	</footer><!-- #colophon .site-footer -->
 
 <?php wp_footer(); ?>
