@@ -12,9 +12,9 @@ CSS3 Media Queries do not work in IE8 or below.
 
 == Credits ==
 
-[_s](https://github.com/Automattic/_s) theme created by Automattic, and released under the GPL v2.0.
+[_s](https://github.com/Automattic/_s) theme by Automattic, and released under the GPL v2.0.
 
-[html5shiv](http://code.google.com/p/html5shiv/) script created by Remy Sharp, and is dual-licensed under the MIT or GPL Version 2 licenses.
+[html5shiv](http://code.google.com/p/html5shiv/) script by Remy Sharp, and is dual-licensed under the MIT or GPL Version 2 licenses.
 
 == Browser Support ==
 
