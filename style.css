@@ -612,8 +612,9 @@ a:visited {
 ----------------------------------------------- */
 
 .sticky {
-	border-left: 4px solid red;
-	padding: 0 0 0 1.5em;
+	background-color: #efefef;
+	border: 1px solid #ddd;
+	padding: 3%;
 }
 .entry-title {
 	clear: none;
