@@ -40,7 +40,7 @@
 			<span class="cat-links">
 				<?php printf( __( 'Posted in %1$s', 'debut' ), $categories_list ); ?>
 			</span>
-			<span class="sep">&nbsp&nbsp&bull;&nbsp&nbsp</span>
+			<span class="sep">&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
 			<?php endif; // End if categories ?>
 
 			<?php
@@ -51,7 +51,7 @@
 			<span class="tag-links">
 				<?php printf( __( 'Tagged %1$s', 'debut' ), $tags_list ); ?>
 			</span>
-			<span class="sep">&nbsp&nbsp&bull;&nbsp&nbsp</span>
+			<span class="sep">&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
@@ -59,6 +59,6 @@
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'debut' ), __( '1 Comment', 'debut' ), __( '% Comments', 'debut' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'debut' ), '<span class="sep">&nbsp&nbsp&bull;&nbsp&nbsp</span><span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'debut' ), '<span class="sep">&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span><span class="edit-link">', '</span>' ); ?>
 	</footer><!-- #entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
