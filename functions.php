@@ -45,6 +45,11 @@ function debut_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	/**
+	 * Add image sizes
+	 */
+	add_image_size( 'debut-featured', 646, 300, true );
+
+	/**
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
