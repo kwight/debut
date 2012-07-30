@@ -685,12 +685,14 @@ a:visited {
 ----------------------------------------------- */
 
 .site-header img,
+.entry-header img,
 .entry-content img,
 .comment-content img,
 .widget img {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
 }
 .site-header img,
+.entry-header img,
 .entry-content img,
 .widget img,
 img[class*="align"],
@@ -760,10 +762,14 @@ object {
 }
 
 /* Featured images */
-.attachment-thumbnail {
+.attachment-thumbnail.wp-post-image {
 	float: left;
 	height: auto;
 	width: 22.678%;
+}
+.attachment-debut-featured {
+	display: block;
+	margin-bottom: .5em;
 }
 
 
