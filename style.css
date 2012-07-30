@@ -232,8 +232,11 @@ Based on a 12-column, fluid grid
 #masthead:after,
 #main:after,
 #primary:after,
-p:after,
-div:after,
+article:after,
+.single p:after,
+.page p:after,
+.single div:after,
+.page div:after,
 #secondary:after,
 #tertiary:after,
 .widget:after,
@@ -613,15 +616,17 @@ a:visited {
 	padding: 0 0 0 1.5em;
 }
 .entry-title {
+	clear: none;
 	font-size: 24px;
 	font-size: 2.4rem;
-	margin-bottom: .3em;
+	margin: 0 0 .3em 25.774%;
 }
 .single .entry-title,
 .page .entry-title,
 .not-found .entry-title {
 	font-size: 28px;
 	font-size: 2.8rem;
+	margin-left: 0;
 }
 .page-title {
 	color: #aaa;
@@ -634,22 +639,29 @@ a:visited {
 	text-transform: uppercase;
 }
 .entry-meta {
-	clear: both;
 	color: #aaa;
 	font-size: 12px;
 	font-size: 1.2rem;
 	line-height: 1.2;
+	margin-left: 25.774%;
 	text-transform: uppercase;
+}
+.entry-content {
+	margin: 1.5em 0 0 25.774%;
+}
+.single .entry-meta,
+.page .entry-meta,
+.not-found .entry-meta,
+.single .entry-content,
+.page .entry-content,
+.not-found .entry-content {
+	margin-left: 0;
 }
 .byline {
 	display: none;
 }
 .group-blog .byline {
 	display: inline;
-}
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
 }
 .page-links {
 	clear: both;
@@ -744,6 +756,13 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+/* Featured images */
+.attachment-thumbnail {
+	float: left;
+	height: auto;
+	width: 22.678%;
 }
 
 
