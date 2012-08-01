@@ -230,6 +230,7 @@ Based on a 12-column, fluid grid
 }
 /* Clearfix */
 #masthead:after,
+.menu:after,
 #main:after,
 #primary:after,
 p:after,
@@ -528,7 +529,7 @@ a:visited {
 /* =Menu
 ----------------------------------------------- */
 
-.main-navigation {
+.main-navigation .menu {
 	background-color: #efefef;
 	border: 1px solid #ddd;
 	font-weight: 700;
@@ -1053,6 +1054,7 @@ object {
 
 @media screen and ( max-width: 680px ) {
 	#masthead hgroup,
+	.main-navigation,
 	#primary,
 	#secondary,
 	#tertiary {
@@ -1060,6 +1062,7 @@ object {
 	}
 	#masthead,
 	#masthead hgroup,
+	.main-navigation,
 	#primary,
 	#secondary,
 	#tertiary  {
@@ -1067,6 +1070,9 @@ object {
 	}
 	.site-description {
 		margin-bottom: 1.5em;
+	}
+	.main-navigation {
+		margin-bottom: 2.5em;
 	}
 	#secondary,
 	#tertiary {
