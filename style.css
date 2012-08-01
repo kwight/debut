@@ -603,8 +603,7 @@ a:visited {
 }
 .menu-item-parent:hover > a:after,
 .sub-menu .menu-item-parent > a:after,
-.current-menu-item a:after,
-.current-menu-ancestor a:after {
+.current-menu-item a:after {
 	color: #ff4d4d;
 }
 
