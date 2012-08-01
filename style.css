@@ -1078,6 +1078,9 @@ object {
 	#tertiary {
 		padding: 0;
 	}
+	.widget_search #searchform input[type="text"] {
+		width: 98%;
+	}
 }
 
 @media screen and ( max-width: 480px ) {
@@ -1156,7 +1159,8 @@ object {
 		margin: 0 0 1em;
 		width: 100%;
 	}
-	#commentform input[type="text"] {
+	#commentform input[type="text"],
+	.widget_search input[type="text"] {
 		width: 97%;
 	}
 }
