@@ -560,22 +560,18 @@ a:visited {
 	text-transform: uppercase;
 	white-space: nowrap;
 }
-.main-navigation li:hover a,
+.main-navigation .menu-item-parent:hover,
+.main-navigation .sub-menu a {
+	background-color: #ddd;
+}
 .main-navigation a:hover,
 .main-navigation a:focus,
-.main-navigation a:active,
-.main-navigation ul ul,
-.main-navigation ul ul a,
-.main-navigation li.current_page_item a,
-.main-navigation li.current-menu-item a,
-.main-navigation li.current-page-ancestor a {
+.main-navigation a:active {
 	background-color: red;
 	color: #fff;
 	text-shadow: 0 1px 0 rgba( 0, 0, 0, 0.8 );
 }
 .main-navigation ul ul {
-	border: solid #ff4d4d;
-	border-width: 1px 0 0 0;
 	box-shadow: 0 8px 8px -5px rgba(0, 0, 0, .4);
 	display: none;
 	float: left;
@@ -585,26 +581,21 @@ a:visited {
 	z-index: 99999;
 }
 .main-navigation ul ul ul {
-	border-width: 0 0 0 1px;
 	left: 100%;
 	top: 0;
-}.main-navigation ul li:hover > ul {
+}
+.main-navigation ul li:hover > ul {
 	display: block;
 }
-.menu-item-parent > a:after {
+.main-navigation .menu-item-parent > a:after {
     color: #bbb;
     content: '\a0 \a0 \a0 \25bc';
     font-size: 8px;
     font-size: .8rem;
     vertical-align: 1px;
 }
-.sub-menu .menu-item-parent > a:after {
+.main-navigation .sub-menu .menu-item-parent > a:after {
     content: '\a0 \a0 \a0 \a0 \25b6';
-}
-.menu-item-parent:hover > a:after,
-.sub-menu .menu-item-parent > a:after,
-.current-menu-item a:after {
-	color: #ff4d4d;
 }
 
 
