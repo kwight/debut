@@ -566,7 +566,8 @@ a:visited {
 }
 .main-navigation a:hover,
 .main-navigation a:focus,
-.main-navigation a:active {
+.main-navigation a:active,
+.main-navigation .current-menu-item > a {
 	background-color: red;
 	color: #fff;
 	text-shadow: 0 1px 0 rgba( 0, 0, 0, 0.8 );
