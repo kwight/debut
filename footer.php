@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer.
  *
- * (Feel free to remove the WordPress link if you choose.)
+ * (Feel free to remove all links if you choose.)
  *
  * @package debut 
  * @since 1.0 
