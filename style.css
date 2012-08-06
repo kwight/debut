@@ -234,10 +234,6 @@ Based on a 12-column, fluid grid
 #main:after,
 #primary:after,
 article:after,
-.single p:after,
-.page p:after,
-.single div:after,
-.page div:after,
 ul:after,
 ol:after,
 #secondary:after,
@@ -274,8 +270,7 @@ textarea {
 	line-height: 1.5;
 }
 /* Headings */
-h1,h2,h3,h4,h5,h6 {
-	clear: both;
+h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 	line-height: 1.1;
 	margin: 0 0 .5em;
