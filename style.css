@@ -904,6 +904,9 @@ object {
 	font-size: 16px;
 	font-size: 1.6rem;
 }
+.widget p {
+	margin-bottom: .5em;
+}
 .widget > ul,
 .widget_nav_menu ul.menu {
 	list-style: none;
