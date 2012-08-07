@@ -46,13 +46,17 @@
 	</nav>
 
 	<header id="masthead" class="site-header" role="banner">
+
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
-
 		
 		<?php get_sidebar( 'header' ); ?>
+
+		<?php if ( get_header_image() ) { ?>
+			<img class="header-image" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" />
+		<?php } ?>
 
 	</header><!-- #masthead .site-header -->
 	<nav role="navigation" class="site-navigation main-navigation">

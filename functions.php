@@ -50,6 +50,16 @@ function debut_setup() {
 	add_image_size( 'debut-featured', 646, 300, true );
 
 	/**
+	 * Custom header support
+	 */
+	$header_args = array(
+		'height' => 300,
+		'flex-height' => true,
+		'width' => 980
+	);
+	add_theme_support( 'custom-header', $header_args );
+
+	/**
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
