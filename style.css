@@ -215,7 +215,6 @@ Based on a 12-column, fluid grid
 	width: 6.333%;
 }
 /* Vertical spacing */
-#masthead,
 .main-navigation,
 .hentry,
 .widget {
@@ -523,7 +522,13 @@ a:visited {
 }
 .site-description {
 	font-weight: 400;
-	margin-bottom: 0;
+	margin-bottom: 1.5em;
+}
+.header-image {
+	display: block;
+	height: auto;
+	margin: 2.5em 1% 0;
+	width: 98%;
 }
 
 /* =Menu
@@ -677,14 +682,12 @@ a:visited {
 /* =Media
 ----------------------------------------------- */
 
-.site-header img,
 .entry-header img,
 .entry-content img,
 .comment-content img,
 .widget img {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
 }
-.site-header img,
 .entry-header img,
 .entry-content img,
 .widget img,
@@ -692,7 +695,6 @@ img[class*="align"],
 img[class*="wp-image-"] {
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
-.site-header img,
 .entry-content img,
 img.size-full {
 	max-width: 100%;
@@ -1072,6 +1074,7 @@ object {
 
 @media screen and ( max-width: 680px ) {
 	#masthead hgroup,
+	.header-image,
 	.main-navigation,
 	#primary,
 	#secondary,
@@ -1088,6 +1091,9 @@ object {
 	}
 	.site-description {
 		margin-bottom: 1.5em;
+	}
+	.header-image {
+		margin-bottom: 2.5em;
 	}
 	.main-navigation {
 		margin-bottom: 2.5em;
