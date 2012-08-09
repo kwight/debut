@@ -217,6 +217,7 @@ Based on a 12-column, fluid grid
 /* Vertical spacing */
 #masthead,
 .main-navigation,
+.flexslider,
 .hentry,
 .widget {
 	margin-bottom: 2.5em;
