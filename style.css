@@ -152,7 +152,7 @@ Based on a 12-column, fluid grid
 }
 /* Elements */
 #masthead hgroup,
-#searchform,
+form.searchform,
 .main-navigation,
 #primary,
 .comment-form-author,
@@ -234,8 +234,8 @@ Based on a 12-column, fluid grid
 #main:after,
 #primary:after,
 article:after,
-ul:after,
-ol:after,
+#page ul:after,
+#page ol:after,
 #secondary:after,
 #tertiary:after,
 .widget:after,
@@ -920,12 +920,12 @@ object {
 .widget_search .widget-title {
 	display: none;
 }
-.widget_search #searchform {
+.widget_search form.searchform {
 	margin: 0;
 	position: relative;
 	width: 100%;
 }
-.widget_search #searchform input[type="text"] {
+.widget_search form.searchform input[type="text"] {
 	background-color: #fff;
 	width: 96%;
 }
@@ -935,7 +935,7 @@ object {
 .widget_search :-moz-placeholder {  /* Change color of placeholder text */
    /*color: #000;*/  
 }
-#searchsubmit {
+input.searchsubmit {
 	display: none;
 }
 /* Calendar widget */
@@ -1021,8 +1021,8 @@ object {
 	top: 1.7em;
 }
 /* Show labels, as IE doesn't support placeholder text */
-#unsupported #searchsubmit,
-#ie9 #searchsubmit {
+#unsupported input.searchsubmit,
+#ie9 input.searchsubmit {
 	background: none;
 	border-color: #ddd;
 	border-radius: 0;
@@ -1035,8 +1035,8 @@ object {
 	position: absolute;
 	top: 2px;
 }
-#unsupported #searchform input[type="text"],
-#ie9 #searchform input[type="text"] {
+#unsupported form.searchform input[type="text"],
+#ie9 form.searchform input[type="text"] {
 	padding-right: 24%;
 	width: 74%;
 }
@@ -1099,7 +1099,7 @@ object {
 	#tertiary {
 		padding: 0;
 	}
-	.widget_search #searchform input[type="text"] {
+	.widget_search form.searchform input[type="text"] {
 		width: 98%;
 	}
 }
