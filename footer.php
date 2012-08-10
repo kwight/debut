@@ -15,6 +15,8 @@
 		<?php printf( __( 'Powered by %1$s. %2$s theme by %3$s.', 'debut' ),'<a href="http://wordpress.org/" target="_blank">WordPress</a>', 'Debut', '<a href="http://kwight.ca/" target="_blank">kwight</a>' ); ?>
 	</footer><!-- #colophon .site-footer -->
 
+</div><!-- #page -->
+
 <?php wp_footer(); ?>
 
 </body>
