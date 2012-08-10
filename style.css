@@ -603,10 +603,19 @@ a:visited {
 /* =Content
 ----------------------------------------------- */
 
+/* Sticky posts */
 .sticky {
 	background-color: #efefef;
 	border: 1px solid #ddd;
-	padding: 3.093%;
+	padding: 1.5465%;
+}
+.sticky .attachment-thumbnail.wp-post-image {
+	width: 23.52%;
+}
+.sticky .entry-title,
+.sticky .entry-meta,
+.sticky .entry-content {
+	margin-left: 26.72%;
 }
 .entry-title {
 	clear: none;
