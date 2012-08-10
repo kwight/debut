@@ -12,7 +12,7 @@
  * @since 1.0
  */
 if ( ! isset( $content_width ) )
-	$content_width = 646; /* pixels */
+	$content_width = 647; /* pixels, at 1000px wide */
 
 if ( ! function_exists( 'debut_setup' ) ):
 /**
@@ -47,7 +47,7 @@ function debut_setup() {
 	/**
 	 * Add image sizes
 	 */
-	add_image_size( 'debut-featured', 646, 300, true );
+	add_image_size( 'debut-featured', 647, 364, true ); // 16:9
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
