@@ -48,6 +48,7 @@ and Blueprint http://www.blueprintcss.org/
 =Widgets
 =Footer
 =IE9 and unsupported
+=Plugin integration
 =Responsive
 */
 
@@ -1055,6 +1056,15 @@ input.searchsubmit {
 	display: block;
 	font-size: 12px;
 	text-transform: uppercase;
+}
+
+
+/* =Plugin integration
+----------------------------------------------- */
+
+/* kwight FlexSlider */
+.kwight-fs-slides .entry-title {
+	margin-left: 0;
 }
 
 
