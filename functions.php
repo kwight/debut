@@ -56,7 +56,7 @@ function debut_setup() {
 		'primary' => __( 'Primary Menu', 'debut' ),
 	) );
 }
-endif; // _s_setup
+endif; // debut_setup
 add_action( 'after_setup_theme', 'debut_setup' );
 
 /**
