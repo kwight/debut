@@ -105,6 +105,22 @@ function debut_scripts() {
 add_action( 'wp_enqueue_scripts', 'debut_scripts' );
 
 /**
+ * Add html5.js script to <head> conditionally for IE8 and under
+ *
+ * @since 1.0.4
+ */
+if ( ! function_exists( 'debut_ie_html5_js' ) ) {
+
+	function debut_ie_html5_js() { ?>
+		<!--[if lt IE 9]>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+		<![endif]-->
+	<?php }
+
+}
+add_action('wp_head', 'debut_ie_html5_js');
+
+/**
  * Display navigation to next/previous pages when applicable
  *
  * @since 1.0
