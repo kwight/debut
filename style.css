@@ -166,7 +166,8 @@ form.searchform,
 	margin-right: 1%;
 }
 /* 12 columns */
-.main-navigation {
+.main-navigation,
+.page-template-full-width-php #primary {
 	width: 98.0%;
 }
 /* 11 columns */
