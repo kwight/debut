@@ -1063,6 +1063,11 @@ input.searchsubmit {
 ----------------------------------------------- */
 
 /* kwight FlexSlider */
+.flexslider {
+	background: #efefef;
+	border: 1px solid #ddd;
+	padding-bottom: 26px;   
+}
 .kwight-fs-slides .entry-title {
 	margin-left: 0;
 }
