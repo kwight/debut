@@ -126,6 +126,7 @@ a img {
 	border: 0;
 }
 
+
 /* =Colors
 ----------------------------------------------- */
 
@@ -143,6 +144,7 @@ White: #fff
 /* =Structure
 Based on a 12-column, fluid grid
 ----------------------------------------------- */
+
 /* Containers */
 #page {
 	width: 94%;
@@ -170,50 +172,10 @@ form.searchform,
 .page-template-full-width-php #primary {
 	width: 98.0%;
 }
-/* 11 columns */
-#dummy {
-	width: 89.667%;
-}
-/* 10 columns */
-#dummy {
-	width: 81.333%;
-}
-/* 9 columns */
-#dummy {
-	width: 73.0%;
-}
 /* 8 columns */
 #masthead hgroup,
 #primary {
 	width: 64.667%;
-}
-/* 7 columns */
-#dummy {
-	width: 56.333%;
-}
-/* 6 columns */
-#dummy {
-	width: 48.0%;
-}
-/* 5 columns */
-#dummy {
-	width: 39.667%;
-}
-/* 4 columns */
-#dummy {
-	width: 31.333%;
-}
-/* 3 columns */
-#dummy {
-	width: 23.0%;
-}
-/* 2 columns */
-#dummy {
-	width: 14.667%;
-}
-/* 1 column */
-#dummy {
-	width: 6.333%;
 }
 /* Vertical spacing */
 #masthead,
@@ -257,7 +219,6 @@ body {
 	border: solid red;
 	border-width: 4px 0;
 }
-
 body,
 button,
 input,
@@ -300,7 +261,6 @@ hr {
 	height: 1px;
 	margin-bottom: 1.5em;
 }
-
 /* Text elements */
 p {
 	margin-bottom: 1.5em;
@@ -478,14 +438,12 @@ textarea {
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 97%;
 }
-
 /* Links */
 a,
 a:visited {
 	color: red;
 	font-weight: 400;
 }
-
 /* Alignment */
 .alignleft {
 	display: inline;
@@ -502,13 +460,13 @@ a:visited {
 	display: block;
 	margin: 0 auto;
 }
-
 /* Text meant only for screen readers */
 .assistive-text {
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 }
+
 
 /* =Header
 ----------------------------------------------- */
@@ -526,6 +484,7 @@ a:visited {
 	font-weight: 400;
 	margin-bottom: 0;
 }
+
 
 /* =Menu
 ----------------------------------------------- */
@@ -752,14 +711,12 @@ img[class*="wp-image-"] {
 #content .gallery dd {
 	margin: 0;
 }
-
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
 object {
 	max-width: 100%;
 }
-
 /* Featured images */
 .attachment-thumbnail.wp-post-image {
 	float: left;
@@ -800,6 +757,7 @@ object {
 #image-navigation {
 	margin-top: 1.5em;
 }
+
 
 /* =Comments
 ----------------------------------------------- */
@@ -892,6 +850,7 @@ object {
 	font-size: 14px;
 	font-size: 1.4rem;
 }
+
 
 /* =Widgets
 ----------------------------------------------- */
@@ -1075,10 +1034,7 @@ input.searchsubmit {
 	.depth-5 #commentform input[type="text"] {
 		width: 97%;
 	}
-
-
 }
-
 @media screen and ( max-width: 680px ) {
 	#masthead hgroup,
 	.main-navigation,
@@ -1109,7 +1065,6 @@ input.searchsubmit {
 		width: 98%;
 	}
 }
-
 @media screen and ( max-width: 480px ) {
 	#page {
 		margin-top: 1em;
