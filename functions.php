@@ -13,7 +13,6 @@
  */
 if ( ! isset( $content_width ) ) $content_width = 646; // pixels, at 1000px wide
 
-if ( ! function_exists( 'debut_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -24,7 +23,6 @@ if ( ! function_exists( 'debut_setup' ) ):
  * @since 1.0
  */
 function debut_setup() {
-
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
@@ -55,7 +53,6 @@ function debut_setup() {
 		'primary' => __( 'Primary Menu', 'debut' ),
 	) );
 }
-endif; // debut_setup
 add_action( 'after_setup_theme', 'debut_setup' );
 
 /**
@@ -108,15 +105,11 @@ add_action( 'wp_enqueue_scripts', 'debut_scripts' );
  *
  * @since 1.0.4
  */
-if ( ! function_exists( 'debut_ie_html5_js' ) ) {
-
-	function debut_ie_html5_js() { ?>
-		<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-		<![endif]-->
-	<?php }
-
-}
+function debut_ie_html5_js() { ?>
+	<!--[if lt IE 9]>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
+<?php }
 add_action('wp_head', 'debut_ie_html5_js');
 
 /**
@@ -182,6 +175,7 @@ endif;
  *
  * @since 1.0
  */
+if ( ! function_exists( 'debut_categorized_blog' ) ) :
 function debut_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts
@@ -203,6 +197,7 @@ function debut_categorized_blog() {
 		return false;
 	}
 }
+endif;
 
 /**
  * Flush out the transients used in debut_categorized_blog
@@ -223,51 +218,46 @@ add_action( 'save_post', 'debut_category_transient_flusher' );
  *
  * @since 1.0
  */
-if ( ! function_exists( 'debut_comment' ) ) {
+if ( ! function_exists( 'debut_comment' ) ) :
+function debut_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
+	if ( !is_single() && get_comment_type() != 'comment' )
+		return;
+	$can_edit_post  = current_user_can( 'edit_post', $comment->comment_post_ID );
+	$content_class  = 'comment-content';
+	if ( $can_edit_post )
+		$content_class .= ' comment-edit';
+	?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+		<article id="comment-<?php comment_ID(); ?>" class="comment">
 
-	function debut_comment( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment;
-		if ( !is_single() && get_comment_type() != 'comment' )
-			return;
-		$can_edit_post  = current_user_can( 'edit_post', $comment->comment_post_ID );
-		$content_class  = 'comment-content';
-		if ( $can_edit_post )
-			$content_class .= ' comment-edit';
-		?>
-		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-			<article id="comment-<?php comment_ID(); ?>" class="comment">
-
-			<?php echo get_avatar( $comment, 60 ); ?>
-			<div class="comment-meta">
-				<div class="perma-reply-edit">
-					<a href="<?php echo esc_url( get_comment_link() ); ?>"><?php _e( 'Permalink', 'debut' ); ?></a>
-					<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '&nbsp;&sdot;&nbsp;' ) ) );
-					if ( $can_edit_post ) { edit_comment_link( __( 'Edit', 'debut' ), '&nbsp;&sdot;&nbsp;' ); } ?>
-				</div><!-- .perma-reply-edit -->
-				<h4><?php echo get_comment_author_link(); ?></h4>
-				<?php comment_time( 'F j, Y \a\t g:ia' ); ?><br />
-			</div><!-- .comment-meta -->
-			<div id="comment-content-<?php comment_ID(); ?>" class="<?php echo esc_attr( $content_class ); ?>">
-				<?php if ( $comment->comment_approved == '0' ): ?>
-						<p class="comment-awaiting"><?php esc_html_e( 'Your comment is awaiting moderation.', 'debut' ); ?></p>
-				<?php endif; ?>
-				<?php echo apply_filters( 'comment_text', $comment->comment_content ); ?>	
-			</div>
-			</article>
-		</li>
-		
-	<?php }
-
-}
+		<?php echo get_avatar( $comment, 60 ); ?>
+		<div class="comment-meta">
+			<div class="perma-reply-edit">
+				<a href="<?php echo esc_url( get_comment_link() ); ?>"><?php _e( 'Permalink', 'debut' ); ?></a>
+				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '&nbsp;&sdot;&nbsp;' ) ) );
+				if ( $can_edit_post ) { edit_comment_link( __( 'Edit', 'debut' ), '&nbsp;&sdot;&nbsp;' ); } ?>
+			</div><!-- .perma-reply-edit -->
+			<h4><?php echo get_comment_author_link(); ?></h4>
+			<?php comment_time( 'F j, Y \a\t g:ia' ); ?><br />
+		</div><!-- .comment-meta -->
+		<div id="comment-content-<?php comment_ID(); ?>" class="<?php echo esc_attr( $content_class ); ?>">
+			<?php if ( $comment->comment_approved == '0' ): ?>
+					<p class="comment-awaiting"><?php esc_html_e( 'Your comment is awaiting moderation.', 'debut' ); ?></p>
+			<?php endif; ?>
+			<?php echo apply_filters( 'comment_text', $comment->comment_content ); ?>	
+		</div>
+		</article>
+	</li>	
+<?php }
+endif;
 
 /**
  * Change HTML for comment form fields
  *
  * @since 1.0
  */
-if ( ! function_exists( 'debut_comment_form_args' ) ) {
-
-	function debut_comment_form_args( $args ) {
+function debut_comment_form_args( $args ) {
 	$args[ 'fields' ] = array(
 		'author' => '<div class="comment-form-author"><label for="author">' . esc_html__( 'Name', 'debut' ) . '</label><input type="text" class="field" name="author" id="author" aria-required="true" placeholder="' . esc_attr__( 'Name', 'debut' ) . '" /></div><!-- .comment-form-author -->',
 		'email' => '<div class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'debut' ) . '</label><input type="text" class="field" name="email" id="email" aria-required="true" placeholder="' . esc_attr__( 'Email', 'debut' ) . '" /></div><!-- .comment-form-email -->',
@@ -276,8 +266,6 @@ if ( ! function_exists( 'debut_comment_form_args' ) ) {
 	$args[ 'comment_field' ] = '<div class="comment-form-comment"><label for="comment">' . esc_html__( 'Comment', 'debut' ) . '</label><textarea id="comment" name="comment" rows="8" aria-required="true" placeholder="' . esc_attr__( 'Comment', 'debut' ) . '"></textarea></div><!-- .comment-form-comment -->';
 	$args[ 'comment_notes_before' ] = '<p class="comment-notes">' . esc_html__( 'Your email will not be published. Name and Email fields are required.', 'debut' ) . '</p>';
 	return $args;
-	}
-
 }
 add_filter( 'comment_form_defaults', 'debut_comment_form_args' );
 
@@ -287,24 +275,20 @@ add_filter( 'comment_form_defaults', 'debut_comment_form_args' );
  *
  * @since 1.0
  */
-if ( ! function_exists( 'debut_remove_caption_width' ) ) {
+function debut_remove_caption_width( $current_html, $attr, $content ) {
+    extract(shortcode_atts(array(
+        'id'    => '',
+        'align' => 'alignnone',
+        'width' => '',
+        'caption' => ''
+    ), $attr));
+    if ( 1 > (int) $width || empty($caption) )
+        return $content;
 
-	function debut_remove_caption_width( $current_html, $attr, $content ) {
-	    extract(shortcode_atts(array(
-	        'id'    => '',
-	        'align' => 'alignnone',
-	        'width' => '',
-	        'caption' => ''
-	    ), $attr));
-	    if ( 1 > (int) $width || empty($caption) )
-	        return $content;
+    if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
 
-	    if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
-
-	    return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (int) $width . 'px">'
-	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
-	}
-
+    return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (int) $width . 'px">'
+. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
 }
 add_filter( 'img_caption_shortcode', 'debut_remove_caption_width', 10, 3 );
 
@@ -328,77 +312,57 @@ class Debut_Page_Navigation_Walker extends Walker_Nav_Menu {
  *
  * @since 1.0
  */
-if ( ! function_exists( 'debut_nav_menu_args' ) ) {
-
-	function debut_nav_menu_args( $args ) {
-		/**
-		 * Set our new walker only if a menu is assigned,
-		 * and a child theme hasn't modified it to one level
-		 * (naughty child theme...)
-		 */
-		if ( 1 !== $args[ 'depth' ] && has_nav_menu( 'primary' ) ) {
-			$args[ 'walker' ] = new Debut_Page_Navigation_Walker;
-		}
-		return $args;
+function debut_nav_menu_args( $args ) {
+	/**
+	 * Set our new walker only if a menu is assigned,
+	 * and a child theme hasn't modified it to one level
+	 * (naughty child theme...)
+	 */
+	if ( 1 !== $args[ 'depth' ] && has_nav_menu( 'primary' ) ) {
+		$args[ 'walker' ] = new Debut_Page_Navigation_Walker;
 	}
-
+	return $args;
 }
 add_filter( 'wp_nav_menu_args', 'debut_nav_menu_args' );
-
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
  * @since 1.0
  */
-if ( ! function_exists( 'debut_page_menu_args' ) ) {
-
-	function debut_page_menu_args( $args ) {
-		$args['show_home'] = true;
-		return $args;
-	}
-
+function debut_page_menu_args( $args ) {
+	$args['show_home'] = true;
+	return $args;
 }
 add_filter( 'wp_page_menu_args', 'debut_page_menu_args' );
-
 
 /**
  * Adds custom classes to the array of body classes.
  *
  * @since 1.0
  */
-if ( ! function_exists( 'debut_body_classes' ) ) {
-
-	function debut_body_classes( $classes ) {
-		// Adds a class of group-blog to blogs with more than 1 published author
-		if ( is_multi_author() ) {
-			$classes[] = 'group-blog';
-		}
-
-		return $classes;
+function debut_body_classes( $classes ) {
+	// Adds a class of group-blog to blogs with more than 1 published author
+	if ( is_multi_author() ) {
+		$classes[] = 'group-blog';
 	}
-
+	return $classes;
 }
 add_filter( 'body_class', 'debut_body_classes' );
-
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  *
  * @since 1.0
  */
-if ( ! function_exists( 'debut_enhanced_image_navigation' ) ) {
-
-	function debut_enhanced_image_navigation( $url, $id ) {
-		if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
-			return $url;
-
-		$image = get_post( $id );
-		if ( ! empty( $image->post_parent ) && $image->post_parent != $id )
-			$url .= '#main';
-
+function debut_enhanced_image_navigation( $url, $id ) {
+	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 		return $url;
-	}
 
+	$image = get_post( $id );
+	if ( ! empty( $image->post_parent ) && $image->post_parent != $id )
+		$url .= '#main';
+
+	return $url;
 }
 add_filter( 'attachment_link', 'debut_enhanced_image_navigation', 10, 2 );
