@@ -853,7 +853,9 @@ object {
 	font-size: 14px;
 	font-size: 1.4rem;
 }
-
+.page-template-full-width-php #comments {
+	max-width: 64.667%;
+}
 
 /* =Widgets
 ----------------------------------------------- */
@@ -1036,6 +1038,11 @@ input.searchsubmit {
 	.depth-4 #commentform input[type="text"],
 	.depth-5 #commentform input[type="text"] {
 		width: 97%;
+	}
+}
+@media screen and ( max-width: 768px ) {
+	.page-template-full-width-php #comments {
+		max-width: 100%;
 	}
 }
 @media screen and ( max-width: 680px ) {
