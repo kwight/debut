@@ -161,7 +161,8 @@ form.searchform,
 .comment-form-email,
 .comment-form-url,
 #secondary,
-#tertiary {
+#tertiary,
+#colophon {
 	display: inline;
 	float: left;
 	margin-left: 1%;
@@ -169,7 +170,8 @@ form.searchform,
 }
 /* 12 columns */
 .main-navigation,
-.page-template-full-width-php #primary {
+.page-template-full-width-php #primary,
+#colophon {
 	width: 98.0%;
 }
 /* 8 columns */
@@ -192,6 +194,7 @@ form.searchform,
 	margin-right: 0;
 }
 /* Clearfix */
+#page:after,
 #masthead:after,
 .site-navigation:after,
 #main:after,
