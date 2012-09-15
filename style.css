@@ -47,6 +47,7 @@ and Blueprint http://www.blueprintcss.org/
 =Comments
 =Widgets
 =Footer
+=Plugin integration
 =IE9 and unsupported
 =Responsive
 */
@@ -979,6 +980,23 @@ input.searchsubmit {
 	font-size: 1.4rem;
 	padding-top: 2.5em;
 	text-align: right;
+}
+
+
+/* =Plugin Integration
+----------------------------------------------- */
+
+/* kwight Widgets
+ * https://github.com/kwight/kwight-widgets
+ */
+.kwight-widgets-twi-image,
+.kwight_widgets_random_post .wp-post-image {
+	display: block;
+	margin-bottom: 1em;
+}
+.kwight-widgets-rp-title {
+	font-size: 16px;
+	font-size: 1.6rem;
 }
 
 
