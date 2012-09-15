@@ -17,7 +17,7 @@ get_header(); ?>
 		<div id="primary" class="site-content">
 			<div id="content" role="main">
 
-			<?php if ( function_exists( 'kwight_fs_slider' ) ) kwight_fs_slider(); ?>
+			<?php if ( function_exists( 'kwight_slider' ) ) kwight_slider(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
