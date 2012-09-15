@@ -5,7 +5,7 @@
  * This template displays the content full-width, with no sidebar.
  *
  * @package debut
- * @since 1.0
+ * @since 1.0.4
  */
 
 get_header(); ?>
