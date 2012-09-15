@@ -818,7 +818,7 @@ object {
 }
 /* Reply form */
 #respond {
-	margin-bottom: 1em; /*Correction for Jetpack Comments iframe*/
+	margin-bottom: 1em; /* Correction for Jetpack Comments iframe */
 }
 #reply-title small a,
 #cancel-comment-reply-link {
