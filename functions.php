@@ -6,12 +6,14 @@
  * @since 1.0
  */
 
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
  * @since 1.0
  */
 if ( ! isset( $content_width ) ) $content_width = 646; // pixels, at 1000px wide
+
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -55,6 +57,7 @@ function debut_setup() {
 }
 add_action( 'after_setup_theme', 'debut_setup' );
 
+
 /**
  * Register widgetized area and update sidebar with default widgets
  *
@@ -80,6 +83,7 @@ function debut_widgets_init() {
 }
 add_action( 'widgets_init', 'debut_widgets_init' );
 
+
 /**
  * Enqueue scripts and styles
  */
@@ -100,6 +104,7 @@ function debut_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'debut_scripts' );
 
+
 /**
  * Add html5.js script to <head> conditionally for IE8 and under
  *
@@ -111,6 +116,7 @@ function debut_ie_html5_js() { ?>
 	<![endif]-->
 <?php }
 add_action('wp_head', 'debut_ie_html5_js');
+
 
 /**
  * Display navigation to next/previous pages when applicable
@@ -151,6 +157,7 @@ function debut_content_nav( $nav_id ) {
 }
 endif;
 
+
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
@@ -169,6 +176,7 @@ function debut_posted_on() {
 	);
 }
 endif;
+
 
 /**
  * Returns true if a blog has more than one category
@@ -199,6 +207,7 @@ function debut_categorized_blog() {
 }
 endif;
 
+
 /**
  * Flush out the transients used in debut_categorized_blog
  *
@@ -210,6 +219,7 @@ function debut_category_transient_flusher() {
 }
 add_action( 'edit_category', 'debut_category_transient_flusher' );
 add_action( 'save_post', 'debut_category_transient_flusher' );
+
 
 /**
  * Generate comment HTML
@@ -252,6 +262,7 @@ function debut_comment( $comment, $args, $depth ) {
 <?php }
 endif;
 
+
 /**
  * Change HTML for comment form fields
  *
@@ -268,6 +279,7 @@ function debut_comment_form_args( $args ) {
 	return $args;
 }
 add_filter( 'comment_form_defaults', 'debut_comment_form_args' );
+
 
 /**
  * Remove ridiculous inline width style from captions
@@ -292,6 +304,7 @@ function debut_remove_caption_width( $current_html, $attr, $content ) {
 }
 add_filter( 'img_caption_shortcode', 'debut_remove_caption_width', 10, 3 );
 
+
 /**
  * Add CSS class to menus for submenu indicator
  *
@@ -306,6 +319,7 @@ class Debut_Page_Navigation_Walker extends Walker_Nav_Menu {
         Walker_Nav_Menu::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
     }
 }
+
 
 /**
  * Filter wp_nav_menu() arguments to specify the above walker
@@ -325,6 +339,7 @@ function debut_nav_menu_args( $args ) {
 }
 add_filter( 'wp_nav_menu_args', 'debut_nav_menu_args' );
 
+
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
@@ -335,6 +350,7 @@ function debut_page_menu_args( $args ) {
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'debut_page_menu_args' );
+
 
 /**
  * Adds custom classes to the array of body classes.
@@ -349,6 +365,7 @@ function debut_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'debut_body_classes' );
+
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
