@@ -1156,3 +1156,23 @@ input.searchsubmit {
 		width: 97%;
 	}
 }
+
+
+.kwight_ads_widget {
+	margin-bottom: 0;
+}
+.kwight_ads_leaderboard {
+	float: left;
+	height: 90px;
+	overflow: hidden;
+	width: 728px;
+}
+.kwight_ads_linkunit {
+	float: right;
+	height: 90px;
+	overflow: hidden;
+	width: 180px;
+}
+.kwight_ads_widget img {
+	display: block;
+}

@@ -80,6 +80,22 @@ function debut_widgets_init() {
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
 	) );
+	register_sidebar( array(
+		'name' => __( 'Leaderboard', 'debut' ),
+		'id' => 'leaderboard',
+		'before_widget' => '<div id="%1$s" class="widget %2$s kwight_ads_leaderboard">',
+		'after_widget' => "</div>",
+		'before_title' => '<h6 class="widget-title">',
+		'after_title' => '</h6>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Link Unit', 'debut' ),
+		'id' => 'link-unit',
+		'before_widget' => '<div id="%1$s" class="widget %2$s kwight_ads_linkunit">',
+		'after_widget' => "</div>",
+		'before_title' => '<h6 class="widget-title">',
+		'after_title' => '</h6>',
+	) );
 }
 add_action( 'widgets_init', 'debut_widgets_init' );
 
