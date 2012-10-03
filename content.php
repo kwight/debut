@@ -25,8 +25,14 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content<?php echo $class; ?>">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'debut' ) ); ?>
+	<div class="entry-content">
+		<?php
+		if ( has_excerpt() ) {
+			the_excerpt();
+		} else {
+			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'debut' ) );
+		}
+		?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'debut' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
