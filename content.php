@@ -5,21 +5,19 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php $class = ( has_post_thumbnail() ) ? 'debut-has-thumb' : NULL; ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?>>
 	<header class="entry-header">
 		<?php
-		if ( has_post_thumbnail() ) {
-			$class = null; ?>
+		if ( has_post_thumbnail() ) { ?>
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'thumbnail' ); ?></a>
-		<?php
-
-		} else $class = ' no-thumb'; ?>
-
+		<?php }
+		?>
 		
-		<h1 class="entry-title<?php echo $class; ?>"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'debut' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'debut' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta<?php echo $class; ?>">
+		<div class="entry-meta">
 			<?php debut_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -30,7 +28,7 @@
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'debut' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-meta<?php echo $class; ?>">
+	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
