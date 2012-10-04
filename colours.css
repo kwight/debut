@@ -1,0 +1,214 @@
+
+/* =Colors
+----------------------------------------------- */
+
+/*
+Red: red #ff0000
+Dark Grey Text: #333
+Light Grey Text: #666
+Border Grey: #ddd
+Light Grey: #efefef
+Black: #000
+White: #fff
+*/
+
+hr {
+	background-color: #ddd;
+}
+pre {
+	background-color: #efefef;
+}
+mark,
+ins {
+	background-color: #fff9c0;
+}
+pre,
+#colophon {
+	border-color: #ddd;
+}
+#colophon {
+	color: #aaa;
+}
+body,
+button,
+input,
+select,
+textarea {
+	color: #333;
+}
+
+
+/* =IE9 and Unsupported
+----------------------------------------------- */
+     
+/* Correct small gap above submenus */
+#unsupported .menu > li > .sub-menu,
+#ie9 .menu > li > .sub-menu {
+	top: 1.7em;
+}
+/* Show labels, as IE doesn't support placeholder text */
+#unsupported input.searchsubmit,
+#ie9 input.searchsubmit {
+	background: none;
+	border-color: #ddd;
+	border-radius: 0;
+	border-width: 0 0 0 1px;
+	box-shadow: none;
+	color: #aaa;
+	display: block;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	right: 1%;
+	position: absolute;
+	top: 2px;
+}
+#unsupported form.searchform input[type="text"],
+#ie9 form.searchform input[type="text"] {
+	padding-right: 24%;
+	width: 74%;
+}
+#unsupported #commentform label,
+#ie9 #commentform label {
+	display: block;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+
+/* =Responsive
+----------------------------------------------- */
+
+@media screen and ( max-width: 920px ) {
+	.depth-3 .comment-form-author,
+	.depth-3 .comment-form-email,
+	.depth-3 .comment-form-url,
+	.depth-4 .comment-form-author,
+	.depth-4 .comment-form-email,
+	.depth-4 .comment-form-url,
+	.depth-5 .comment-form-author,
+	.depth-5 .comment-form-email,
+	.depth-5 .comment-form-url {
+		margin: 0 0 1em;
+		width: 100%;
+	}
+	.depth-3 #commentform input[type="text"],
+	.depth-4 #commentform input[type="text"],
+	.depth-5 #commentform input[type="text"] {
+		width: 97%;
+	}
+}
+@media screen and ( max-width: 768px ) {
+	.page-template-full-width-php #comments {
+		max-width: 100%;
+	}
+}
+@media screen and ( max-width: 680px ) {
+	#masthead hgroup,
+	.main-navigation,
+	#primary,
+	#secondary,
+	#tertiary {
+		width: 100%;
+	}
+	#masthead,
+	#masthead hgroup,
+	.main-navigation,
+	#primary,
+	#secondary,
+	#tertiary  {
+		margin: 0;
+	}
+	.site-description {
+		margin-bottom: 1.5em;
+	}
+	.main-navigation {
+		margin-bottom: 2.5em;
+	}
+	#secondary,
+	#tertiary {
+		padding: 0;
+	}
+	.widget_search form.searchform input[type="text"] {
+		width: 98%;
+	}
+}
+@media screen and ( max-width: 480px ) {
+	#page {
+		margin-top: 1em;
+	}
+	/* Navigation */
+	.main-navigation,
+	.menu {
+		display: none;
+	}
+	.menu-button {
+		bottom: -1px;
+		float: right;
+		position: relative;
+	}
+	.small-navigation,
+	.widget .main-navigation,
+	.widget .menu {
+		display: block;
+	}
+	.small-navigation {
+		margin-bottom: 1em;
+	}
+	.small-navigation ul {
+		background: #efefef;
+		border: 1px solid #ddd;
+		border-bottom-width: 0;
+		clear: both;
+		list-style: none;
+		margin: 0;
+	}
+	.small-navigation .sub-menu {
+		border: none;
+	}
+	.small-navigation li {
+	}
+	.small-navigation a {
+		border-bottom: 1px solid #ddd;
+		border-top: 1px solid #fff;
+		display: block;
+		font-size: 14px;
+		font-size: 1.4rem;
+		font-weight: 700;
+		padding: 3% 5%;
+		text-shadow: 0 1px 0 rgba( 255, 255, 255, .8 );
+		text-transform: uppercase;
+	}
+	.small-navigation a:hover {
+		background-color: #ddd;
+	}
+	.small-navigation a:active {
+		background-color: red;
+		color: #fff;
+		text-shadow: 0 1px 0 rgba( 0, 0, 0, .5 );
+	}
+	.small-navigation .sub-menu a {
+		padding-left: 10%;
+	}
+	.small-navigation .sub-menu .sub-menu a {
+		padding-left: 15%;
+	}
+	.menu-item-parent > a:after,
+	.sub-menu .menu-item-parent > a:after {
+		content: '';
+	}
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url,
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url,
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		margin: 0 0 1em;
+		width: 100%;
+	}
+	#commentform input[type="text"],
+	.widget_search input[type="text"] {
+		width: 97%;
+	}
+}

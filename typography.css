@@ -1,0 +1,138 @@
+/* =Typography
+----------------------------------------------- */
+
+
+pre,
+code,
+kbd,
+tt,
+var {
+	font-family: Courier, monospace;
+}
+body,
+button,
+input,
+select,
+textarea {
+	font-family: Helvetica, sans-serif;
+}
+h4,
+h5,
+h6 {
+	font-family: inherit;
+}
+big {
+	font-size: 125%;
+}
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+}
+sup,
+sub,
+small {
+	font-size: 75%;
+}
+h1 {
+	font-size: 38px;
+	font-size: 3.8rem;
+}
+h2 {
+	font-size: 20px;
+	font-size: 2rem;
+}
+body,
+h3,
+button,
+input,
+select,
+textarea {
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+h4,
+h5,
+h6,
+pre,
+#colophon {
+	font-size: 14px;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+}
+dfn,
+cite,
+em,
+i,
+blockquote {
+	font-style: italic;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+}
+dt,
+b,
+strong,
+th {
+	font-weight: 400;
+}
+body,
+button,
+input,
+select,
+textarea {
+	font-weight: 300;
+}
+body,
+button,
+input,
+select,
+textarea,
+pre {
+	line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.1;
+}
+.d {
+	line-height: 1;
+}
+sup,
+sub {
+	line-height: 0;
+}
+ol {
+	list-style: decimal;
+}
+ul {
+	list-style: disc;
+}
+ol ol {
+	list-style: lower-alpha;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
+#colophon {
+	text-align: right;
+}
+mark,
+ins {
+	text-decoration: none;
+}
+h4,
+h5,
+h6 {
+	text-transform: uppercase;
+}

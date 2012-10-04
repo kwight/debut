@@ -1,0 +1,399 @@
+/*
+Theme Name: Debut
+Author: kwight
+Author URI: http://kwight.ca
+Description: Debut is a solid and clean responsive theme, for sharing your ideas with the world.
+Version: 1.0.4
+License: GNU General Public License
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: debut
+Tags: white, black, red, gray, two-columns, one-column, flexible-width, right-sidebar, sticky-post, featured-images, threaded-comments, translation-ready
+
+
+Debut (c) 2012 Kirk Wight
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+
+/* =Table of contents
+-------------------------------------------------------------- */
+
+/*
+=Reset
+=Layout
+=Typography
+=Styling
+=Colors
+=IE9 and unsupported
+=Responsive
+*/
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a {
+	text-decoration: none;
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+
+/* =Layout
+----------------------------------------------- */
+
+/* Display */
+#d {
+	display: block;
+}
+#masthead hgroup,
+form.searchform,
+.main-navigation,
+#primary,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+#secondary,
+#tertiary,
+#colophon {
+	display: inline;
+}
+
+
+/* Floats */
+#masthead hgroup,
+form.searchform,
+.main-navigation,
+#primary,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+#secondary,
+#tertiary,
+#colophon {
+	float: left;
+}
+#d {
+	float: right;
+}
+/* Height */
+hr {
+	height: 1px;
+}
+sup,
+sub {
+	height: 0;
+}
+/* Margins */
+#page,
+#masthead,
+.main-navigation,
+.hentry,
+.widget,
+ul,
+ol {
+	margin-bottom: 2.5em;
+}
+hr,
+p,
+dd,
+address,
+pre,
+table {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: .5em;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul,
+figure,
+button,
+input,
+select,
+textarea {
+	margin-bottom: 0;
+}
+#page {
+	margin-left: auto;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul,
+dd,
+blockquote {
+	margin-left: 1.5em;
+}
+#masthead hgroup,
+form.searchform,
+.main-navigation,
+#primary,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+#secondary,
+#tertiary,
+#colophon {
+	margin-left: 1%;
+}
+.comment-form-author,
+figure,
+button,
+input,
+select,
+textarea {
+	margin-left: 0;
+}
+#page {
+	margin-right: auto;
+}
+ol,
+ul,
+dd,
+blockquote {
+	margin-right: 1.5em;
+}
+#masthead hgroup,
+form.searchform,
+.main-navigation,
+#primary,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+#secondary,
+#tertiary,
+#colophon {
+	margin-right: 1%;
+}
+.comment-form-url,
+figure,
+button,
+input,
+select,
+textarea {
+	margin-right: 0;
+}
+#page {
+	margin-top: 2.5em;
+}
+figure,
+button,
+input,
+select,
+textarea {
+	margin-top: 0;
+}
+/* Overflow */
+pre {
+	overflow: auto;
+}
+/* Padding */
+pre {
+	padding-bottom: 1.5em;
+}
+pre {
+	padding-left: 1.5em;
+}
+pre {
+	padding-right: 1.5em;
+}
+#colophon {
+	padding-top: 2.5em;
+}
+pre {
+	padding-top: 1.5em;
+}
+/* Positioning */
+#d {
+	position: absolute;
+}
+#page,
+sup,
+sub {
+	position: relative;
+}
+sup {
+	bottom: .5ex;
+}
+sub {
+	top: 1ex;
+}
+
+
+
+/* Widths */
+#page {
+	max-width: 1000px;
+}
+pre {
+	max-width: 99.9%;
+}
+table {
+	width: 100%;
+}
+.main-navigation,
+.page-template-full-width-php #primary,
+#colophon {
+	width: 98%; /* 12 columns */
+}
+#page {
+	width: 94%;
+}
+.d {
+	width: 89.667%; /* 11 columns */
+}
+.d {
+	width: 81.333%; /* 10 columns */
+}
+.d {
+	width: 73%; /* 9 columns */
+}
+#masthead hgroup,
+#primary {
+	width: 64.667%; /* 8 columns */
+}
+.d {
+	width: 56.333%; /* 7 columns */
+}
+.d {
+	width: 48%; /* 6 columns */
+}
+.d {
+	width: 39.667%; /* 5 columns */
+}
+.d {
+	width: 31.333%; /* 4 columns */
+}
+.d {
+	width: 23%; /* 3 columns */
+}
+.d {
+	width: 14.667%; /* 2 columns */
+}
+.d {
+	width: 6.333%; /* 1 column */
+}
+
+sup,
+sub,
+button,
+input,
+select,
+textarea {
+	vertical-align: baseline;
+}
+button,
+input,
+select,
+textarea {
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+
+/* Clearfix */
+#page:after,
+#masthead:after,
+.site-navigation:after,
+#main:after,
+#primary:after,
+article:after,
+#page ul:after,
+#page ol:after,
+#secondary:after,
+#tertiary:after,
+.widget:after,
+#colophon:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: '\0020';
+	clear: both;
+	height: 0;
+}

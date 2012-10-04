@@ -1,0 +1,48 @@
+/* =Styling
+----------------------------------------------- */
+
+/* Borders */
+body,
+pre {
+	border-style: solid;
+}
+body {
+	border-bottom-width: 4px;
+}
+pre,
+abbr,
+acronym {
+	border-bottom-width: 1px;
+}
+hr {
+	border-bottom-width: 0;
+}
+pre {
+	border-left-width: 1px;
+}
+body,
+hr {
+	border-left-width: 0;
+}
+pre {
+	border-right-width: 1px;
+}
+body,
+hr {
+	border-right-width: 0;
+}
+body {
+	border-top-width: 4px;
+}
+pre,
+#colophon {
+	border-top-width: 1px;
+}
+hr {
+	border-top-width: 0;
+}
+/* Various */
+abbr,
+acronym {
+	cursor: help;
+}
