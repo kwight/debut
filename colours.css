@@ -12,10 +12,38 @@ Black: #000
 White: #fff
 */
 
-hr {
+.main-navigation a:hover,
+.main-navigation a:focus,
+.main-navigation a:active,
+.main-navigation .current-menu-item > a {
+	background-color: red;
+}
+hr,
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+.main-navigation .menu-item-parent:hover,
+.main-navigation .sub-menu a {
 	background-color: #ddd;
 }
-pre {
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+}
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+}
+pre,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.main-navigation .menu,
+.sticky {
 	background-color: #efefef;
 }
 mark,
@@ -23,18 +51,98 @@ ins {
 	background-color: #fff9c0;
 }
 pre,
-#colophon {
-	border-color: #ddd;
+#colophon,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
+	border-bottom-color: #ddd;
+}
+pre,
+#colophon,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
+	border-left-color: #ddd;
+}
+pre,
+#colophon,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
+	border-right-color: #ddd;
+}
+pre,
+#colophon,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
+	border-top-color: #ddd;
+}
+a,
+a:visited {
+	color: red;
+}
+.main-navigation a:hover,
+.main-navigation a:focus,
+.main-navigation a:active,
+.main-navigation .current-menu-item > a {
+	color: #fff;
+}
+.main-navigation .menu-item-parent > a:after {
+	color: #bbb;
 }
 #colophon {
 	color: #aaa;
+}
+input[type=text],
+textarea {
+	color: #666;
 }
 body,
 button,
 input,
 select,
-textarea {
+textarea,
+input[type=text]:focus,
+textarea:focus {
 	color: #333;
+}
+
+
+/* =Browser-specific
+----------------------------------------------- */
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+}
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none; /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
 }
 
 

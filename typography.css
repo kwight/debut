@@ -1,7 +1,12 @@
 /* =Typography
 ----------------------------------------------- */
 
-
+.main-navigation .sub-menu .menu-item-parent > a:after {
+    content: '\a0 \a0 \a0 \a0 \25b6';
+}
+.main-navigation .menu-item-parent > a:after {
+    content: '\a0 \a0 \a0 \25bc';
+}
 pre,
 code,
 kbd,
@@ -35,9 +40,17 @@ sub,
 small {
 	font-size: 75%;
 }
+.site-title {
+	font-size: 55px;
+	font-size: 5.5rem;
+}
 h1 {
 	font-size: 38px;
 	font-size: 3.8rem;
+}
+.entry-title {
+	font-size: 24px;
+	font-size: 2.4rem;
 }
 h2 {
 	font-size: 20px;
@@ -56,10 +69,20 @@ h4,
 h5,
 h6,
 pre,
-#colophon {
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+#colophon,
+.main-navigation a {
 	font-size: 14px;
 	font-size: 1.4rem;
-	text-transform: uppercase;
+}
+.main-navigation .menu-item-parent > a:after {
+    font-size: 8px;
+    font-size: .8rem;
 }
 dfn,
 cite,
@@ -73,13 +96,23 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.site-title a,
+.main-navigation .menu,
+.main-navigation a {
 	font-weight: 700;
 }
 dt,
 b,
 strong,
-th {
+th,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+a,
+a:visited,
+.site-description {
 	font-weight: 400;
 }
 body,
@@ -88,6 +121,9 @@ input,
 select,
 textarea {
 	font-weight: 300;
+}
+.site-title a {
+	letter-spacing: -1px;
 }
 body,
 button,
@@ -105,12 +141,17 @@ h5,
 h6 {
 	line-height: 1.1;
 }
-.d {
+.site-title,
+.main-navigation a {
 	line-height: 1;
 }
 sup,
 sub {
 	line-height: 0;
+}
+button,
+input {
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
 }
 ol {
 	list-style: decimal;
@@ -128,11 +169,16 @@ ol ol ol {
 	text-align: right;
 }
 mark,
-ins {
+ins,
+.main-navigation a {
 	text-decoration: none;
 }
 h4,
 h5,
-h6 {
+h6,
+.main-navigation a {
 	text-transform: uppercase;
+}
+.main-navigation a {
+	white-space: nowrap;
 }

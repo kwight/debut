@@ -2,8 +2,24 @@
 ----------------------------------------------- */
 
 /* Borders */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea {
+	border-radius: 3px;
+}
 body,
-pre {
+pre,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
 	border-style: solid;
 }
 body {
@@ -11,38 +27,105 @@ body {
 }
 pre,
 abbr,
-acronym {
+acronym,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
 	border-bottom-width: 1px;
 }
-hr {
+hr,
+button::-moz-focus-inner,
+input::-moz-focus-inner {
 	border-bottom-width: 0;
 }
-pre {
+pre,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
 	border-left-width: 1px;
 }
 body,
-hr {
+hr,
+button::-moz-focus-inner,
+input::-moz-focus-inner {
 	border-left-width: 0;
 }
-pre {
+pre,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
 	border-right-width: 1px;
 }
 body,
-hr {
+hr,
+button::-moz-focus-inner,
+input::-moz-focus-inner {
 	border-right-width: 0;
 }
 body {
 	border-top-width: 4px;
 }
 pre,
-#colophon {
+#colophon,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
 	border-top-width: 1px;
 }
-hr {
+hr,
+button::-moz-focus-inner,
+input::-moz-focus-inner {
 	border-top-width: 0;
 }
-/* Various */
+/* Cursors */
 abbr,
 acronym {
 	cursor: help;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+}
+/* Lists */
+.main-navigation ul {
+	list-style: none;
+}
+/* Shadows */
+.main-navigation .sub-menu li:last-child {
+	box-shadow: 0 8px 8px -5px rgba(0,0,0,.4);
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.main-navigation a {
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+.main-navigation a:hover,
+.main-navigation a:focus,
+.main-navigation a:active,
+.main-navigation .current-menu-item > a {
+	text-shadow: 0 1px 0 rgba(0,0,0,.8);
 }

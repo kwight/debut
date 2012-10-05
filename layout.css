@@ -39,6 +39,7 @@ and Blueprint http://www.blueprintcss.org/
 =Typography
 =Styling
 =Colors
+=Browser-specific
 =IE9 and unsupported
 =Responsive
 */
@@ -122,8 +123,34 @@ a img {
 /* =Layout
 ----------------------------------------------- */
 
+/* Box model */
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+}
+input[type="search"] {
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+}
+
+/* Clearing */
+.aligncenter {
+	clear: both;
+}
+.entry-title {
+	clear: none;
+}
+
+/* Clipping */
+.assistive-text { /* Text meant only for screen readers */
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
 /* Display */
-#d {
+.aligncenter,
+.main-navigation a,
+.main-navigation ul li:hover > ul {
 	display: block;
 }
 #masthead hgroup,
@@ -135,10 +162,14 @@ form.searchform,
 .comment-form-url,
 #secondary,
 #tertiary,
-#colophon {
+#colophon,
+.alignleft,
+.alignright {
 	display: inline;
 }
-
+.main-navigation ul ul {
+	display: none;
+}
 
 /* Floats */
 #masthead hgroup,
@@ -150,10 +181,13 @@ form.searchform,
 .comment-form-url,
 #secondary,
 #tertiary,
-#colophon {
+#colophon,
+.alignleft,
+.main-navigation li,
+.main-navigation ul ul {
 	float: left;
 }
-#d {
+.alignright {
 	float: right;
 }
 /* Height */
@@ -198,10 +232,14 @@ figure,
 button,
 input,
 select,
-textarea {
+textarea,
+.aligncenter,
+.site-description,
+.main-navigation ul {
 	margin-bottom: 0;
 }
-#page {
+#page,
+.aligncenter {
 	margin-left: auto;
 }
 ul ul,
@@ -209,8 +247,14 @@ ol ol,
 ul ol,
 ol ul,
 dd,
-blockquote {
+blockquote,
+.alignright {
 	margin-left: 1.5em;
+}
+.sticky .entry-title,
+.sticky .entry-meta,
+.sticky .entry-content {
+	margin-left: 26.72%;
 }
 #masthead hgroup,
 form.searchform,
@@ -229,16 +273,19 @@ figure,
 button,
 input,
 select,
-textarea {
+textarea,
+.main-navigation ul {
 	margin-left: 0;
 }
-#page {
+#page,
+.aligncenter {
 	margin-right: auto;
 }
 ol,
 ul,
 dd,
-blockquote {
+blockquote,
+.alignleft {
 	margin-right: 1.5em;
 }
 #masthead hgroup,
@@ -258,7 +305,8 @@ figure,
 button,
 input,
 select,
-textarea {
+textarea,
+.main-navigation ul {
 	margin-right: 0;
 }
 #page {
@@ -268,22 +316,98 @@ figure,
 button,
 input,
 select,
-textarea {
+textarea,
+.aligncenter,
+.main-navigation ul {
 	margin-top: 0;
 }
+
 /* Overflow */
-pre {
+button,
+input {
+	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+pre,
+textarea {
 	overflow: auto;
 }
+
 /* Padding */
 pre {
 	padding-bottom: 1.5em;
 }
+.main-navigation a {
+	padding-bottom: .5em;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	padding-bottom: .3em;
+}
+input[type=text],
+textarea {
+	padding-bottom: 5px;
+}
+.sticky {
+	padding-bottom: 1.5465%;
+}
+input[type="checkbox"],
+input[type="radio"],
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding-bottom: 0;
+}
 pre {
 	padding-left: 1.5em;
 }
+.main-navigation a {
+	padding-left: .7em;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	padding-left: .5em;
+}
+input[type=text],
+textarea {
+	padding-left: 5px;
+}
+.sticky {
+	padding-left: 1.5465%;
+}
+input[type="checkbox"],
+input[type="radio"],
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+.main-navigation ul {
+	padding-left: 0;
+}
 pre {
 	padding-right: 1.5em;
+}
+.main-navigation a {
+	padding-right: .7em;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	padding-right: .5em;
+}
+input[type=text],
+textarea {
+	padding-right: 5px;
+}
+.sticky {
+	padding-right: 1.5465%;
+}
+input[type="checkbox"],
+input[type="radio"],
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding-right: 0;
 }
 #colophon {
 	padding-top: 2.5em;
@@ -291,23 +415,87 @@ pre {
 pre {
 	padding-top: 1.5em;
 }
+.main-navigation a {
+	padding-top: .5em;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	padding-top: .3em;
+}
+input[type=text],
+textarea {
+	padding-top: 5px;
+}
+.sticky {
+	padding-top: 1.5465%;
+}
+input[type="checkbox"],
+input[type="radio"],
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding-top: 0;
+}
 /* Positioning */
-#d {
+.assistive-text,
+.main-navigation ul ul {
 	position: absolute;
 }
 #page,
 sup,
-sub {
+sub,
+.main-navigation .menu,
+.main-navigation li {
 	position: relative;
 }
 sup {
 	bottom: .5ex;
 }
+.main-navigation ul ul ul {
+	left: 100%;
+}
+.main-navigation ul ul {
+	left: 0;
+}
 sub {
 	top: 1ex;
 }
+.main-navigation ul ul {
+	top: 1.8em;
+}
+.main-navigation ul ul ul {
+	top: 0;
+}
+.main-navigation ul ul,
+.main-navigation .sub-menu li:last-child {
+	z-index: 99999; /* Whoa! Hope a plugin doesn't use 999999!.. Urgh. */
+}
+.main-navigation .menu {
+	z-index: 1;
+}
 
-
+/* Vertical alignment */
+sup,
+sub,
+button,
+input,
+select,
+textarea {
+	vertical-align: baseline;
+}
+button,
+input,
+select,
+textarea {
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+textarea {
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+}
+.main-navigation .menu-item-parent > a:after {
+    vertical-align: 1px;
+}
 
 /* Widths */
 #page {
@@ -324,7 +512,12 @@ table {
 #colophon {
 	width: 98%; /* 12 columns */
 }
-#page {
+textarea {
+	width: 97%;
+}
+#page,
+input[type=text],
+textarea {
 	width: 94%;
 }
 .d {
@@ -352,6 +545,9 @@ table {
 .d {
 	width: 31.333%; /* 4 columns */
 }
+.sticky .attachment-thumbnail.wp-post-image {
+	width: 23.52%;
+}
 .d {
 	width: 23%; /* 3 columns */
 }
@@ -360,21 +556,6 @@ table {
 }
 .d {
 	width: 6.333%; /* 1 column */
-}
-
-sup,
-sub,
-button,
-input,
-select,
-textarea {
-	vertical-align: baseline;
-}
-button,
-input,
-select,
-textarea {
-	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
 }
 
 /* Clearfix */
