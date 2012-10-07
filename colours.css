@@ -1,4 +1,3 @@
-
 /* =Colors
 ----------------------------------------------- */
 
@@ -17,6 +16,9 @@ White: #fff
 .main-navigation a:active,
 .main-navigation .current-menu-item > a {
 	background-color: red;
+}
+.widget_search form.searchform input[type="text"] {
+	background-color: #fff;
 }
 hr,
 button:hover,
@@ -49,6 +51,9 @@ input[type="submit"],
 mark,
 ins {
 	background-color: #fff9c0;
+}
+.comment-navigation {
+	border-bottom-color: #efefef;
 }
 pre,
 #colophon,
@@ -86,6 +91,10 @@ textarea,
 .sticky {
 	border-right-color: #ddd;
 }
+#content .site-navigation,
+.single .comments-title {
+	border-top-color: #efefef;
+}
 pre,
 #colophon,
 button,
@@ -111,11 +120,21 @@ a:visited {
 .main-navigation .menu-item-parent > a:after {
 	color: #bbb;
 }
+.page-title,
+.entry-meta,
+.wp-caption-text,
+.comment-meta,
+#commentform ::-webkit-input-placeholder,
+#commentform :-moz-placeholder,
+.form-allowed-tags,
+.widget_rss .rss-date,
+.widget_rss cite,
 #colophon {
 	color: #aaa;
 }
 input[type=text],
-textarea {
+textarea,
+.comment-meta h4 {
 	color: #666;
 }
 body,
@@ -126,6 +145,12 @@ textarea,
 input[type=text]:focus,
 textarea:focus {
 	color: #333;
+}
+.widget_search ::-webkit-input-placeholder { /* Change color of placeholder text */
+   /*color: #000;*/
+}
+.widget_search :-moz-placeholder {  /* Change color of placeholder text */
+   /*color: #000;*/  
 }
 
 

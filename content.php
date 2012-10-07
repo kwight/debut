@@ -23,7 +23,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content<?php echo $class; ?>">
+	<div class="entry-content">
 		<?php
 		if ( has_excerpt() ) {
 			the_excerpt();

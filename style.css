@@ -1,317 +1,1390 @@
+/*
+Theme Name: Debut
+Author: kwight
+Author URI: http://kwight.ca
+Description: Debut is a solid and clean responsive theme, for sharing your ideas with the world.
+Version: 1.0.4
+License: GNU General Public License
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: debut
+Tags: white, black, red, gray, two-columns, one-column, flexible-width, right-sidebar, sticky-post, featured-images, threaded-comments, translation-ready
 
-.entry-title {
-	clear: none;
-	font-size: 24px;
-	font-size: 2.4rem;
-	margin: 0 0 .3em 0;
+
+Debut (c) 2012 Kirk Wight
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+
+/* =Table of contents
+-------------------------------------------------------------- */
+
+/*
+=Reset
+=Layout
+=Typography
+=Styling
+=Colors
+=Browser-specific
+=IE9 and unsupported
+=Responsive
+*/
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
 }
-.single .entry-title,
-.page .entry-title,
-.not-found .entry-title {
-	font-size: 28px;
-	font-size: 2.8rem;
-	margin-left: 0;
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a {
+	text-decoration: none;
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+
+/* =Layout
+----------------------------------------------- */
+
+/* Box model */
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+}
+input[type="search"] {
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+}
+
+/* Clearing */
+.aligncenter,
+.page-links,
+.comment-form-comment {
+	clear: both;
+}
+.entry-title,
+.comment-meta h4 {
+	clear: none;
+}
+
+/* Clipping */
+.assistive-text { /* Text meant only for screen readers */
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+/* Display */
+.aligncenter,
+.main-navigation a,
+.main-navigation ul li:hover > ul,
+.wp-caption img,
+.attachment-debut-featured,
+.widget_rss .rss-date,
+.widget_rss cite {
+	display: block;
+}
+#masthead hgroup,
+form.searchform,
+.main-navigation,
+#primary,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+#secondary,
+#tertiary,
+#colophon,
+.alignleft,
+.alignright,
+.group-blog .byline {
+	display: inline;
+}
+.main-navigation ul ul,
+.byline,
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title,
+.small-navigation,
+#commentform label,
+.widget_search .widget-title,
+input.searchsubmit {
+	display: none;
+}
+
+/* Floats */
+#masthead hgroup,
+form.searchform,
+.main-navigation,
+#primary,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+#secondary,
+#tertiary,
+#colophon,
+.alignleft,
+.main-navigation li,
+.main-navigation ul ul,
+.attachment-thumbnail.wp-post-image,
+#content .nav-previous,
+#content .previous-image,
+.comment .avatar {
+	float: left;
+}
+.alignright,
+#content .nav-next,
+#content .next-image,
+.perma-reply-edit {
+	float: right;
+}
+/* Height */
+.site-header img,
+.entry-header img,
+.entry-content img,
+.widget img,
+img[class*="align"],
+img[class*="wp-image-"],
+#content .gallery a img,
+.attachment-thumbnail.wp-post-image {
+	height: auto;
+}
+hr {
+	height: 1px;
+}
+sup,
+sub {
+	height: 0;
+}
+/* Margins */
+#page,
+#masthead,
+.main-navigation,
+.hentry,
+.widget {
+	margin-bottom: 2.5em;
+}
+hr,
+p,
+dd,
+address,
+pre,
+table,
+ul,
+ol,
+.page-links,
+.wp-caption,
+#content .gallery,
+.attachment-debut-featured,
+.comment-meta,
+.widget_archive select,
+.widget_categories select,
+.error404 .entry-content .widget {
+	margin-bottom: 1.5em;
 }
 .page-title {
-	color: #aaa;
-	font-family: inherit;
-	font-size: 12px;
-	font-size: 1.2rem;
-	font-weight: inherit;
-	line-height: 1.2;
 	margin-bottom: 1.3em;
-	text-transform: uppercase;
 }
-.entry-meta {
-	color: #aaa;
-	font-size: 12px;
-	font-size: 1.2rem;
-	line-height: 1.2;
-	text-transform: uppercase;
+.wp-caption .wp-caption-text,
+#respond,
+#commentform div,
+.widget_rss li {
+	margin-bottom: 1em;
 }
-.entry-content {
-	margin: 1.5em 0 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.perma-reply-edit,
+.widget p {
+	margin-bottom: .5em;
+}
+.entry-title,
+.widget_calendar caption,
+.widget_rss .rss-date,
+.widget_rss cite {
+	margin-bottom: .3em;
+}
+.comment-meta h4 {
+	margin-bottom: .2em;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul,
+figure,
+button,
+input,
+select,
+textarea,
+.aligncenter,
+.site-description,
+.main-navigation ul,
+.entry-content,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley,
+.wp-caption img,
+#content .gallery dd,
+.widget_search form.searchform,
+.widget_rss .widget-title img,
+.error404 .entry-content .widget_archive select {
+	margin-bottom: 0;
+}
+#page,
+.aligncenter {
+	margin-left: auto;
+}
+ol,
+ul {
+	margin-left: 3em;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul,
+dd,
+blockquote,
+.alignright {
+	margin-left: 1.5em;
+}
+.widget.widget_recent_comments > ul,
+.widget.widget_recent_entries > ul {
+	margin-left: 1.3em;
+}
+.wp-caption .wp-caption-text {
+	margin-left: 1em;
+}
+.perma-reply-edit {
+	margin-left: .5em;
+}
+.sticky .entry-title,
+.sticky .entry-meta,
+.sticky .entry-content {
+	margin-left: 26.72%;
 }
 .debut-has-thumb .entry-title,
 .debut-has-thumb .entry-meta,
 .debut-has-thumb .entry-content {
 	margin-left: 25.774%;
 }
-.byline {
-	display: none;
+#masthead hgroup,
+form.searchform,
+.main-navigation,
+#primary,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+#secondary,
+#tertiary,
+#colophon {
+	margin-left: 1%;
 }
-.group-blog .byline {
-	display: inline;
+.commentlist ul.children,
+.comment-meta,
+.comment-content {
+	margin-left: 80px;
 }
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+.comment-form-author,
+figure,
+button,
+input,
+select,
+textarea,
+.main-navigation ul,
+.entry-title,
+.single .entry-title,
+.page .entry-title,
+.not-found .entry-title,
+.entry-content,
+.page-links,
+.wp-caption img,
+#content .gallery dd,
+.commentlist,
+.widget > ul,
+.widget_nav_menu ul.menu,
+.widget_search form.searchform,
+.widget_rss .rss-date,
+.widget_rss cite {
+	margin-left: 0;
 }
-.bypostauthor {
+#page,
+.aligncenter {
+	margin-right: auto;
+}
+dd,
+blockquote,
+.alignleft {
+	margin-right: 1.5em;
+}
+.wp-caption .wp-caption-text {
+	margin-right: 1em;
+}
+#masthead hgroup,
+form.searchform,
+.main-navigation,
+#primary,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+#secondary,
+#tertiary,
+#colophon {
+	margin-right: 1%;
+}
+.comment-form-url,
+figure,
+button,
+input,
+select,
+textarea,
+.main-navigation ul,
+.entry-title,
+.entry-content,
+.page-links,
+.wp-caption img,
+#content .gallery dd,
+.perma-reply-edit,
+.widget_search form.searchform,
+.widget_rss .rss-date,
+.widget_rss cite {
+	margin-right: 0;
+}
+#page {
+	margin-top: 2.5em;
+}
+.entry-content,
+#image-navigation {
+	margin-top: 1.5em;
+}
+.wp-caption .wp-caption-text {
+	margin-top: 1em;
+}
+.widget_rss .rss-date,
+.widget_rss cite {
+	margin-top: .3em;
+}
+figure,
+button,
+input,
+select,
+textarea,
+.aligncenter,
+.main-navigation ul,
+.entry-title,
+.page-links,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley,
+.wp-caption img,
+#content .gallery dd,
+.perma-reply-edit,
+.widget_search form.searchform {
+	margin-top: 0;
 }
 
-
-/* =Asides
------------------------------------------------ */
-
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
+/* Overflow */
+button,
+input {
+	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+pre,
+textarea {
+	overflow: auto;
 }
 
+/* Padding */
+pre,
+#content .site-navigation {
+	padding-bottom: 1.5em;
+}
+.main-navigation a {
+	padding-bottom: .5em;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.widget_calendar caption {
+	padding-bottom: .3em;
+}
+input[type=text],
+textarea {
+	padding-bottom: 5px;
+}
+.sticky {
+	padding-bottom: 1.5465%;
+}
+input[type="checkbox"],
+input[type="radio"],
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley,
+.error404 .entry-content .widget {
+	padding-bottom: 0;
+}
+pre {
+	padding-left: 1.5em;
+}
+.main-navigation a {
+	padding-left: .7em;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	padding-left: .5em;
+}
+input[type=text],
+textarea {
+	padding-left: 5px;
+}
+#secondary,
+#tertiary {
+	padding-left: 2%;
+}
 
-/* =Media
------------------------------------------------ */
+.sticky {
+	padding-left: 1.5465%;
+}
+input[type="checkbox"],
+input[type="radio"],
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+.main-navigation ul,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley,
+#content .site-navigation,
+.error404 .entry-content .widget {
+	padding-left: 0;
+}
+pre {
+	padding-right: 1.5em;
+}
+.main-navigation a {
+	padding-right: .7em;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	padding-right: .5em;
+}
+input[type=text],
+textarea {
+	padding-right: 5px;
+}
+.sticky {
+	padding-right: 1.5465%;
+}
+input[type="checkbox"],
+input[type="radio"],
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley,
+#content .site-navigation,
+.error404 .entry-content .widget {
+	padding-right: 0;
+}
+#colophon {
+	padding-top: 2.5em;
+}
+pre,
+#content .site-navigation,
+.comments-title,
+#reply-title,
+.depth-1 {
+	padding-top: 1.5em;
+}
+.main-navigation a {
+	padding-top: .5em;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.widget_calendar tfoot td {
+	padding-top: .3em;
+}
+input[type=text],
+textarea {
+	padding-top: 5px;
+}
+.sticky {
+	padding-top: 1.5465%;
+}
+input[type="checkbox"],
+input[type="radio"],
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley,
+.error404 .entry-content .widget {
+	padding-top: 0;
+}
+/* Positioning */
+.assistive-text,
+.main-navigation ul ul {
+	position: absolute;
+}
+#page,
+sup,
+sub,
+.main-navigation .menu,
+.main-navigation li,
+.comment-meta,
+.widget_search form.searchform {
+	position: relative;
+}
+sup {
+	bottom: .5ex;
+}
+.main-navigation ul ul ul {
+	left: 100%;
+}
+.main-navigation ul ul {
+	left: 0;
+}
+sub {
+	top: 1ex;
+}
+.main-navigation ul ul {
+	top: 1.8em;
+}
+.main-navigation ul ul ul {
+	top: 0;
+}
+.main-navigation ul ul,
+.main-navigation .sub-menu li:last-child {
+	z-index: 99999; /* Whoa! Hope a plugin doesn't use 999999!.. Urgh. */
+}
+.main-navigation .menu {
+	z-index: 1;
+}
 
+/* Vertical alignment */
+sup,
+sub,
+button,
+input,
+select,
+textarea {
+	vertical-align: baseline;
+}
+button,
+input,
+select,
+textarea {
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+textarea {
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+}
+.main-navigation .menu-item-parent > a:after {
+    vertical-align: 1px;
+}
+
+/* Widths */
+#page {
+	max-width: 1000px;
+}
 .site-header img,
 .entry-header img,
 .entry-content img,
 .comment-content img,
 .widget img,
-img.size-full {
-	max-width: 100%; /* Fluid images for posts, comments, and widgets */
-}
-.site-header img,
-.entry-header img,
-.entry-content img,
-.widget img,
-img[class*="align"],
-img[class*="wp-image-"] {
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
-}
-.entry-content img.wp-smiley,
-.comment-content img.wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-.wp-caption {
-	max-width: 100%;
-}
-.wp-caption.alignleft,
-.wp-caption.alignright {
-	margin-bottom: .5em;
-}
-.wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
-}
-.wp-caption img {
-	border-width: 0 0 1px 0;
-	box-shadow: none;
-	display: block;
-	margin: 0;
-	max-width: 100%;
-}
-.wp-caption-text {
-	color: #aaa;
-	font-size: 14px;
-	font-size: 1.4rem;
-	font-style: italic;
-	line-height: 1.2;
-	text-align: center;
-}
-.wp-caption .wp-caption-text {
-	margin: 1em;
-}
-#content .gallery {
-	margin-bottom: 1.5em;
-}
-.gallery-caption {
-}
-#content .gallery a img {
-	border: none;
-	height: auto;
-	max-width: 90%;
-}
-#content .gallery dd {
-	margin: 0;
-}
-/* Make sure embeds and iframes fit their containers */
-embed,
+img.size-full,
+.wp-caption,
+.wp-caption img,
 iframe,
 object {
-	max-width: 100%;
+	max-width: 100%; 
 }
-/* Featured images */
-.attachment-thumbnail.wp-post-image {
-	float: left;
-	height: auto;
-	width: 22.678%;
+pre {
+	max-width: 99.9%;
 }
-.attachment-debut-featured {
-	display: block;
-	margin-bottom: 1.5em;
+#content .gallery a img {
+	max-width: 90%;
 }
-
-
-/* =Navigation
------------------------------------------------ */
-
-.small-navigation {
-	display: none;
+.page-template-full-width-php #comments {
+	max-width: 64.667%;
 }
-#content .site-navigation {
-	border-top: 1px solid #efefef;
-	padding: 1em 0;
-	overflow: hidden;
+table,
+.comment-form-comment,
+.widget_search form.searchform {
+	width: 100%;
 }
-.comment-navigation {
-	border-bottom: 1px solid #efefef;
+.main-navigation,
+.page-template-full-width-php #primary,
+textarea,
+#colophon {
+	width: 98%; /* 12 columns */
+}
+.widget_search form.searchform input[type="text"] {
+	width: 96%;
+}
+#page,
+input[type=text] {
+	width: 94%;
+}
+.d {
+	width: 89.667%; /* 11 columns */
+}
+.d {
+	width: 81.333%; /* 10 columns */
+}
+.d {
+	width: 73%; /* 9 columns */
+}
+#masthead hgroup,
+#primary {
+	width: 64.667%; /* 8 columns */
+}
+.d {
+	width: 56.333%; /* 7 columns */
 }
 #content .nav-previous,
-#content .previous-image {
-	float: left;
-	width: 50%;
-}
+#content .previous-image,
 #content .nav-next,
 #content .next-image {
-	float: right;
-	text-align: right;
 	width: 50%;
 }
-#image-navigation {
-	margin-top: 1.5em;
+.d {
+	width: 48%; /* 6 columns */
 }
-
-
-/* =Comments
------------------------------------------------ */
-
-.comments-title,
-#reply-title {
-	padding-top: 1.5em;
-}
-.single .comments-title {
-	border-top: 1px solid #efefef;
-}
-.commentlist {
-	list-style: none;
-	margin-left: 0;
-}
-.commentlist ul.children {
-	list-style: none;
-	margin-left: 80px;
-}
-.depth-1 {
-	padding-top: 1.5em;
-}
-.comment .avatar {
-	float: left;
-}
-.comment-meta,
-.comment-content {
-	margin-left: 80px;
-}
-.comment-meta {
-	color: #aaa;
-	font-size: 12px;
-	font-size: 1.2rem;
-	margin-bottom: 1.5em;
-	position: relative;
-	text-transform: uppercase;
-}
-.perma-reply-edit {
-	float: right;
-	margin: 0 0 .5em .5em;
-}
-.comment-meta h4 {
-	clear: none;
-	color: #555;
-	font-size: 16px;
-	font-size: 1.6rem;
-	line-height: 1.2em;
-	margin-bottom: .2em;
-	text-transform: none;
-}
-.comment-awaiting,
-.nocomments {
-	font-weight: 400;
-	text-align: center;
-}
-/* Reply form */
-#respond {
-	margin-bottom: 1em; /* Correction for Jetpack Comments iframe */
-}
-#reply-title small a,
-#cancel-comment-reply-link {
-	font-family: Helvetica, sans-serif;
-	font-size: 12px;
-	font-size: 1.2rem;
-	text-transform: uppercase;
+.d {
+	width: 39.667%; /* 5 columns */
 }
 .comment-form-author,
 .comment-form-email,
 .comment-form-url {
 	width: 32%;
 }
-.comment-form-comment {
-	clear: both;
-	width: 100%;
+.d {
+	width: 31.333%; /* 4 columns */
 }
-#commentform div {
-	margin-bottom: 1em;
-}
-#commentform label {
-	display: none;
-}
-#commentform ::-webkit-input-placeholder {
-   color: #aaa;
-}
-#commentform :-moz-placeholder {  
-   color: #aaa;  
-}
-.form-allowed-tags {
-	color: #aaa;
-	font-size: 14px;
-	font-size: 1.4rem;
-}
-.page-template-full-width-php #comments {
-	max-width: 64.667%;
-}
-
-/* =Widgets
------------------------------------------------ */
-
 #secondary,
 #tertiary {
-	font-size: 14px;
-	font-size: 1.4rem;
-	padding-left: 2%;
 	width: 29.333%;
 }
-.widget {
-	word-wrap: break-word;
+.sticky .attachment-thumbnail.wp-post-image {
+	width: 23.52%;
 }
+.d {
+	width: 23%; /* 3 columns */
+}
+.attachment-thumbnail.wp-post-image {
+	width: 22.678%;
+}
+.d {
+	width: 14.667%; /* 2 columns */
+}
+.d {
+	width: 6.333%; /* 1 column */
+}
+
+/* Clearfix */
+#page:after,
+#masthead:after,
+.site-navigation:after,
+#main:after,
+#primary:after,
+article:after,
+#page ul:after,
+#page ol:after,
+#secondary:after,
+#tertiary:after,
+.widget:after,
+#colophon:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: '\0020';
+	clear: both;
+	height: 0;
+}
+
+
+/* =Typography
+----------------------------------------------- */
+
+.main-navigation .sub-menu .menu-item-parent > a:after {
+    content: '\a0 \a0 \a0 \a0 \25b6';
+}
+.main-navigation .menu-item-parent > a:after {
+    content: '\a0 \a0 \a0 \25bc';
+}
+.widget_nav_menu .menu-item-parent > a:after,
+.widget_nav_menu .sub-menu .menu-item-parent > a:after {
+    content: '';
+}
+pre,
+code,
+kbd,
+tt,
+var {
+	font-family: Courier, monospace;
+}
+body,
+button,
+input,
+select,
+textarea,
+#reply-title small a,
+#cancel-comment-reply-link {
+	font-family: Helvetica, sans-serif;
+}
+h4,
+h5,
+h6,
+.page-title {
+	font-family: inherit;
+}
+big {
+	font-size: 125%;
+}
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+}
+sup,
+sub,
+small {
+	font-size: 75%;
+}
+.site-title {
+	font-size: 55px;
+	font-size: 5.5rem;
+}
+h1 {
+	font-size: 38px;
+	font-size: 3.8rem;
+}
+.single .entry-title,
+.page .entry-title,
+.not-found .entry-title {
+	font-size: 28px;
+	font-size: 2.8rem;
+}
+.entry-title {
+	font-size: 24px;
+	font-size: 2.4rem;
+}
+h2 {
+	font-size: 20px;
+	font-size: 2rem;
+}
+body,
+h3,
+button,
+input,
+select,
+textarea,
+.comment-meta h4,
 .widget-title {
 	font-size: 16px;
 	font-size: 1.6rem;
 }
-.widget p {
-	margin-bottom: .5em;
+h4,
+h5,
+h6,
+pre,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+#colophon,
+.main-navigation a,
+.wp-caption-text,
+.form-allowed-tags,
+#secondary,
+#tertiary,
+.nocomments,
+.comment-awaiting {
+	font-size: 14px;
+	font-size: 1.4rem;
 }
+.page-title,
+.entry-meta,
+.comment-meta,
+#reply-title small a,
+#cancel-comment-reply-link,
+.widget_rss .rss-date,
+.widget_rss cite {
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+.main-navigation .menu-item-parent > a:after {
+    font-size: 8px;
+    font-size: .8rem;
+}
+dfn,
+cite,
+em,
+i,
+blockquote,
+.wp-caption-text,
+.nocomments,
+.comment-awaiting {
+	font-style: italic;
+}
+.widget_rss .rss-date,
+.widget_rss cite {
+	font-style: normal;
+}
+.page-title {
+	font-weight: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.site-title a,
+.main-navigation .menu,
+.main-navigation a {
+	font-weight: 700;
+}
+dt,
+b,
+strong,
+th,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+a,
+a:visited,
+.site-description {
+	font-weight: 400;
+}
+body,
+button,
+input,
+select,
+textarea {
+	font-weight: 300;
+}
+.site-title a {
+	letter-spacing: -1px;
+}
+body,
+button,
+input,
+select,
+textarea,
+pre {
+	line-height: 1.5;
+}
+.page-title,
+.entry-meta,
+.wp-caption-text,
+.comment-meta h4 {
+	line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.1;
+}
+.site-title,
+.main-navigation a,
+.widget_rss .rss-date,
+.widget_rss cite,
+.widget_rss li a {
+	line-height: 1;
+}
+sup,
+sub {
+	line-height: 0;
+}
+button,
+input {
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+}
+ol {
+	list-style: decimal;
+}
+ul {
+	list-style: disc;
+}
+ol ol {
+	list-style: lower-alpha;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
+.wp-caption-text,
+.comment-awaiting,
+.nocomments {
+	text-align: center;
+}
+#content .nav-next,
+#content .next-image,
+#next,
+#colophon {
+	text-align: right;
+}
+mark,
+ins,
+.main-navigation a {
+	text-decoration: none;
+}
+.comment-meta h4 {
+	text-transform: none;
+}
+h4,
+h5,
+h6,
+.main-navigation a,
+.page-title,
+.entry-meta,
+.comment-meta,
+#reply-title small a,
+#cancel-comment-reply-link,
+.widget_calendar caption,
+.widget_rss .rss-date,
+.widget_rss cite {
+	text-transform: uppercase;
+}
+.main-navigation a {
+	white-space: nowrap;
+}
+.widget {
+	word-wrap: break-word;
+}
+
+
+/* =Styling
+----------------------------------------------- */
+
+/* Borders */
+.widget_calendar table {
+	border-collapse: collapse;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea {
+	border-radius: 3px;
+}
+body,
+pre,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky,
+#content .site-navigation,
+.comment-navigation,
+.single .comments-title {
+	border-style: solid;
+}
+body {
+	border-bottom-width: 4px;
+}
+pre,
+abbr,
+acronym,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky,
+.wp-caption img,
+.comment-navigation {
+	border-bottom-width: 1px;
+}
+hr,
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley,
+#content .gallery a img,
+#content .site-navigation,
+.error404 .entry-content .widget {
+	border-bottom-width: 0;
+}
+pre,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
+	border-left-width: 1px;
+}
+body,
+hr,
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley,
+.wp-caption img,
+#content .gallery a img,
+#content .site-navigation,
+.error404 .entry-content .widget {
+	border-left-width: 0;
+}
+pre,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
+	border-right-width: 1px;
+}
+body,
+hr,
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley,
+.wp-caption img,
+#content .gallery a img,
+#content .site-navigation,
+.error404 .entry-content .widget {
+	border-right-width: 0;
+}
+body {
+	border-top-width: 4px;
+}
+pre,
+#colophon,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky,
+#content .site-navigation,
+.single .comments-title {
+	border-top-width: 1px;
+}
+hr,
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley,
+.wp-caption img,
+#content .gallery a img,
+.error404 .entry-content .widget {
+	border-top-width: 0;
+}
+/* Cursors */
+abbr,
+acronym {
+	cursor: help;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+}
+/* Lists */
+.widget.widget_recent_comments > ul,
+.widget.widget_recent_entries > ul {
+	list-style: inherit;
+}
+.main-navigation ul,
+.commentlist,
+.commentlist ul.children,
 .widget > ul,
 .widget_nav_menu ul.menu {
 	list-style: none;
-	margin-left: 0;
 }
-.widget_archive select,
-.widget_categories select {
-	margin-bottom: 1.5em;
+/* Shadows */
+.wp-caption img,
+.widget_rss .widget-title img {
+	box-shadow: none;
 }
-/* Search widget */
-.widget_search .widget-title {
-	display: none;
+.main-navigation .sub-menu li:last-child {
+	box-shadow: 0 8px 8px -5px rgba(0,0,0,.4);
 }
-.widget_search form.searchform {
-	margin: 0;
-	position: relative;
-	width: 100%;
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.main-navigation a {
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+.main-navigation a:hover,
+.main-navigation a:focus,
+.main-navigation a:active,
+.main-navigation .current-menu-item > a {
+	text-shadow: 0 1px 0 rgba(0,0,0,.8);
+}
+.bypostauthor {
+}
+.gallery-caption {
+}
+
+
+/* =Colors
+----------------------------------------------- */
+
+/*
+Red: red #ff0000
+Dark Grey Text: #333
+Light Grey Text: #666
+Border Grey: #ddd
+Light Grey: #efefef
+Black: #000
+White: #fff
+*/
+
+.main-navigation a:hover,
+.main-navigation .sub-menu a:hover,
+.main-navigation a:focus,
+.main-navigation a:active,
+.main-navigation .current-menu-item > a,
+.main-navigation .sub-menu .current-menu-item > a {
+	background-color: red;
 }
 .widget_search form.searchform input[type="text"] {
 	background-color: #fff;
-	width: 96%;
+}
+hr,
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+.main-navigation .menu-item-parent:hover,
+.main-navigation .sub-menu a {
+	background-color: #ddd;
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+}
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+}
+pre,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.main-navigation .menu,
+.sticky {
+	background-color: #efefef;
+}
+mark,
+ins {
+	background-color: #fff9c0;
+}
+body {
+	border-bottom-color: red;
+}
+.comment-navigation {
+	border-bottom-color: #efefef;
+}
+pre,
+#colophon,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
+	border-bottom-color: #ddd;
+}
+pre,
+#colophon,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
+	border-left-color: #ddd;
+}
+pre,
+#colophon,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
+	border-right-color: #ddd;
+}
+body {
+	border-top-color: red;
+}
+#content .site-navigation,
+.single .comments-title {
+	border-top-color: #efefef;
+}
+pre,
+#colophon,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky {
+	border-top-color: #ddd;
+}
+a,
+a:visited {
+	color: red;
+}
+.main-navigation a:hover,
+.main-navigation a:focus,
+.main-navigation a:active,
+.main-navigation .current-menu-item > a {
+	color: #fff;
+}
+.main-navigation .menu-item-parent > a:after {
+	color: #bbb;
+}
+.page-title,
+.entry-meta,
+.wp-caption-text,
+.comment-meta,
+.form-allowed-tags,
+.widget_rss .rss-date,
+.widget_rss cite,
+.nocomments,
+.comment-awaiting,
+#colophon {
+	color: #aaa;
+}
+#commentform ::-webkit-input-placeholder { /* needs its own rule */
+	color: #aaa;
+}
+#commentform :-moz-placeholder { /* needs its own rule */
+	color: #aaa;
+}
+input[type=text],
+textarea,
+.comment-meta h4 {
+	color: #666;
+}
+body,
+button,
+input,
+select,
+textarea,
+input[type=text]:focus,
+textarea:focus {
+	color: #333;
 }
 .widget_search ::-webkit-input-placeholder { /* Change color of placeholder text */
    /*color: #000;*/
@@ -319,65 +1392,196 @@ object {
 .widget_search :-moz-placeholder {  /* Change color of placeholder text */
    /*color: #000;*/  
 }
-input.searchsubmit {
-	display: none;
+
+
+/* =Browser-specific
+----------------------------------------------- */
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 }
-/* Calendar widget */
-.widget_calendar caption {
-	text-transform: uppercase;
-	margin-bottom: .3em;
-	padding-bottom: .3em;
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none; /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 }
-.widget_calendar table {
-	border-collapse: collapse;
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
 }
-.widget_calendar tfoot td {
-	padding-top: .3em;
+
+
+/* =IE9 and Unsupported
+----------------------------------------------- */
+     
+/* Correct small gap above submenus */
+#unsupported .menu > li > .sub-menu,
+#ie9 .menu > li > .sub-menu {
+	top: 1.7em;
 }
-#next {
-	text-align: right;
-}
-/* Recent Comments / Recent Posts */
-.widget.widget_recent_comments > ul,
-.widget.widget_recent_entries > ul {
-	list-style: inherit;
-	margin-left: 1.3em;
-}
-/* RSS widget */
-.widget_rss .widget-title img {
+/* Show labels, as IE doesn't support placeholder text */
+#unsupported input.searchsubmit,
+#ie9 input.searchsubmit {
+	background: none;
+	border-color: #ddd;
+	border-radius: 0;
+	border-width: 0 0 0 1px;
 	box-shadow: none;
-	margin-bottom: 0;
-}
-.widget_rss .rss-date,
-.widget_rss cite {
 	color: #aaa;
 	display: block;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	right: 1%;
+	position: absolute;
+	top: 2px;
+}
+#unsupported form.searchform input[type="text"],
+#ie9 form.searchform input[type="text"] {
+	padding-right: 24%;
+	width: 74%;
+}
+#unsupported #commentform label,
+#ie9 #commentform label {
+	display: block;
 	font-size: 12px;
-	font-size: 1.2rem;
-	font-style: normal;
-	line-height: 1;
 	text-transform: uppercase;
-	margin: .3em 0;
 }
-.widget_rss li {
-	margin-bottom: 1em;
+
+
+/* =Responsive
+----------------------------------------------- */
+
+@media screen and ( max-width: 920px ) {
+	.depth-3 .comment-form-author,
+	.depth-3 .comment-form-email,
+	.depth-3 .comment-form-url,
+	.depth-4 .comment-form-author,
+	.depth-4 .comment-form-email,
+	.depth-4 .comment-form-url,
+	.depth-5 .comment-form-author,
+	.depth-5 .comment-form-email,
+	.depth-5 .comment-form-url {
+		margin: 0 0 1em;
+		width: 100%;
+	}
+	.depth-3 #commentform input[type="text"],
+	.depth-4 #commentform input[type="text"],
+	.depth-5 #commentform input[type="text"] {
+		width: 97%;
+	}
 }
-.widget_rss li a {
-	line-height: 1;
+@media screen and ( max-width: 768px ) {
+	.page-template-full-width-php #comments {
+		max-width: 100%;
+	}
 }
-/* Nav Menu widget */
-.widget_nav_menu .menu-item-parent > a:after {
-    content: '';
+@media screen and ( max-width: 680px ) {
+	#masthead hgroup,
+	.main-navigation,
+	#primary,
+	#secondary,
+	#tertiary {
+		width: 100%;
+	}
+	#masthead,
+	#masthead hgroup,
+	.main-navigation,
+	#primary,
+	#secondary,
+	#tertiary  {
+		margin: 0;
+	}
+	.site-description {
+		margin-bottom: 1.5em;
+	}
+	.main-navigation {
+		margin-bottom: 2.5em;
+	}
+	#secondary,
+	#tertiary {
+		padding: 0;
+	}
+	.widget_search form.searchform input[type="text"] {
+		width: 98%;
+	}
 }
-.widget_nav_menu .sub-menu .menu-item-parent > a:after {
-    content: '';
-}
-/* Error 404 widgets */
-.error404 .entry-content .widget {
-	border: none;
-	margin-bottom: 1.5em;
-	padding: 0;
-}
-.error404 .entry-content .widget_archive select {
-	margin-bottom: 0;
+@media screen and ( max-width: 480px ) {
+	#page {
+		margin-top: 1em;
+	}
+	/* Navigation */
+	.main-navigation,
+	.menu {
+		display: none;
+	}
+	.menu-button {
+		bottom: -1px;
+		float: right;
+		position: relative;
+	}
+	.small-navigation,
+	.widget .main-navigation,
+	.widget .menu {
+		display: block;
+	}
+	.small-navigation {
+		margin-bottom: 1em;
+	}
+	.small-navigation ul {
+		background: #efefef;
+		border: 1px solid #ddd;
+		border-bottom-width: 0;
+		clear: both;
+		list-style: none;
+		margin: 0;
+	}
+	.small-navigation .sub-menu {
+		border: none;
+	}
+	.small-navigation li {
+	}
+	.small-navigation a {
+		border-bottom: 1px solid #ddd;
+		border-top: 1px solid #fff;
+		display: block;
+		font-size: 14px;
+		font-size: 1.4rem;
+		font-weight: 700;
+		padding: 3% 5%;
+		text-shadow: 0 1px 0 rgba( 255, 255, 255, .8 );
+		text-transform: uppercase;
+	}
+	.small-navigation a:hover {
+		background-color: #ddd;
+	}
+	.small-navigation a:active {
+		background-color: red;
+		color: #fff;
+		text-shadow: 0 1px 0 rgba( 0, 0, 0, .5 );
+	}
+	.small-navigation .sub-menu a {
+		padding-left: 10%;
+	}
+	.small-navigation .sub-menu .sub-menu a {
+		padding-left: 15%;
+	}
+	.menu-item-parent > a:after,
+	.sub-menu .menu-item-parent > a:after {
+		content: '';
+	}
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url,
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url,
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		margin: 0 0 1em;
+		width: 100%;
+	}
+	#commentform input[type="text"],
+	.widget_search input[type="text"] {
+		width: 97%;
+	}
 }

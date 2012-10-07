@@ -7,6 +7,10 @@
 .main-navigation .menu-item-parent > a:after {
     content: '\a0 \a0 \a0 \25bc';
 }
+.widget_nav_menu .menu-item-parent > a:after,
+.widget_nav_menu .sub-menu .menu-item-parent > a:after {
+    content: '';
+}
 pre,
 code,
 kbd,
@@ -18,12 +22,15 @@ body,
 button,
 input,
 select,
-textarea {
+textarea,
+#reply-title small a,
+#cancel-comment-reply-link {
 	font-family: Helvetica, sans-serif;
 }
 h4,
 h5,
-h6 {
+h6,
+.page-title {
 	font-family: inherit;
 }
 big {
@@ -48,6 +55,12 @@ h1 {
 	font-size: 38px;
 	font-size: 3.8rem;
 }
+.single .entry-title,
+.page .entry-title,
+.not-found .entry-title {
+	font-size: 28px;
+	font-size: 2.8rem;
+}
 .entry-title {
 	font-size: 24px;
 	font-size: 2.4rem;
@@ -61,7 +74,9 @@ h3,
 button,
 input,
 select,
-textarea {
+textarea,
+.comment-meta h4,
+.widget-title {
 	font-size: 16px;
 	font-size: 1.6rem;
 }
@@ -76,10 +91,25 @@ input[type="submit"],
 input[type=text],
 textarea,
 #colophon,
-.main-navigation a {
+.main-navigation a,
+.wp-caption-text,
+.form-allowed-tags,
+#secondary,
+#tertiary {
 	font-size: 14px;
 	font-size: 1.4rem;
 }
+.page-title,
+.entry-meta,
+.comment-meta,
+#reply-title small a,
+#cancel-comment-reply-link,
+.widget_rss .rss-date,
+.widget_rss cite {
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
 .main-navigation .menu-item-parent > a:after {
     font-size: 8px;
     font-size: .8rem;
@@ -88,8 +118,16 @@ dfn,
 cite,
 em,
 i,
-blockquote {
+blockquote,
+.wp-caption-text {
 	font-style: italic;
+}
+.widget_rss .rss-date,
+.widget_rss cite {
+	font-style: normal;
+}
+.page-title {
+	font-weight: inherit;
 }
 h1,
 h2,
@@ -112,7 +150,9 @@ input[type="reset"],
 input[type="submit"],
 a,
 a:visited,
-.site-description {
+.site-description,
+.comment-awaiting,
+.nocomments {
 	font-weight: 400;
 }
 body,
@@ -133,6 +173,13 @@ textarea,
 pre {
 	line-height: 1.5;
 }
+.page-title,
+.entry-meta,
+.wp-caption-text,
+.comment-meta h4 {
+	line-height: 1.2;
+}
+
 h1,
 h2,
 h3,
@@ -142,7 +189,10 @@ h6 {
 	line-height: 1.1;
 }
 .site-title,
-.main-navigation a {
+.main-navigation a,
+.widget_rss .rss-date,
+.widget_rss cite,
+.widget_rss li a {
 	line-height: 1;
 }
 sup,
@@ -165,6 +215,14 @@ ol ol {
 ol ol ol {
 	list-style: lower-roman;
 }
+.wp-caption-text,
+.comment-awaiting,
+.nocomments {
+	text-align: center;
+}
+#content .nav-next,
+#content .next-image,
+#next,
 #colophon {
 	text-align: right;
 }
@@ -173,12 +231,26 @@ ins,
 .main-navigation a {
 	text-decoration: none;
 }
+.comment-meta h4 {
+	text-transform: none;
+}
 h4,
 h5,
 h6,
-.main-navigation a {
+.main-navigation a,
+.page-title,
+.entry-meta,
+.comment-meta,
+#reply-title small a,
+#cancel-comment-reply-link,
+.widget_calendar caption,
+.widget_rss .rss-date,
+.widget_rss cite {
 	text-transform: uppercase;
 }
 .main-navigation a {
 	white-space: nowrap;
+}
+.widget {
+	word-wrap: break-word;
 }
