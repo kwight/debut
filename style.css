@@ -140,6 +140,9 @@ input[type="search"] {
 .comment-form-comment {
 	clear: both;
 }
+.sub-menu li {
+	clear: left;
+}
 .entry-title,
 .comment-meta h4 {
 	clear: none;
@@ -687,6 +690,7 @@ pre {
 .page-template-full-width-php #comments {
 	max-width: 64.667%;
 }
+.sub-menu li,
 table,
 .comment-form-comment,
 .widget_search form.searchform {
