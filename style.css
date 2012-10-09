@@ -588,14 +588,13 @@ a:visited {
 	clear: none;
 	font-size: 24px;
 	font-size: 2.4rem;
-	margin: 0 0 .3em 25.774%;
+	margin: 0 0 .3em 0;
 }
 .single .entry-title,
 .page .entry-title,
 .not-found .entry-title {
 	font-size: 28px;
 	font-size: 2.8rem;
-	margin-left: 0;
 }
 .page-title {
 	color: #aaa;
@@ -612,20 +611,15 @@ a:visited {
 	font-size: 12px;
 	font-size: 1.2rem;
 	line-height: 1.2;
-	margin-left: 25.774%;
 	text-transform: uppercase;
 }
 .entry-content {
-	margin: 1.5em 0 0 25.774%;
+	margin: 1.5em 0 0;
 }
-.no-thumb,
-.single .entry-meta,
-.page .entry-meta,
-.not-found .entry-meta,
-.single .entry-content,
-.page .entry-content,
-.not-found .entry-content {
-	margin-left: 0;
+.debut-has-thumb .entry-title,
+.debut-has-thumb .entry-meta,
+.debut-has-thumb .entry-content {
+	margin-left: 25.774%;
 }
 .byline {
 	display: none;
