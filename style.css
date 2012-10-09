@@ -547,6 +547,10 @@ a:visited {
 .main-navigation ul li:hover > ul {
 	display: block;
 }
+.sub-menu li {
+	clear: left;
+	width: 100%;
+}
 .main-navigation .menu-item-parent > a:after {
     color: #bbb;
     content: '\a0 \a0 \a0 \25bc';
