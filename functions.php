@@ -172,7 +172,7 @@ function debut_posted_on() {
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
+		esc_html( debut_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'debut' ), get_the_author() ) ),
 		esc_html( get_the_author() )
@@ -410,4 +410,20 @@ function debut_lang_switcher() {
 		$html .= '</div><!-- end .debut-lang-switcher -->';
 		return apply_filters( 'debut_lang_switcher_html', $html, $lang );
 	}
+}
+
+
+/**
+ * Output the date with correct formatting per language
+ *
+ * @since 1.0
+ */
+
+function debut_date() {
+    if ( 'fr' == ICL_LANGUAGE_CODE ) {
+        $date = get_the_time( 'j F Y' );
+    } else {
+        $date = get_the_time( 'F j, Y' );
+    }
+    return $date;
 }
