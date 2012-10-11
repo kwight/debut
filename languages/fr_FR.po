@@ -1,0 +1,299 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Kirk Wight <kwight@kwight.ca>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+
+#. Text in function
+#: debut/content.php:63
+msgid "% Comments"
+msgstr "% commentaires"
+
+#. Text in function
+#: debut/comments.php:50
+msgid "&larr; Older Comments"
+msgstr "&larr; Commentaire plus ancien"
+
+#. Text in function
+#: debut/image.php:38
+msgid "&larr; Previous"
+msgstr "&larr; Précédent"
+
+#. Text in function
+#: debut/content.php:49
+#: debut/content-single.php:24
+msgid ", "
+msgstr ", "
+
+#. Text in function
+#: debut/content.php:63
+msgid "1 Comment"
+msgstr "1 commentaire"
+
+#. Text in function
+#: debut/image.php:92
+#, php-format
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Publier un commentaire\">Publier un commentaire</a> or laisser un rétrolien <a class=\"trackback-link\" href=\"%s\" title=\"Ping URL vers votre article\" rel=\"trackback\">URL du rétrolien</a>."
+
+#. Text in function
+#: debut/functions.php:146
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articles plus anciens"
+
+#. Text in echo
+#: debut/sidebar.php:18
+#: debut/archive.php:20
+msgid "Archives"
+msgstr "Archives"
+
+#. Text in function
+#: debut/content-single.php:24
+#, php-format
+msgid "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Vous pouvez la mettre en favoris avec <a href=\"%3$s\" title=\"Permalien pour %4$s\" rel=\"bookmark\">ce permalien</a>."
+
+#. Text in echo
+#: debut/image.php:98
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Les commentaires et les rétroliens sont actuellement fermés."
+
+#. Text in function
+#: debut/archive.php:20
+#, php-format
+msgid "Category Archives: %s"
+msgstr "Archives pour la catégorie&nbsp;: %s"
+
+#. Text in echo
+#: debut/comments.php:49
+msgid "Comment navigation"
+msgstr "Navigation des commentaires"
+
+#. Text in function
+#: debut/image.php:94
+#, php-format
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Les commentaires sont fermés, mais vous pouvez laisser un ping : <a class=\"trackback-link\" href=\"%s\" title=\"Ping URL vers votre article\" rel=\"trackback\"> URL du ping</a>."
+
+#. Text in echo
+#: debut/single.php:25
+#: debut/comments.php:61
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#. Text in function
+#: debut/content.php:27
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continuer la lecture <span class=\"meta-nav\">&rarr;</span>"
+
+#. Text in function
+#: debut/image.php:34
+#: debut/image.php:100
+#: debut/content-page.php:19
+#: debut/content.php:66
+#: debut/content-single.php:58
+#: debut/functions.php:248
+msgid "Edit"
+msgstr "Modifier"
+
+#. Text in function
+#: debut/functions.php:1
+msgid "Header"
+msgstr "Header"
+
+#. Text in echo
+#: debut/404.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Il semble que rien n'a été trouvé à cet endroit. Essayer peut-être un des liens ci-dessous ou une recherche ?"
+
+#. Text in echo
+#: debut/no-results.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Il semble que vous ne trouvez ce que vous cherchez. Peut-être qu'une recherche pourra vous aider."
+
+#. Text in function
+#: debut/content.php:63
+msgid "Leave a comment"
+msgstr "Laisser un commentaire"
+
+#. Text in echo
+#: debut/header.php:58
+msgid "Menu"
+msgstr "Menu"
+
+#. Text in echo
+#: debut/sidebar.php:25
+msgid "Meta"
+msgstr "Méta"
+
+#. Text in echo
+#: debut/404.php:25
+msgid "Most Used Categories"
+msgstr "Catégories les plus utilisées"
+
+#. Text in function
+#: debut/comments.php:51
+msgid "Newer Comments &rarr;"
+msgstr "Commentaires plus récents &rarr;"
+
+#. Text in function
+#: debut/functions.php:150
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articles plus récents <span class=\"meta-nav\">&rarr;</span>"
+
+#. Text in function
+#: debut/image.php:39
+msgid "Next &rarr;"
+msgstr "Suivant &rarr;"
+
+#. Text in echo
+#: debut/no-results.php:14
+msgid "Nothing Found"
+msgstr "Rien n&rsquo;a été trouvé"
+
+#. Text in echo
+#: debut/404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oups ! Cette page ne peut pas être trouvée."
+
+#. Text in function
+#: debut/image.php:86
+#: debut/content-page.php:18
+#: debut/content.php:34
+#: debut/content-single.php:20
+msgid "Pages:"
+msgstr "Pages&nbsp;:"
+
+#. Text in echo
+#: debut/functions.php:247
+msgid "Permalink"
+msgstr "Lien permanent"
+
+#. Text in function
+#: debut/content.php:17
+#, php-format
+msgid "Permalink to %s"
+msgstr "Permalien vers %s"
+
+#. Text in echo
+#: debut/functions.php:136
+msgid "Post navigation"
+msgstr "Navigation des articles"
+
+#. Text in function
+#: debut/content.php:45
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Publié dans %1$s"
+
+#. Text in function
+#: debut/functions.php:156
+#, php-format
+msgid "Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr "Publié le <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> par <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+
+#. Text in function
+#: debut/footer.php:15
+msgid "Powered by %1$s. %2$s theme by %3$s."
+msgstr "Propulsé par %1$s. Thème %2$s par %3$s."
+
+#. Text in function
+#: debut/functions.php:1
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#. Text in function
+#: debut/image.php:22
+#, php-format
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+msgstr "Publié <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> à <a href=\"%3$s\" title=\"Lien vers la grande image\">%4$s &times; %5$s</a> dans <a href=\"%6$s\" title=\"Retour vers %7$s\" rel=\"gallery\">%7$s</a>"
+
+#. Text in function
+#: debut/no-results.php:20
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Prêt à publier votre premier article ? <a href=\"%1$s\">Commencez ici</a>."
+
+#. Text in echo
+#: debut/searchform.php:10
+#: debut/searchform.php:12
+msgid "Search"
+msgstr "Rechercher"
+
+#. Text in echo
+#: debut/searchform.php:11
+msgid "Search &hellip;"
+msgstr "Rechercher &hellip;"
+
+#. Text in function
+#: debut/search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Résultats de recherche pour : %s"
+
+#. Text in function
+#: debut/functions.php:1
+msgid "Sidebar"
+msgstr "Colonne latérale"
+
+#. Text in echo
+#: debut/header.php:59
+msgid "Skip to content"
+msgstr "Aller au contenu"
+
+#. Text in echo
+#: debut/no-results.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Désolé, mais rien ne correspond à votre critères de recherche. Veuillez réessayer avec d&rsquo;autres mots-clefs."
+
+#. Text in function
+#: debut/content.php:56
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Tagué avec %1$s"
+
+#. Text in function
+#: debut/content-single.php:24
+#, php-format
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Ce contenu a été publié dans %1$s, et marqué avec %2$s. Mettez-le en favori avec son <a href=\"%3$s\" title=\"Permalien vers %4$s\" rel=\"bookmark\">permalien</a>."
+
+#. Text in function
+#: debut/content-single.php:24
+#, php-format
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Ce contenu a été publié dans %1$s. Mettez-le en favori avec son <a href=\"%3$s\" title=\"Permalien vers %4$s\" rel=\"bookmark\">permalien</a>."
+
+#. Text in function
+#: debut/content-single.php:24
+#, php-format
+msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Ce contenu a été taggué %2$s. Mettre en favoris avec ce<a href=\"%3$s\" title=\"Permalien vers %4$s\" rel=\"bookmark\">permalien</a>."
+
+#. Text in echo
+#: debut/image.php:96
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Les rétroliens sont fermés, mais vous pouvez <a class=\"comment-link\" href=\"#respond\" title=\"Publier un commentaire\"> publier un commentaire </ a>."
+
+#. Text in function
+#: debut/404.php:31
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Essayez de voir du côté des archives mensuelles. %1$s"
+
+#. Text in function
+#: debut/functions.php:156
+#, php-format
+msgid "View all posts by %s"
+msgstr "Afficher tous les articles de %s"
+
+#. Text in echo
+#: debut/functions.php:256
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération."
+
