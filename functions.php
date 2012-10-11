@@ -392,7 +392,7 @@ add_filter( 'attachment_link', 'debut_enhanced_image_navigation', 10, 2 );
  * WPML language switcher
  * Called only if WPML plugin is active: http://wpml.org
  *
- * @since 1.0
+ * @since 1.05
  */
 function debut_lang_switcher() {
 	define( 'ICL_DONT_LOAD_NAVIGATION_CSS', true );
@@ -416,7 +416,7 @@ function debut_lang_switcher() {
 /**
  * Output the date with correct formatting per language
  *
- * @since 1.0
+ * @since 1.05
  */
 
 function debut_date() {
