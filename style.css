@@ -47,6 +47,8 @@ and Blueprint http://www.blueprintcss.org/
 =Comments
 =Widgets
 =Footer
+=Browser-specific
+=Plugin integration
 =IE9 and unsupported
 =Responsive
 */
@@ -148,8 +150,9 @@ Based on a 12-column, fluid grid
 /* Containers */
 #page {
 	width: 94%;
-	margin: 2.5em auto;
+	margin: 0 auto 2.5em;
 	max-width: 1000px;
+	padding-top: 2.5em;
 	position: relative;
 }
 /* Elements */
@@ -977,6 +980,34 @@ input.searchsubmit {
 	font-size: 1.4rem;
 	padding-top: 2.5em;
 	text-align: right;
+}
+
+
+/* =Plugin integration
+----------------------------------------------- */
+
+.debut-lang-switcher {
+	background-color: #efefef;
+	border: 1px solid #ddd;
+	border-top: none;
+	position: absolute;
+	right: 1%;
+	top: 0;
+}
+.debut-lang {
+	display: block;
+	float: left;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 1;
+	padding: .5em;
+	text-transform: uppercase;
+}
+.debut-lang:hover {
+	background-color: red;
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,.8);
 }
 
 

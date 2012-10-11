@@ -383,3 +383,28 @@ function debut_enhanced_image_navigation( $url, $id ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'debut_enhanced_image_navigation', 10, 2 );
+
+
+/**
+ * WPML language switcher
+ * Called only if WPML plugin is active: http://wpml.org
+ *
+ * @since 1.0
+ */
+function debut_lang_switcher() {
+	define( 'ICL_DONT_LOAD_NAVIGATION_CSS', true );
+	define( 'ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true );
+	define( 'ICL_DONT_LOAD_LANGUAGES_JS', true );
+	$lang = icl_get_languages( 'skip_missing=N' );
+	dbgx_trace_var( $lang );
+	if ( count( $lang ) > 1 ) {
+		$html = '<div class="debut-lang-switcher">';
+		foreach( $lang as $value ) {
+			if ( 0 == $value[ 'active' ] ) {
+				$html .= '<a class="debut-lang" href="' . $value[ 'url' ] . '">' . $value[ 'language_code' ]  . '</a>';
+			}
+		}
+		$html .= '</div><!-- end .debut-lang-switcher -->';
+		return apply_filters( 'debut_lang_switcher_html', $html, $lang );
+	}
+}
