@@ -1113,7 +1113,7 @@ input.searchsubmit {
 }
 @media screen and ( max-width: 480px ) {
 	#page {
-		margin-top: 1em;
+		padding-top: 1.5em;
 	}
 	/* Navigation */
 	.main-navigation,
