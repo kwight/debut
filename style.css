@@ -3,7 +3,7 @@ Theme Name: Debut
 Author: kwight
 Author URI: http://kwight.ca
 Description: Debut is a solid and clean responsive theme, for sharing your ideas with the world.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: debut
@@ -47,6 +47,8 @@ and Blueprint http://www.blueprintcss.org/
 =Comments
 =Widgets
 =Footer
+=Browser-specific
+=Plugin integration
 =IE9 and unsupported
 =Responsive
 */
@@ -126,6 +128,7 @@ a img {
 	border: 0;
 }
 
+
 /* =Colors
 ----------------------------------------------- */
 
@@ -143,76 +146,41 @@ White: #fff
 /* =Structure
 Based on a 12-column, fluid grid
 ----------------------------------------------- */
+
 /* Containers */
 #page {
 	width: 94%;
-	margin: 2.5em auto;
+	margin: 0 auto 2.5em;
 	max-width: 1000px;
+	padding-top: 2.5em;
 	position: relative;
 }
 /* Elements */
 #masthead hgroup,
-#searchform,
+form.searchform,
 .main-navigation,
 #primary,
 .comment-form-author,
 .comment-form-email,
 .comment-form-url,
 #secondary,
-#tertiary {
+#tertiary,
+#colophon {
 	display: inline;
 	float: left;
 	margin-left: 1%;
 	margin-right: 1%;
 }
 /* 12 columns */
-.main-navigation {
+.main-navigation,
+.page-template-full-width-php #primary,
+#colophon {
 	width: 98.0%;
-}
-/* 11 columns */
-#dummy {
-	width: 89.667%;
-}
-/* 10 columns */
-#dummy {
-	width: 81.333%;
-}
-/* 9 columns */
-#dummy {
-	width: 73.0%;
 }
 /* 8 columns */
 #masthead hgroup,
 #primary {
 	width: 64.667%;
-}
-/* 7 columns */
-#dummy {
-	width: 56.333%;
-}
-/* 6 columns */
-#dummy {
-	width: 48.0%;
-}
-/* 5 columns */
-#dummy {
-	width: 39.667%;
-}
-/* 4 columns */
-#dummy {
-	width: 31.333%;
-}
-/* 3 columns */
-#dummy {
-	width: 23.0%;
-}
-/* 2 columns */
-#dummy {
-	width: 14.667%;
-}
-/* 1 column */
-#dummy {
-	width: 6.333%;
 }
 /* Vertical spacing */
 .main-navigation,
@@ -228,13 +196,14 @@ Based on a 12-column, fluid grid
 	margin-right: 0;
 }
 /* Clearfix */
+#page:after,
 #masthead:after,
-.menu:after,
+.site-navigation:after,
 #main:after,
 #primary:after,
 article:after,
-ul:after,
-ol:after,
+#page ul:after,
+#page ol:after,
 #secondary:after,
 #tertiary:after,
 .widget:after,
@@ -255,7 +224,6 @@ body {
 	border: solid red;
 	border-width: 4px 0;
 }
-
 body,
 button,
 input,
@@ -298,7 +266,6 @@ hr {
 	height: 1px;
 	margin-bottom: 1.5em;
 }
-
 /* Text elements */
 p {
 	margin-bottom: 1.5em;
@@ -476,14 +443,12 @@ textarea {
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 97%;
 }
-
 /* Links */
 a,
 a:visited {
 	color: red;
 	font-weight: 400;
 }
-
 /* Alignment */
 .alignleft {
 	display: inline;
@@ -500,13 +465,13 @@ a:visited {
 	display: block;
 	margin: 0 auto;
 }
-
 /* Text meant only for screen readers */
 .assistive-text {
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 }
+
 
 /* =Header
 ----------------------------------------------- */
@@ -530,6 +495,7 @@ a:visited {
 	margin: 2.5em 1% 0;
 	width: 98%;
 }
+
 
 /* =Menu
 ----------------------------------------------- */
@@ -589,6 +555,10 @@ a:visited {
 .main-navigation ul li:hover > ul {
 	display: block;
 }
+.sub-menu li {
+	clear: left;
+	width: 100%;
+}
 .main-navigation .menu-item-parent > a:after {
     color: #bbb;
     content: '\a0 \a0 \a0 \25bc';
@@ -608,23 +578,31 @@ a:visited {
 /* =Content
 ----------------------------------------------- */
 
+/* Sticky posts */
 .sticky {
 	background-color: #efefef;
 	border: 1px solid #ddd;
-	padding: 3%;
+	padding: 1.5465%;
+}
+.sticky .attachment-thumbnail.wp-post-image {
+	width: 23.52%;
+}
+.sticky .entry-title,
+.sticky .entry-meta,
+.sticky .entry-content {
+	margin-left: 26.72%;
 }
 .entry-title {
 	clear: none;
 	font-size: 24px;
 	font-size: 2.4rem;
-	margin: 0 0 .3em 25.774%;
+	margin: 0 0 .3em 0;
 }
 .single .entry-title,
 .page .entry-title,
 .not-found .entry-title {
 	font-size: 28px;
 	font-size: 2.8rem;
-	margin-left: 0;
 }
 .page-title {
 	color: #aaa;
@@ -641,20 +619,15 @@ a:visited {
 	font-size: 12px;
 	font-size: 1.2rem;
 	line-height: 1.2;
-	margin-left: 25.774%;
 	text-transform: uppercase;
 }
 .entry-content {
-	margin: 1.5em 0 0 25.774%;
+	margin: 1.5em 0 0;
 }
-.no-thumb,
-.single .entry-meta,
-.page .entry-meta,
-.not-found .entry-meta,
-.single .entry-content,
-.page .entry-content,
-.not-found .entry-content {
-	margin-left: 0;
+.debut-has-thumb .entry-title,
+.debut-has-thumb .entry-meta,
+.debut-has-thumb .entry-content {
+	margin-left: 25.774%;
 }
 .byline {
 	display: none;
@@ -685,7 +658,8 @@ a:visited {
 .entry-header img,
 .entry-content img,
 .comment-content img,
-.widget img {
+.widget img,
+img.size-full {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
 }
 .entry-header img,
@@ -694,10 +668,6 @@ a:visited {
 img[class*="align"],
 img[class*="wp-image-"] {
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
-}
-.entry-content img,
-img.size-full {
-	max-width: 100%;
 }
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
@@ -748,14 +718,12 @@ img.size-full {
 #content .gallery dd {
 	margin: 0;
 }
-
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
 object {
 	max-width: 100%;
 }
-
 /* Featured images */
 .attachment-thumbnail.wp-post-image {
 	float: left;
@@ -796,6 +764,7 @@ object {
 #image-navigation {
 	margin-top: 1.5em;
 }
+
 
 /* =Comments
 ----------------------------------------------- */
@@ -853,7 +822,7 @@ object {
 }
 /* Reply form */
 #respond {
-	margin-bottom: 1em; /*Correction for Jetpack Comments iframe*/
+	margin-bottom: 1em; /* Correction for Jetpack Comments iframe */
 }
 #reply-title small a,
 #cancel-comment-reply-link {
@@ -888,6 +857,9 @@ object {
 	font-size: 14px;
 	font-size: 1.4rem;
 }
+.page-template-full-width-php #comments {
+	max-width: 64.667%;
+}
 
 /* =Widgets
 ----------------------------------------------- */
@@ -906,6 +878,9 @@ object {
 	font-size: 16px;
 	font-size: 1.6rem;
 }
+.widget p {
+	margin-bottom: .5em;
+}
 .widget > ul,
 .widget_nav_menu ul.menu {
 	list-style: none;
@@ -919,12 +894,12 @@ object {
 .widget_search .widget-title {
 	display: none;
 }
-.widget_search #searchform {
+.widget_search form.searchform {
 	margin: 0;
 	position: relative;
 	width: 100%;
 }
-.widget_search #searchform input[type="text"] {
+.widget_search form.searchform input[type="text"] {
 	background-color: #fff;
 	width: 96%;
 }
@@ -934,7 +909,7 @@ object {
 .widget_search :-moz-placeholder {  /* Change color of placeholder text */
    /*color: #000;*/  
 }
-#searchsubmit {
+input.searchsubmit {
 	display: none;
 }
 /* Calendar widget */
@@ -1011,6 +986,34 @@ object {
 }
 
 
+/* =Plugin integration
+----------------------------------------------- */
+
+.debut-lang-switcher {
+	background-color: #efefef;
+	border: 1px solid #ddd;
+	border-top: none;
+	position: absolute;
+	right: 1%;
+	top: 0;
+}
+.debut-lang {
+	display: block;
+	float: left;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 1;
+	padding: .5em;
+	text-transform: uppercase;
+}
+.debut-lang:hover {
+	background-color: red;
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,.8);
+}
+
+
 /* =IE9 and Unsupported
 ----------------------------------------------- */
      
@@ -1020,8 +1023,8 @@ object {
 	top: 1.7em;
 }
 /* Show labels, as IE doesn't support placeholder text */
-#unsupported #searchsubmit,
-#ie9 #searchsubmit {
+#unsupported input.searchsubmit,
+#ie9 input.searchsubmit {
 	background: none;
 	border-color: #ddd;
 	border-radius: 0;
@@ -1034,8 +1037,8 @@ object {
 	position: absolute;
 	top: 2px;
 }
-#unsupported #searchform input[type="text"],
-#ie9 #searchform input[type="text"] {
+#unsupported form.searchform input[type="text"],
+#ie9 form.searchform input[type="text"] {
 	padding-right: 24%;
 	width: 74%;
 }
@@ -1068,10 +1071,12 @@ object {
 	.depth-5 #commentform input[type="text"] {
 		width: 97%;
 	}
-
-
 }
-
+@media screen and ( max-width: 768px ) {
+	.page-template-full-width-php #comments {
+		max-width: 100%;
+	}
+}
 @media screen and ( max-width: 680px ) {
 	#masthead hgroup,
 	.header-image,
@@ -1102,11 +1107,10 @@ object {
 	#tertiary {
 		padding: 0;
 	}
-	.widget_search #searchform input[type="text"] {
+	.widget_search form.searchform input[type="text"] {
 		width: 98%;
 	}
 }
-
 @media screen and ( max-width: 480px ) {
 	#page {
 		margin-top: 1em;
