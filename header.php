@@ -53,10 +53,6 @@
 		
 		<?php get_sidebar( 'header' ); ?>
 
-		<?php if ( get_header_image() ) { ?>
-			<img class="header-image" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" />
-		<?php } ?>
-
 	</header><!-- #masthead .site-header -->
 	<nav role="navigation" class="site-navigation main-navigation">
 		<h1 class="assistive-text"><?php _e( 'Menu', 'debut' ); ?></h1>
