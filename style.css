@@ -1114,9 +1114,8 @@ input.searchsubmit {
 		display: none;
 	}
 	.menu-button {
-		bottom: -1px;
-		float: right;
-		position: relative;
+		display: block;
+		margin: 0 auto;
 	}
 	.small-navigation,
 	.widget .main-navigation,
