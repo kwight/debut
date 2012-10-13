@@ -399,7 +399,6 @@ function debut_lang_switcher() {
 	define( 'ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true );
 	define( 'ICL_DONT_LOAD_LANGUAGES_JS', true );
 	$lang = icl_get_languages( 'skip_missing=N' );
-	dbgx_trace_var( $lang );
 	if ( count( $lang ) > 1 ) {
 		$html = '<div class="debut-lang-switcher">';
 		foreach( $lang as $value ) {
