@@ -47,6 +47,13 @@ function debut_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	/**
+	 * Add support for background color and images
+	 */
+	add_theme_support( 'custom-background', array(
+		'default-color' => 'fff',
+	) );
+
+	/**
 	 * Add image sizes
 	 */
 	add_image_size( 'debut-featured', 646, 363, true ); // 16:9

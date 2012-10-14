@@ -149,11 +149,11 @@ Based on a 12-column, fluid grid
 
 /* Containers */
 #page {
-	width: 94%;
-	margin: 0 auto 2.5em;
+	background-color: #fff;
+	margin: 0 auto;
 	max-width: 1000px;
-	padding-top: 2.5em;
-	position: relative;
+	padding: 0 1%;
+	width: 94%;
 }
 /* Elements */
 #masthead hgroup,
@@ -477,6 +477,10 @@ a:visited {
 /* =Header
 ----------------------------------------------- */
 
+#masthead {
+	padding-top: 2.5em;
+	position: relative;
+}
 .site-title {
 	font-size: 55px;
 	font-size: 5.5rem;
@@ -978,7 +982,7 @@ input.searchsubmit {
 	color: #aaa;
 	font-size: 14px;
 	font-size: 1.4rem;
-	padding-top: 2.5em;
+	padding: 2.5em 0;
 	text-align: right;
 }
 
@@ -1075,6 +1079,9 @@ input.searchsubmit {
 	}
 }
 @media screen and ( max-width: 680px ) {
+	html body.custom-background {
+		background-color: #fff;
+	}
 	#masthead hgroup,
 	.main-navigation,
 	#primary,
@@ -1096,6 +1103,7 @@ input.searchsubmit {
 	.main-navigation {
 		margin-bottom: 2.5em;
 	}
+	#page,
 	#secondary,
 	#tertiary {
 		padding: 0;
@@ -1105,10 +1113,9 @@ input.searchsubmit {
 	}
 }
 @media screen and ( max-width: 480px ) {
-	#page {
-		margin-top: 1em;
+	#masthead {
+		padding-top: 1.5em;
 	}
-	/* Navigation */
 	.main-navigation,
 	.menu {
 		display: none;
