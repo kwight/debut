@@ -119,6 +119,52 @@ add_action( 'wp_enqueue_scripts', 'debut_scripts' );
 
 
 /**
+ * Add CSS in <head> to assign the header image as the #masthead background
+ *
+ * @since 1.05
+ */
+function debut_add_image_header_css() {
+	if ( get_header_image() ) { ?>
+		<!-- Debut styling for custom header images (displayed as background to #masthead) -->
+		<style>
+			#masthead {
+				background: url('<?php header_image(); ?>') no-repeat center top;
+				min-height: 300px;
+			}
+			.debut-has-header-image .debut-lang-switcher {
+				right: 1.02%;
+			}
+			.debut-has-header-image .debut-identity {
+				margin-left: 1.02%;
+				width: 64.966%;
+			}
+			.debut-has-header-image #tertiary {
+				margin-right: 1.02%;
+				width: 28.878%;
+			}
+
+			@media screen and ( max-width: 680px ) {
+				.debut-has-header-image .debut-identity,
+				.debut-has-header-image #tertiary {
+					margin-left: 1.5465%;
+					margin-right: 1.5465%;
+					width: 96.907%;
+				}
+			}
+
+			@media screen and ( max-width: 480px ) {
+				#masthead {
+					margin-bottom: 2.5em;
+				}
+			}
+
+		</style>
+	<?php }
+}
+add_action( 'wp_head', 'debut_add_image_header_css' );
+
+
+/**
  * Add html5.js script to <head> conditionally for IE8 and under
  *
  * @since 1.0.4

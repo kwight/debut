@@ -152,11 +152,10 @@ Based on a 12-column, fluid grid
 	width: 94%;
 	margin: 0 auto 2.5em;
 	max-width: 1000px;
-	padding-top: 2.5em;
 	position: relative;
 }
 /* Elements */
-#masthead hgroup,
+#masthead,
 form.searchform,
 .main-navigation,
 #primary,
@@ -164,7 +163,6 @@ form.searchform,
 .comment-form-email,
 .comment-form-url,
 #secondary,
-#tertiary,
 #colophon {
 	display: inline;
 	float: left;
@@ -172,13 +170,13 @@ form.searchform,
 	margin-right: 1%;
 }
 /* 12 columns */
+#masthead,
 .main-navigation,
 .page-template-full-width-php #primary,
 #colophon {
 	width: 98.0%;
 }
 /* 8 columns */
-#masthead hgroup,
 #primary {
 	width: 64.667%;
 }
@@ -476,6 +474,26 @@ a:visited {
 /* =Header
 ----------------------------------------------- */
 
+#masthead {
+	position: relative;
+}
+.debut-identity,
+#tertiary {
+	display: inline;
+	float: left;
+	margin-top: 40px;
+}
+.debut-identity {
+	margin-right: 1.02%;
+	width: 65.986%;
+}
+#tertiary {
+	font-size: 14px;
+	font-size: 1.4rem;
+	margin-left: 1.02%;
+	padding-left: 2.04%;
+	width: 29.898%;
+}
 .site-title {
 	font-size: 55px;
 	font-size: 5.5rem;
@@ -489,12 +507,7 @@ a:visited {
 	font-weight: 400;
 	margin-bottom: 1.5em;
 }
-.header-image {
-	display: block;
-	height: auto;
-	margin: 2.5em 1% 0;
-	width: 98%;
-}
+
 
 
 /* =Menu
@@ -864,8 +877,7 @@ object {
 /* =Widgets
 ----------------------------------------------- */
 
-#secondary,
-#tertiary {
+#secondary {
 	font-size: 14px;
 	font-size: 1.4rem;
 	padding-left: 2%;
@@ -994,7 +1006,7 @@ input.searchsubmit {
 	border: 1px solid #ddd;
 	border-top: none;
 	position: absolute;
-	right: 1%;
+	right: 0;
 	top: 0;
 }
 .debut-lang {
@@ -1078,8 +1090,8 @@ input.searchsubmit {
 	}
 }
 @media screen and ( max-width: 680px ) {
-	#masthead hgroup,
-	.header-image,
+	#masthead,
+	.debut-identity,
 	.main-navigation,
 	#primary,
 	#secondary,
@@ -1087,18 +1099,18 @@ input.searchsubmit {
 		width: 100%;
 	}
 	#masthead,
-	#masthead hgroup,
+	.debut-identity,
 	.main-navigation,
 	#primary,
 	#secondary,
 	#tertiary  {
 		margin: 0;
 	}
+	.debut-identity {
+		margin-top: 40px;
+	}
 	.site-description {
 		margin-bottom: 1.5em;
-	}
-	.header-image {
-		margin-bottom: 2.5em;
 	}
 	.main-navigation {
 		margin-bottom: 2.5em;
@@ -1112,25 +1124,22 @@ input.searchsubmit {
 	}
 }
 @media screen and ( max-width: 480px ) {
-	#page {
-		padding-top: 1.5em;
-	}
 	/* Navigation */
 	.main-navigation,
 	.menu {
 		display: none;
 	}
-	.menu-button {
-		display: block;
-		margin: 0 auto;
-	}
 	.small-navigation,
+	.menu-button,
 	.widget .main-navigation,
 	.widget .menu {
 		display: block;
 	}
+	.menu-button {
+		margin: 0 auto;
+	}
 	.small-navigation {
-		margin-bottom: 1em;
+		margin: 1em 0;
 	}
 	.small-navigation ul {
 		background: #efefef;
@@ -1173,6 +1182,9 @@ input.searchsubmit {
 	.menu-item-parent > a:after,
 	.sub-menu .menu-item-parent > a:after {
 		content: '';
+	}
+	.debut-identity {
+		margin-top: 0;
 	}
 	.comment-form-author,
 	.comment-form-email,
