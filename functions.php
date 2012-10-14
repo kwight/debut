@@ -418,7 +418,7 @@ function debut_lang_switcher() {
  * @since 1.05
  */
 function debut_date() {
-    if ( 'fr' == ICL_LANGUAGE_CODE ) {
+    if ( class_exists( 'Sitepress', false ) && 'fr' == ICL_LANGUAGE_CODE ) {
         $date = get_the_time( 'j F Y' );
     } else {
         $date = get_the_time( 'F j, Y' );
@@ -433,7 +433,7 @@ function debut_date() {
  * @since 1.05
  */
 function debut_comment_time() {
-	if ( 'fr' == ICL_LANGUAGE_CODE ) {
+	if ( class_exists( 'Sitepress', false ) && 'fr' == ICL_LANGUAGE_CODE ) {
         $timestamp = comment_time( '\l\e j F Y \à H\hi' );
     } else {
         $timestamp = comment_time( 'F j, Y \a\t g:ia' );
