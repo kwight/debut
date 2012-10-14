@@ -421,6 +421,10 @@ function debut_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
+	// Adds the class "debut-has-header-image" when a header image is present
+	if ( get_header_image() ) {
+		$classes[] = 'debut-has-header-image';
+	}
 	return $classes;
 }
 add_filter( 'body_class', 'debut_body_classes' );
