@@ -54,12 +54,7 @@ function debut_setup() {
 	/**
 	 * Custom header support
 	 */
-	$header_args = array(
-		'height' => 300,
-		'flex-height' => true,
-		'width' => 980
-	);
-	add_theme_support( 'custom-header', $header_args );
+	add_theme_support( 'custom-header' );
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
