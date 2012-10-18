@@ -47,6 +47,13 @@ function debut_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	/**
+	 * Add support for background color and images
+	 */
+	add_theme_support( 'custom-background', array(
+		'default-color' => 'fff',
+	) );
+
+	/**
 	 * Add image sizes
 	 */
 	add_image_size( 'debut-featured', 646, 363, true ); // 16:9
@@ -170,6 +177,69 @@ function debut_ie_html5_js() { ?>
 	<![endif]-->
 <?php }
 add_action('wp_head', 'debut_ie_html5_js');
+
+
+/**
+ * Add a menu item for the theme customizer
+ *
+ * @since 2.0
+ */
+function debut_add_customizer_menu_item() {
+    add_theme_page( 'Customize', 'Customize', 'edit_theme_options', 'customize.php' );
+}
+add_action ('admin_menu', 'debut_add_customizer_menu_item');
+
+
+/**
+ * Theme customizer with real-time update
+ * Very helpful: http://ottopress.com/2012/theme-customizer-part-deux-getting-rid-of-options-pages/
+ *
+ * @since 2.0
+ */
+function debut_theme_customizer( $wp_customize ) {
+    $wp_customize->add_setting( 'debut_link_color', array(
+        'default'        => '#ff0000',
+        'transport' => 'postMessage'
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'debut_link_color', array(
+        'label'   => 'Link and Highlight Color',
+        'section' => 'colors',
+        'settings'   => 'debut_link_color',
+    ) ) );
+
+    $wp_customize->get_setting('blogname')->transport='postMessage';
+	$wp_customize->get_setting('blogdescription')->transport='postMessage';
+ 
+
+}
+add_action('customize_register', 'debut_theme_customizer');
+
+
+/**
+ * Add CSS in <head> for styles handled by the theme customizer
+ *
+ * @since 1.05
+ */
+function debut_add_customizer_css() { ?>
+	<!-- Debut customizer CSS -->
+	<style>
+		body {
+			border-color: <?php echo get_theme_mod( 'debut_link_color' ); ?>;
+		}
+		a, a:visited {
+			color: <?php echo get_theme_mod( 'debut_link_color' ); ?>;
+		}
+		.main-navigation a:hover,
+		.main-navigation a:focus,
+		.main-navigation a:active,
+		.main-navigation .current-menu-item > a,
+		.debut-lang:hover {
+			background-color: <?php echo get_theme_mod( 'debut_link_color' ); ?>;
+		}
+	</style>
+<?php }
+add_action( 'wp_head', 'debut_add_customizer_css' );
 
 
 /**
@@ -473,7 +543,7 @@ function debut_lang_switcher() {
  * @since 1.05
  */
 function debut_date() {
-    if ( 'fr' == ICL_LANGUAGE_CODE ) {
+    if ( class_exists( 'Sitepress', false ) && 'fr' == ICL_LANGUAGE_CODE ) {
         $date = get_the_time( 'j F Y' );
     } else {
         $date = get_the_time( 'F j, Y' );
@@ -488,7 +558,7 @@ function debut_date() {
  * @since 1.05
  */
 function debut_comment_time() {
-	if ( 'fr' == ICL_LANGUAGE_CODE ) {
+	if ( class_exists( 'Sitepress', false ) && 'fr' == ICL_LANGUAGE_CODE ) {
         $timestamp = comment_time( '\l\e j F Y \à H\hi' );
     } else {
         $timestamp = comment_time( 'F j, Y \a\t g:ia' );

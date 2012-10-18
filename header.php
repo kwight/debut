@@ -30,11 +30,9 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	
+
 	<header id="masthead" class="site-header" role="banner">
-
-		<?php if ( class_exists( 'Sitepress', false ) ) echo debut_lang_switcher(); ?>
-
+		
 		<?php
 		/**
 		 * Small width navigation - only on screens 480px wide or smaller
@@ -47,6 +45,8 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav>
 
+		<?php if ( class_exists( 'Sitepress', false ) ) echo debut_lang_switcher(); ?>
+
 		<hgroup class="debut-identity">
 			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
@@ -55,7 +55,7 @@
 		<?php get_sidebar( 'header' ); ?>
 
 	</header><!-- #masthead .site-header -->
-		
+	
 	<nav role="navigation" class="site-navigation main-navigation">
 		<h1 class="assistive-text"><?php _e( 'Menu', 'debut' ); ?></h1>
 		<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'debut' ); ?>"><?php _e( 'Skip to content', 'debut' ); ?></a></div>
