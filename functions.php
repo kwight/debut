@@ -146,7 +146,6 @@ add_action ('admin_menu', 'debut_add_customizer_menu_item');
  * @since 2.0
  */
 function debut_theme_customizer( $wp_customize ) {
- 	dbgx_trace_var( $wp_customize );
     $wp_customize->add_setting( 'debut_link_color', array(
         'default'        => '#ff0000',
         'transport' => 'postMessage'
