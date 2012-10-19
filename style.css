@@ -165,7 +165,7 @@ form.searchform,
 .comment-form-url,
 #secondary,
 #tertiary,
-#colophon {
+.site-footer .widget-area {
 	display: inline;
 	float: left;
 	margin-left: 1%;
@@ -173,14 +173,17 @@ form.searchform,
 }
 /* 12 columns */
 .main-navigation,
-.page-template-full-width-php #primary,
-#colophon {
+.page-template-full-width-php #primary {
 	width: 98.0%;
 }
 /* 8 columns */
 #masthead hgroup,
 #primary {
 	width: 64.667%;
+}
+/* 4 columns */
+.site-footer .widget-area {
+	width: 31.333%;
 }
 /* Vertical spacing */
 #masthead,
@@ -977,13 +980,24 @@ input.searchsubmit {
 /* =Footer
 ----------------------------------------------- */
 
-#colophon {
+.site-footer .widget-area {
 	border-top: 1px solid #ddd;
-	color: #aaa;
 	font-size: 14px;
 	font-size: 1.4rem;
-	padding: 2.5em 0;
-	text-align: right;
+	padding: 2.5em 0 0;
+}
+.site-footer .widget-area.footer-left {
+	margin-right: 0;
+	padding-right: 1%;
+}
+.site-footer .widget-area.footer-center {
+	margin: 0;
+	padding: 2.5em 1% 0;
+}
+.site-footer .widget-area.footer-right {
+	margin-left: 0;
+	padding-left: 3%;
+	width: 29.333%;
 }
 
 
@@ -1086,7 +1100,8 @@ input.searchsubmit {
 	.main-navigation,
 	#primary,
 	#secondary,
-	#tertiary {
+	#tertiary,
+	#colophon .widget-area {
 		width: 100%;
 	}
 	#masthead,
@@ -1094,7 +1109,8 @@ input.searchsubmit {
 	.main-navigation,
 	#primary,
 	#secondary,
-	#tertiary  {
+	#tertiary,
+	#colophon .widget-area  {
 		margin: 0;
 	}
 	.site-description {
@@ -1105,8 +1121,12 @@ input.searchsubmit {
 	}
 	#page,
 	#secondary,
-	#tertiary {
+	#tertiary,
+	#colophon .widget-area {
 		padding: 0;
+	}
+	.site-footer .widget-area {
+		border: none;
 	}
 	.widget_search form.searchform input[type="text"] {
 		width: 98%;
