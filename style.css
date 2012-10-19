@@ -509,9 +509,7 @@ a:visited {
 	font-weight: 400;
 	margin-bottom: 1.5em;
 }
-.debut-has-header-image .site-description {
-	margin-bottom: 0;
-}
+
 
 
 /* =Menu
@@ -1094,6 +1092,9 @@ input.searchsubmit {
 	}
 }
 @media screen and ( max-width: 680px ) {
+	html body.custom-background {
+		background-color: #fff;
+	}
 	#masthead,
 	.debut-identity,
 	.main-navigation,
@@ -1112,6 +1113,10 @@ input.searchsubmit {
 	}
 	.debut-identity {
 		margin-top: 40px;
+	}
+	.site-title {
+		font-size: 30px;
+		font-size: 3rem;
 	}
 	.site-description {
 		margin-bottom: 1.5em;

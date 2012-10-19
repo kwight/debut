@@ -61,7 +61,12 @@ function debut_setup() {
 	/**
 	 * Custom header support
 	 */
-	add_theme_support( 'custom-header' );
+	add_theme_support( 'custom-header', array(
+		'default-text-color' 	 => 'f00',
+		'wp-head-callback'       => 'debut_header_style',
+		'admin-head-callback'    => 'debut_admin_header_style',
+		//'admin-preview-callback' => 'debut_admin_header_image',
+	) );
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -126,12 +131,12 @@ add_action( 'wp_enqueue_scripts', 'debut_scripts' );
  * @since 1.05
  */
 function debut_add_image_header_css() {
-	if ( get_header_image() ) { ?>
+	if ( get_header_image() && display_header_text() ) { ?>
 		<!-- Debut styling for custom header images (displayed as background to #masthead) -->
 		<style>
 			#masthead {
-				background: url('<?php header_image(); ?>') no-repeat center top;
-				min-height: 300px;
+				background: url('<?php header_image(); ?>') <?php echo apply_filters( 'debut_header_background_css', 'no-repeat center top' ); ?>;
+				min-height: 260px;
 			}
 			.debut-has-header-image .debut-lang-switcher {
 				right: 1.02%;
@@ -165,6 +170,106 @@ function debut_add_image_header_css() {
 }
 add_action( 'wp_head', 'debut_add_image_header_css' );
 
+
+/**
+ * Custom header styles for the site title and description
+ *
+ * @since 2.0
+ */
+function debut_header_style() {
+	$text_color = get_header_textcolor();
+
+	// If no custom options for text are set, let's bail
+	if ( $text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
+		return;
+
+	// If we get this far, we have custom styles.
+	?>
+	<style type="text/css">
+	<?php
+		// Has the text been hidden?
+		if ( ! display_header_text() ) :
+	?>
+		.site-title,
+		.site-description {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		#tertiary {
+			display: none;
+		}
+	<?php
+		// If the user has set a custom color for the text, use that.
+		else :
+	?>
+		.site-title a,
+		.site-description {
+			color: #<?php echo $text_color; ?> !important;
+		}
+	<?php endif; ?>
+	</style>
+	<?php
+}
+
+
+/**
+ * Custom header styles for the Admin
+ *
+ * @since 2.0
+ */
+function debut_admin_header_style() {
+?>
+	<style type="text/css">
+	.appearance_page_custom-header #headimg {
+		border: none;
+	}
+	#headimg h1,
+	#headimg h2 {
+		line-height: 1.6;
+		margin: 0;
+		padding: 0;
+	}
+	#headimg h1 {
+		font-size: 30px;
+	}
+	#headimg h1 a {
+		color: #515151;
+		text-decoration: none;
+	}
+	#headimg h1 a:hover {
+		color: #21759b;
+	}
+	#headimg h2 {
+		color: #777;
+		font: normal 13px/1.8 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+		margin-bottom: 24px;
+	}
+	#headimg img {
+		max-width: <?php echo get_theme_support( 'custom-header', 'max-width' ); ?>px;
+	}
+	</style>
+<?php
+}
+
+
+/**
+ * Returns inline HTML for the custom header image,
+ * rather than as a background for #masthead
+ * 
+ * Displayed only if header text has been removed
+ *
+ * @since 2.0
+ */
+function debut_get_custom_header() {
+	$html = '';
+	$header_image = get_header_image();
+	if ( ! display_header_text() && ! empty( $header_image ) ) {
+		$html .= '<a href="' . esc_url( home_url( '/' ) ) . '">';
+		$html .= '<img class="debut-header-image" src="' . esc_url( $header_image ) . '" /></a>';
+	}
+	return apply_filters( 'debut_custom_header_inline_html', $html );
+}
 
 /**
  * Add html5.js script to <head> conditionally for IE8 and under

@@ -54,8 +54,10 @@
 		
 		<?php get_sidebar( 'header' ); ?>
 
+		<?php echo debut_get_custom_header(); ?>
+
 	</header><!-- #masthead .site-header -->
-	
+
 	<nav role="navigation" class="site-navigation main-navigation">
 		<h1 class="assistive-text"><?php _e( 'Menu', 'debut' ); ?></h1>
 		<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'debut' ); ?>"><?php _e( 'Skip to content', 'debut' ); ?></a></div>
