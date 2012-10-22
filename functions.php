@@ -181,8 +181,12 @@ function debut_theme_customizer( $wp_customize ) {
         'settings'   => 'debut_link_color',
     ) ) );
 
+     // Set site name and description to be previewed in real-time
     $wp_customize->get_setting('blogname')->transport='postMessage';
 	$wp_customize->get_setting('blogdescription')->transport='postMessage';
+
+	// Enqueue scripts for real-time preview
+	wp_enqueue_script( 'debut-customizer', get_template_directory_uri() . '/js/debut-customizer.js', array( 'jquery' ) );
  
 
 }
