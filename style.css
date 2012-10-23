@@ -1086,6 +1086,10 @@ input.searchsubmit {
 .kwight-fs-slides .entry-title {
 	margin-left: 0;
 }
+.kwight-slider-control-paging li a:hover,
+.kwight-slider-control-paging li a.kwight-slider-active {
+	background-color: red;
+}
 
 
 /* =Responsive

@@ -214,6 +214,12 @@ function debut_add_customizer_css() { ?>
 		.debut-lang:hover {
 			background-color: <?php echo get_theme_mod( 'debut_link_color' ); ?>;
 		}
+		<?php if ( function_exists( 'kwight_slider' ) ) : ?>
+			.kwight-slider-control-paging li a:hover,
+			.kwight-slider-control-paging li a.kwight-slider-active {
+				background-color: <?php echo get_theme_mod( 'debut_link_color' ); ?>
+			}
+		<?php endif; ?>
 	</style>
 <?php }
 add_action( 'wp_head', 'debut_add_customizer_css' );

@@ -14,8 +14,12 @@ jQuery( document ).ready( function( $ ) {
     wp.customize( 'debut_link_color', function( value ) {
         value.bind( function( to ) {
             $('body').css('border-color', to );
+            $('.kwight-slider-control-paging li a').css({
+            	'background-color': '#ddd',
+            	'background-color': 'rgba(0,0,0,0.3)'
+            });
             $('a').not('.main-navigation .current-menu-item > a').css('color', to );
-            $('.main-navigation .current-menu-item > a').css({
+            $('.main-navigation .current-menu-item > a, .kwight-slider-control-paging li a:hover, .kwight-slider-control-paging li a.kwight-slider-active').css({
             	'background-color': to,
             	'color': '#fff'
             });
