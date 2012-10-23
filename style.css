@@ -581,8 +581,7 @@ a:visited {
 ----------------------------------------------- */
 
 /* Sticky posts */
-.sticky,
-.bypostauthor {
+.sticky {
 	background-color: #efefef;
 	border: 1px solid #ddd;
 	padding: 1.5465%;
@@ -788,7 +787,7 @@ object {
 	margin-left: 80px;
 }
 .depth-1 {
-	padding-top: 1.5em;
+	margin-top: 2.5em;
 }
 .comment .avatar {
 	float: left;
@@ -822,6 +821,15 @@ object {
 .nocomments {
 	font-weight: 400;
 	text-align: center;
+}
+/* By post author */
+.bypostauthor {
+	background-color: #efefef;
+	border: 1px solid #ddd;
+	padding: 1.5465%;
+}
+.bypostauthor .comment-content p:last-child {
+	margin-bottom: 0;
 }
 /* Reply form */
 #respond {
