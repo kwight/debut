@@ -2,6 +2,8 @@
 
 [Debut](https://github.com/kwight/debut/) is a solid and clean responsive theme, for sharing your ideas with the world. Based on _s by Automattic, it is translation-ready, supports featured images, and includes a sliding menu for mobile screens.
 
+Debut also includes a full-width page template.
+
 == Instructions ==
 
 Make sure to create and set a menu under Appearance > Menus. Once you've made your menu, select it under Theme Locations > Primary Menu (this is necessary for the sub-menu indicators to appear).
@@ -25,6 +27,15 @@ Chrome, Firefox, Safari and IE9+ are supported. IE7 and IE8 are not supported, b
 == Changelog ==
 
 More detail on the theme [commit page](https://github.com/kwight/debut/commits?page=1).
+
+= 1.0.4 =
+
+* Enhancement: Added full-width page template
+* Bug fix: proper execution of pluggable functions
+* Bug fix: added missing sidebar on image template
+* Bug fix: improved sticky post styling
+* Bug fix: closed #page div (props brocheafoin)
+* Bug fix: more sensible clearfixes (props brocheafoin)
 
 = 1.0.3 =
 * Enhancement: added support for featured images

@@ -3,7 +3,7 @@ Theme Name: Debut
 Author: kwight
 Author URI: http://kwight.ca
 Description: Debut is a solid and clean responsive theme, for sharing your ideas with the world.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: debut
@@ -47,6 +47,8 @@ and Blueprint http://www.blueprintcss.org/
 =Comments
 =Widgets
 =Footer
+=Browser-specific
+=Plugin integration
 =IE9 and unsupported
 =Plugin integration
 =Responsive
@@ -127,6 +129,7 @@ a img {
 	border: 0;
 }
 
+
 /* =Colors
 ----------------------------------------------- */
 
@@ -144,12 +147,14 @@ White: #fff
 /* =Structure
 Based on a 12-column, fluid grid
 ----------------------------------------------- */
+
 /* Containers */
 #page {
-	width: 94%;
-	margin: 2.5em auto;
+	background-color: #fff;
+	margin: 0 auto;
 	max-width: 1000px;
-	position: relative;
+	padding: 0 1%;
+	width: 94%;
 }
 /* Elements */
 #masthead hgroup,
@@ -160,60 +165,26 @@ form.searchform,
 .comment-form-email,
 .comment-form-url,
 #secondary,
-#tertiary {
+#tertiary,
+.site-footer .widget-area {
 	display: inline;
 	float: left;
 	margin-left: 1%;
 	margin-right: 1%;
 }
 /* 12 columns */
-.main-navigation {
+.main-navigation,
+.page-template-full-width-php #primary {
 	width: 98.0%;
-}
-/* 11 columns */
-#dummy {
-	width: 89.667%;
-}
-/* 10 columns */
-#dummy {
-	width: 81.333%;
-}
-/* 9 columns */
-#dummy {
-	width: 73.0%;
 }
 /* 8 columns */
 #masthead hgroup,
 #primary {
 	width: 64.667%;
 }
-/* 7 columns */
-#dummy {
-	width: 56.333%;
-}
-/* 6 columns */
-#dummy {
-	width: 48.0%;
-}
-/* 5 columns */
-#dummy {
-	width: 39.667%;
-}
 /* 4 columns */
-#dummy {
+.site-footer .widget-area {
 	width: 31.333%;
-}
-/* 3 columns */
-#dummy {
-	width: 23.0%;
-}
-/* 2 columns */
-#dummy {
-	width: 14.667%;
-}
-/* 1 column */
-#dummy {
-	width: 6.333%;
 }
 /* Vertical spacing */
 #masthead,
@@ -231,8 +202,9 @@ form.searchform,
 	margin-right: 0;
 }
 /* Clearfix */
+#page:after,
 #masthead:after,
-.menu:after,
+.site-navigation:after,
 #main:after,
 #primary:after,
 article:after,
@@ -258,7 +230,6 @@ body {
 	border: solid red;
 	border-width: 4px 0;
 }
-
 body,
 button,
 input,
@@ -301,7 +272,6 @@ hr {
 	height: 1px;
 	margin-bottom: 1.5em;
 }
-
 /* Text elements */
 p {
 	margin-bottom: 1.5em;
@@ -479,14 +449,12 @@ textarea {
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 97%;
 }
-
 /* Links */
 a,
 a:visited {
 	color: red;
 	font-weight: 400;
 }
-
 /* Alignment */
 .alignleft {
 	display: inline;
@@ -503,7 +471,6 @@ a:visited {
 	display: block;
 	margin: 0 auto;
 }
-
 /* Text meant only for screen readers */
 .assistive-text {
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
@@ -511,9 +478,14 @@ a:visited {
 	position: absolute !important;
 }
 
+
 /* =Header
 ----------------------------------------------- */
 
+#masthead {
+	padding-top: 2.5em;
+	position: relative;
+}
 .site-title {
 	font-size: 55px;
 	font-size: 5.5rem;
@@ -527,6 +499,7 @@ a:visited {
 	font-weight: 400;
 	margin-bottom: 0;
 }
+
 
 /* =Menu
 ----------------------------------------------- */
@@ -569,7 +542,7 @@ a:visited {
 .main-navigation .current-menu-item > a {
 	background-color: red;
 	color: #fff;
-	text-shadow: 0 1px 0 rgba( 0, 0, 0, 0.8 );
+	text-shadow: 0 -1px 0 rgba( 0, 0, 0, 0.3 );
 }
 .main-navigation ul ul {
 	display: none;
@@ -585,6 +558,10 @@ a:visited {
 }
 .main-navigation ul li:hover > ul {
 	display: block;
+}
+.sub-menu li {
+	clear: left;
+	width: 100%;
 }
 .main-navigation .menu-item-parent > a:after {
     color: #bbb;
@@ -623,14 +600,13 @@ a:visited {
 	clear: none;
 	font-size: 24px;
 	font-size: 2.4rem;
-	margin: 0 0 .3em 25.774%;
+	margin: 0 0 .3em 0;
 }
 .single .entry-title,
 .page .entry-title,
 .not-found .entry-title {
 	font-size: 28px;
 	font-size: 2.8rem;
-	margin-left: 0;
 }
 .page-title {
 	color: #aaa;
@@ -647,20 +623,15 @@ a:visited {
 	font-size: 12px;
 	font-size: 1.2rem;
 	line-height: 1.2;
-	margin-left: 25.774%;
 	text-transform: uppercase;
 }
 .entry-content {
-	margin: 1.5em 0 0 25.774%;
+	margin: 1.5em 0 0;
 }
-.no-thumb,
-.single .entry-meta,
-.page .entry-meta,
-.not-found .entry-meta,
-.single .entry-content,
-.page .entry-content,
-.not-found .entry-content {
-	margin-left: 0;
+.debut-has-thumb .entry-title,
+.debut-has-thumb .entry-meta,
+.debut-has-thumb .entry-content {
+	margin-left: 25.774%;
 }
 .byline {
 	display: none;
@@ -671,8 +642,6 @@ a:visited {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
-}
-.bypostauthor {
 }
 
 
@@ -692,7 +661,8 @@ a:visited {
 .entry-header img,
 .entry-content img,
 .comment-content img,
-.widget img {
+.widget img,
+img.size-full {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
 }
 .site-header img,
@@ -702,11 +672,6 @@ a:visited {
 img[class*="align"],
 img[class*="wp-image-"] {
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
-}
-.site-header img,
-.entry-content img,
-img.size-full {
-	max-width: 100%;
 }
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
@@ -757,14 +722,12 @@ img.size-full {
 #content .gallery dd {
 	margin: 0;
 }
-
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
 object {
 	max-width: 100%;
 }
-
 /* Featured images */
 .attachment-thumbnail.wp-post-image {
 	float: left;
@@ -806,6 +769,7 @@ object {
 	margin-top: 1.5em;
 }
 
+
 /* =Comments
 ----------------------------------------------- */
 
@@ -825,7 +789,7 @@ object {
 	margin-left: 80px;
 }
 .depth-1 {
-	padding-top: 1.5em;
+	margin-top: 2.5em;
 }
 .comment .avatar {
 	float: left;
@@ -860,9 +824,18 @@ object {
 	font-weight: 400;
 	text-align: center;
 }
+/* By post author */
+.bypostauthor {
+	background-color: #efefef;
+	border: 1px solid #ddd;
+	padding: 1.5465%;
+}
+.bypostauthor .comment-content p:last-child {
+	margin-bottom: 0;
+}
 /* Reply form */
 #respond {
-	margin-bottom: 1em; /*Correction for Jetpack Comments iframe*/
+	margin-bottom: 1em; /* Correction for Jetpack Comments iframe */
 }
 #reply-title small a,
 #cancel-comment-reply-link {
@@ -896,6 +869,9 @@ object {
 	color: #aaa;
 	font-size: 14px;
 	font-size: 1.4rem;
+}
+.page-template-full-width-php #comments {
+	max-width: 64.667%;
 }
 
 /* =Widgets
@@ -1013,13 +989,52 @@ input.searchsubmit {
 /* =Footer
 ----------------------------------------------- */
 
-#colophon {
+.site-footer .widget-area {
 	border-top: 1px solid #ddd;
-	color: #aaa;
 	font-size: 14px;
 	font-size: 1.4rem;
-	padding-top: 2.5em;
-	text-align: right;
+	padding: 2.5em 0 0;
+}
+.site-footer .widget-area.footer-left {
+	margin-right: 0;
+	padding-right: 1%;
+}
+.site-footer .widget-area.footer-center {
+	margin: 0;
+	padding: 2.5em 1% 0;
+}
+.site-footer .widget-area.footer-right {
+	margin-left: 0;
+	padding-left: 3%;
+	width: 29.333%;
+}
+
+
+/* =Plugin integration
+----------------------------------------------- */
+
+.debut-lang-switcher {
+	background-color: #efefef;
+	border: 1px solid #ddd;
+	border-top: none;
+	position: absolute;
+	right: 1%;
+	top: 0;
+}
+.debut-lang {
+	display: block;
+	float: left;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 1;
+	padding: .5em;
+	text-transform: uppercase;
+}
+.debut-lang:hover {
+	background-color: red;
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,.8);
 }
 
 
@@ -1094,16 +1109,22 @@ input.searchsubmit {
 	.depth-5 #commentform input[type="text"] {
 		width: 97%;
 	}
-
-
 }
-
+@media screen and ( max-width: 768px ) {
+	.page-template-full-width-php #comments {
+		max-width: 100%;
+	}
+}
 @media screen and ( max-width: 680px ) {
+	html body.custom-background {
+		background-color: #fff;
+	}
 	#masthead hgroup,
 	.main-navigation,
 	#primary,
 	#secondary,
-	#tertiary {
+	#tertiary,
+	#colophon .widget-area {
 		width: 100%;
 	}
 	#masthead,
@@ -1111,7 +1132,8 @@ input.searchsubmit {
 	.main-navigation,
 	#primary,
 	#secondary,
-	#tertiary  {
+	#tertiary,
+	#colophon .widget-area  {
 		margin: 0;
 	}
 	.site-description {
@@ -1120,28 +1142,30 @@ input.searchsubmit {
 	.main-navigation {
 		margin-bottom: 2.5em;
 	}
+	#page,
 	#secondary,
-	#tertiary {
+	#tertiary,
+	#colophon .widget-area {
 		padding: 0;
+	}
+	.site-footer .widget-area {
+		border: none;
 	}
 	.widget_search form.searchform input[type="text"] {
 		width: 98%;
 	}
 }
-
 @media screen and ( max-width: 480px ) {
-	#page {
-		margin-top: 1em;
+	#masthead {
+		padding-top: 1.5em;
 	}
-	/* Navigation */
 	.main-navigation,
 	.menu {
 		display: none;
 	}
 	.menu-button {
-		bottom: -1px;
-		float: right;
-		position: relative;
+		display: block;
+		margin: 0 auto;
 	}
 	.small-navigation,
 	.widget .main-navigation,
