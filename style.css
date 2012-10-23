@@ -148,10 +148,11 @@ Based on a 12-column, fluid grid
 
 /* Containers */
 #page {
-	width: 94%;
-	margin: 2.5em auto;
+	background-color: #fff;
+	margin: 0 auto;
 	max-width: 1000px;
-	position: relative;
+	padding: 0 1%;
+	width: 94%;
 }
 /* Elements */
 #masthead hgroup,
@@ -163,7 +164,7 @@ form.searchform,
 .comment-form-url,
 #secondary,
 #tertiary,
-#colophon {
+.site-footer .widget-area {
 	display: inline;
 	float: left;
 	margin-left: 1%;
@@ -171,14 +172,17 @@ form.searchform,
 }
 /* 12 columns */
 .main-navigation,
-.page-template-full-width-php #primary,
-#colophon {
+.page-template-full-width-php #primary {
 	width: 98.0%;
 }
 /* 8 columns */
 #masthead hgroup,
 #primary {
 	width: 64.667%;
+}
+/* 4 columns */
+.site-footer .widget-area {
+	width: 31.333%;
 }
 /* Vertical spacing */
 #masthead,
@@ -475,6 +479,10 @@ a:visited {
 /* =Header
 ----------------------------------------------- */
 
+#masthead {
+	padding-top: 2.5em;
+	position: relative;
+}
 .site-title {
 	font-size: 55px;
 	font-size: 5.5rem;
@@ -531,7 +539,7 @@ a:visited {
 .main-navigation .current-menu-item > a {
 	background-color: red;
 	color: #fff;
-	text-shadow: 0 1px 0 rgba( 0, 0, 0, 0.8 );
+	text-shadow: 0 -1px 0 rgba( 0, 0, 0, 0.3 );
 }
 .main-navigation ul ul {
 	display: none;
@@ -547,6 +555,10 @@ a:visited {
 }
 .main-navigation ul li:hover > ul {
 	display: block;
+}
+.sub-menu li {
+	clear: left;
+	width: 100%;
 }
 .main-navigation .menu-item-parent > a:after {
     color: #bbb;
@@ -585,14 +597,13 @@ a:visited {
 	clear: none;
 	font-size: 24px;
 	font-size: 2.4rem;
-	margin: 0 0 .3em 25.774%;
+	margin: 0 0 .3em 0;
 }
 .single .entry-title,
 .page .entry-title,
 .not-found .entry-title {
 	font-size: 28px;
 	font-size: 2.8rem;
-	margin-left: 0;
 }
 .page-title {
 	color: #aaa;
@@ -609,20 +620,15 @@ a:visited {
 	font-size: 12px;
 	font-size: 1.2rem;
 	line-height: 1.2;
-	margin-left: 25.774%;
 	text-transform: uppercase;
 }
 .entry-content {
-	margin: 1.5em 0 0 25.774%;
+	margin: 1.5em 0 0;
 }
-.no-thumb,
-.single .entry-meta,
-.page .entry-meta,
-.not-found .entry-meta,
-.single .entry-content,
-.page .entry-content,
-.not-found .entry-content {
-	margin-left: 0;
+.debut-has-thumb .entry-title,
+.debut-has-thumb .entry-meta,
+.debut-has-thumb .entry-content {
+	margin-left: 25.774%;
 }
 .byline {
 	display: none;
@@ -633,8 +639,6 @@ a:visited {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
-}
-.bypostauthor {
 }
 
 
@@ -782,7 +786,7 @@ object {
 	margin-left: 80px;
 }
 .depth-1 {
-	padding-top: 1.5em;
+	margin-top: 2.5em;
 }
 .comment .avatar {
 	float: left;
@@ -816,6 +820,15 @@ object {
 .nocomments {
 	font-weight: 400;
 	text-align: center;
+}
+/* By post author */
+.bypostauthor {
+	background-color: #efefef;
+	border: 1px solid #ddd;
+	padding: 1.5465%;
+}
+.bypostauthor .comment-content p:last-child {
+	margin-bottom: 0;
 }
 /* Reply form */
 #respond {
@@ -973,13 +986,24 @@ input.searchsubmit {
 /* =Footer
 ----------------------------------------------- */
 
-#colophon {
+.site-footer .widget-area {
 	border-top: 1px solid #ddd;
-	color: #aaa;
 	font-size: 14px;
 	font-size: 1.4rem;
-	padding-top: 2.5em;
-	text-align: right;
+	padding: 2.5em 0 0;
+}
+.site-footer .widget-area.footer-left {
+	margin-right: 0;
+	padding-right: 1%;
+}
+.site-footer .widget-area.footer-center {
+	margin: 0;
+	padding: 2.5em 1% 0;
+}
+.site-footer .widget-area.footer-right {
+	margin-left: 0;
+	padding-left: 3%;
+	width: 29.333%;
 }
 
 
@@ -997,6 +1021,33 @@ input.searchsubmit {
 .kwight-widgets-rp-title {
 	font-size: 16px;
 	font-size: 1.6rem;
+}
+/**
+ * WPML
+ * http://wpml.org
+ */
+.debut-lang-switcher {
+	background-color: #efefef;
+	border: 1px solid #ddd;
+	border-top: none;
+	position: absolute;
+	right: 1%;
+	top: 0;
+}
+.debut-lang {
+	display: block;
+	float: left;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 1;
+	padding: .5em;
+	text-transform: uppercase;
+}
+.debut-lang:hover {
+	background-color: red;
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,.8);
 }
 
 
@@ -1064,11 +1115,15 @@ input.searchsubmit {
 	}
 }
 @media screen and ( max-width: 680px ) {
+	html body.custom-background {
+		background-color: #fff;
+	}
 	#masthead hgroup,
 	.main-navigation,
 	#primary,
 	#secondary,
-	#tertiary {
+	#tertiary,
+	#colophon .widget-area {
 		width: 100%;
 	}
 	#masthead,
@@ -1076,7 +1131,8 @@ input.searchsubmit {
 	.main-navigation,
 	#primary,
 	#secondary,
-	#tertiary  {
+	#tertiary,
+	#colophon .widget-area  {
 		margin: 0;
 	}
 	.site-description {
@@ -1085,27 +1141,30 @@ input.searchsubmit {
 	.main-navigation {
 		margin-bottom: 2.5em;
 	}
+	#page,
 	#secondary,
-	#tertiary {
+	#tertiary,
+	#colophon .widget-area {
 		padding: 0;
+	}
+	.site-footer .widget-area {
+		border: none;
 	}
 	.widget_search form.searchform input[type="text"] {
 		width: 98%;
 	}
 }
 @media screen and ( max-width: 480px ) {
-	#page {
-		margin-top: 1em;
+	#masthead {
+		padding-top: 1.5em;
 	}
-	/* Navigation */
 	.main-navigation,
 	.menu {
 		display: none;
 	}
 	.menu-button {
-		bottom: -1px;
-		float: right;
-		position: relative;
+		display: block;
+		margin: 0 auto;
 	}
 	.small-navigation,
 	.widget .main-navigation,

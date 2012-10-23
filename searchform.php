@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying search forms in Debut
+ * The template for displaying search forms
  *
  * @package debut
  * @since 1.0

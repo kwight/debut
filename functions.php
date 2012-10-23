@@ -32,6 +32,9 @@ function debut_setup() {
 	 * to change '_s' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'debut', get_template_directory() . '/languages' );
+	$locale = get_locale();
+    $locale_file = get_template_directory() . '/languages/$locale.php';
+    if ( is_readable( $locale_file ) ) require_once( $locale_file );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -42,6 +45,13 @@ function debut_setup() {
 	 * Enable support for Post Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
+
+	/**
+	 * Add support for background color and images
+	 */
+	add_theme_support( 'custom-background', array(
+		'default-color' => 'fff',
+	) );
 
 	/**
 	 * Add image sizes
@@ -75,6 +85,30 @@ function debut_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Header', 'debut' ),
 		'id' => 'header',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Footer – Left', 'debut' ),
+		'id' => 'footer-left',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Footer – Center', 'debut' ),
+		'id' => 'footer-center',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Footer – Right', 'debut' ),
+		'id' => 'footer-right',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h1 class="widget-title">',
@@ -116,6 +150,73 @@ function debut_ie_html5_js() { ?>
 	<![endif]-->
 <?php }
 add_action('wp_head', 'debut_ie_html5_js');
+
+
+/**
+ * Add a menu item for the theme customizer
+ *
+ * @since 2.0
+ */
+function debut_add_customizer_menu_item() {
+    add_theme_page( 'Customize', 'Customize', 'edit_theme_options', 'customize.php' );
+}
+add_action ('admin_menu', 'debut_add_customizer_menu_item');
+
+
+/**
+ * Theme customizer with real-time update
+ * Very helpful: http://ottopress.com/2012/theme-customizer-part-deux-getting-rid-of-options-pages/
+ *
+ * @since 2.0
+ */
+function debut_theme_customizer( $wp_customize ) {
+    $wp_customize->add_setting( 'debut_link_color', array(
+        'default'        => '#ff0000',
+        'transport' => 'postMessage'
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'debut_link_color', array(
+        'label'   => 'Link and Highlight Color',
+        'section' => 'colors',
+        'settings'   => 'debut_link_color',
+    ) ) );
+
+     // Set site name and description to be previewed in real-time
+    $wp_customize->get_setting('blogname')->transport='postMessage';
+	$wp_customize->get_setting('blogdescription')->transport='postMessage';
+
+	// Enqueue scripts for real-time preview
+	wp_enqueue_script( 'debut-customizer', get_template_directory_uri() . '/js/debut-customizer.js', array( 'jquery' ) );
+ 
+
+}
+add_action('customize_register', 'debut_theme_customizer');
+
+
+/**
+ * Add CSS in <head> for styles handled by the theme customizer
+ *
+ * @since 1.05
+ */
+function debut_add_customizer_css() { ?>
+	<!-- Debut customizer CSS -->
+	<style>
+		body {
+			border-color: <?php echo get_theme_mod( 'debut_link_color' ); ?>;
+		}
+		a, a:visited {
+			color: <?php echo get_theme_mod( 'debut_link_color' ); ?>;
+		}
+		.main-navigation a:hover,
+		.main-navigation a:focus,
+		.main-navigation a:active,
+		.main-navigation .current-menu-item > a,
+		.debut-lang:hover {
+			background-color: <?php echo get_theme_mod( 'debut_link_color' ); ?>;
+		}
+	</style>
+<?php }
+add_action( 'wp_head', 'debut_add_customizer_css' );
 
 
 /**
@@ -169,7 +270,7 @@ function debut_posted_on() {
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
+		esc_html( debut_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'debut' ), get_the_author() ) ),
 		esc_html( get_the_author() )
@@ -249,7 +350,7 @@ function debut_comment( $comment, $args, $depth ) {
 				if ( $can_edit_post ) { edit_comment_link( __( 'Edit', 'debut' ), '&nbsp;&sdot;&nbsp;' ); } ?>
 			</div><!-- .perma-reply-edit -->
 			<h4><?php echo get_comment_author_link(); ?></h4>
-			<?php comment_time( 'F j, Y \a\t g:ia' ); ?><br />
+			<?php echo debut_comment_time(); ?><br />
 		</div><!-- .comment-meta -->
 		<div id="comment-content-<?php comment_ID(); ?>" class="<?php echo esc_attr( $content_class ); ?>">
 			<?php if ( $comment->comment_approved == '0' ): ?>
@@ -383,3 +484,57 @@ function debut_enhanced_image_navigation( $url, $id ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'debut_enhanced_image_navigation', 10, 2 );
+
+
+/**
+ * WPML language switcher
+ * Called only if WPML plugin is active: http://wpml.org
+ *
+ * @since 1.05
+ */
+function debut_lang_switcher() {
+	define( 'ICL_DONT_LOAD_NAVIGATION_CSS', true );
+	define( 'ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true );
+	define( 'ICL_DONT_LOAD_LANGUAGES_JS', true );
+	$lang = icl_get_languages( 'skip_missing=N' );
+	if ( count( $lang ) > 1 ) {
+		$html = '<div class="debut-lang-switcher">';
+		foreach( $lang as $value ) {
+			if ( 0 == $value[ 'active' ] ) {
+				$html .= '<a class="debut-lang" href="' . $value[ 'url' ] . '">' . $value[ 'language_code' ]  . '</a>';
+			}
+		}
+		$html .= '</div><!-- end .debut-lang-switcher -->';
+		return apply_filters( 'debut_lang_switcher_html', $html, $lang );
+	}
+}
+
+
+/**
+ * Output the date with correct formatting per language
+ *
+ * @since 1.05
+ */
+function debut_date() {
+    if ( class_exists( 'Sitepress', false ) && 'fr' == ICL_LANGUAGE_CODE ) {
+        $date = get_the_time( 'j F Y' );
+    } else {
+        $date = get_the_time( 'F j, Y' );
+    }
+    return $date;
+}
+
+
+/**
+ * Output the comment timestamp with correct formatting per language
+ *
+ * @since 1.05
+ */
+function debut_comment_time() {
+	if ( class_exists( 'Sitepress', false ) && 'fr' == ICL_LANGUAGE_CODE ) {
+        $timestamp = comment_time( '\l\e j F Y \à H\hi' );
+    } else {
+        $timestamp = comment_time( 'F j, Y \a\t g:ia' );
+    }
+    return $timestamp;
+}
