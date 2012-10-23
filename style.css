@@ -581,7 +581,8 @@ a:visited {
 ----------------------------------------------- */
 
 /* Sticky posts */
-.sticky {
+.sticky,
+.bypostauthor {
 	background-color: #efefef;
 	border: 1px solid #ddd;
 	padding: 1.5465%;
@@ -640,8 +641,6 @@ a:visited {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
-}
-.bypostauthor {
 }
 
 
