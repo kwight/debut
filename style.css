@@ -662,6 +662,7 @@ a:visited {
 .widget img,
 img.size-full {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+	width: auto; /* Corrects image stretching in IE8 */
 }
 .site-header img,
 .entry-header img,
