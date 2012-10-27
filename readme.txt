@@ -1,12 +1,12 @@
 === Debut ===
 
-[Debut](https://github.com/kwight/debut/) is a solid and clean responsive theme, for sharing your ideas with the world. Based on _s by Automattic, it is translation-ready, supports featured images, and includes a sliding menu for mobile screens.
-
-Debut also includes a full-width page template.
+[Debut](https://github.com/kwight/debut/) is a solid and clean responsive theme, for sharing your ideas with the world. Make Debut your own by changing the background, colors and more with the new Theme Customizer and real-time preview. Based on _s by Automattic, Debut is translation-ready (French is already included), supports featured images, has five widget areas and includes a sliding menu for mobile screens. Debut also includes a full-width page template.
 
 == Instructions ==
 
 Make sure to create and set a menu under Appearance > Menus. Once you've made your menu, select it under Theme Locations > Primary Menu (this is necessary for the sub-menu indicators to appear).
+
+Any default widgets in widget areas can be removed or replaced by simply adding your own widgets.
 
 == Limitations ==
 
@@ -22,11 +22,20 @@ Lily image in screenshot.png by Flickr user [shaferlens](http://www.flickr.com/p
 
 == Browser Support ==
 
-Chrome, Firefox, Safari and IE9+ are supported. IE7 and IE8 are not supported, but receive occasional attention as second-class citizens. 
+Chrome, Firefox, Safari and IE9+ are supported. IE7 and IE8 are not supported, but receive attention as second-class citizens. 
 
 == Changelog ==
 
 More detail on the theme [commit page](https://github.com/kwight/debut/commits?page=1).
+
+= 1.5 =
+
+* Enhancement: theme customizer with real-time preview
+* Enhancement: added three widget areas to the footer
+* Enhancement: added French translation and POT file for additional languages
+* Enhancement: styled WPML language switcher in top right corner
+* Enhancement: excerpts, if present, will be used on index pages
+* Bug fix: plenty of styling and formatting fixes
 
 = 1.0.4 =
 
