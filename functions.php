@@ -150,7 +150,7 @@ add_action('wp_head', 'debut_ie_html5_js');
 /**
  * Add a menu item for the theme customizer
  *
- * @since 2.0
+ * @since 1.5
  */
 function debut_add_customizer_menu_item() {
     add_theme_page( 'Customize', 'Customize', 'edit_theme_options', 'customize.php' );
@@ -162,7 +162,7 @@ add_action ('admin_menu', 'debut_add_customizer_menu_item');
  * Theme customizer with real-time update
  * Very helpful: http://ottopress.com/2012/theme-customizer-part-deux-getting-rid-of-options-pages/
  *
- * @since 2.0
+ * @since 1.5
  */
 function debut_theme_customizer( $wp_customize ) {
     $wp_customize->add_setting( 'debut_link_color', array(
@@ -191,7 +191,7 @@ add_action('customize_register', 'debut_theme_customizer');
 /**
  * Add CSS in <head> for styles handled by the theme customizer
  *
- * @since 1.05
+ * @since 1.5
  */
 function debut_add_customizer_css() { ?>
 	<!-- Debut customizer CSS -->
@@ -485,7 +485,7 @@ add_filter( 'attachment_link', 'debut_enhanced_image_navigation', 10, 2 );
  * WPML language switcher
  * Called only if WPML plugin is active: http://wpml.org
  *
- * @since 1.05
+ * @since 1.5
  */
 function debut_lang_switcher() {
 	define( 'ICL_DONT_LOAD_NAVIGATION_CSS', true );
@@ -509,7 +509,7 @@ function debut_lang_switcher() {
  * Output the date with correct formatting per language
  * (currently supports FR only, all other languages will display as EN)
  *
- * @since 1.05
+ * @since 1.5
  */
 function debut_date() {
     if ( class_exists( 'Sitepress', false ) && 'fr' == ICL_LANGUAGE_CODE ) {
@@ -525,7 +525,7 @@ function debut_date() {
  * Output the comment timestamp with correct formatting per language
  * (currently supports FR only, all other languages will display as EN)
  *
- * @since 1.05
+ * @since 1.5
  */
 function debut_comment_time() {
 	if ( class_exists( 'Sitepress', false ) && 'fr' == ICL_LANGUAGE_CODE ) {
