@@ -22,7 +22,7 @@
 			<?php
 			if ( ! dynamic_sidebar( 'footer-right' ) ) : ?>
 				<p class="debut-credit">
-					<?php printf( __( 'Powered by %1$s. %2$s theme by %3$s.', 'debut' ),'<a href="http://wordpress.org/" target="_blank">WordPress</a>', 'Debut', '<a href="http://kwight.ca/" target="_blank">kwight</a>' ); ?>
+					<?php printf( __( 'Powered by %1$s. %2$s theme by %3$s.', 'debut' ),'<a href="http://wordpress.org/" target="_blank">WordPress</a>', '<a href="https://github.com/kwight/debut/" target="_blank">Debut</a>', 'kwight' ); ?>
 				</p>
 			<?php endif; ?>
 		</div>
