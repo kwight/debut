@@ -1009,6 +1009,10 @@ input.searchsubmit {
 /* =Plugin integration
 ----------------------------------------------- */
 
+/**
+ * WPML - translation management
+ * http://wpml.org
+ */
 .debut-lang-switcher {
 	background-color: #efefef;
 	border: 1px solid #ddd;
