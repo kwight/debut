@@ -576,11 +576,7 @@ a:visited {
 .sticky .attachment-thumbnail.wp-post-image {
 	width: 23.52%;
 }
-.sticky .entry-title,
-.sticky .entry-meta,
-.sticky .entry-content {
-	margin-left: 26.72%;
-}
+
 .entry-title {
 	clear: none;
 	font-size: 24px;
