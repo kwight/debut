@@ -560,7 +560,7 @@ a:visited {
 }
 .main-navigation .sub-menu li:last-child {
 	box-shadow: 0 8px 8px -5px rgba(0, 0, 0, .4);
-	z-index: 9999999;
+	z-index: 9999999; /* Do I really need to do this? Really?.. */
 }
 
 
