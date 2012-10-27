@@ -35,7 +35,6 @@ and Blueprint http://www.blueprintcss.org/
 
 /*
 =Reset
-=Colors
 =Structure
 =Global
 =Header
@@ -127,20 +126,6 @@ a:active { /* Improves readability when focused and also mouse hovered in all br
 a img {
 	border: 0;
 }
-
-
-/* =Colors
------------------------------------------------ */
-
-/*
-Red: red #ff0000
-Dark Grey Text: #333
-Light Grey Text: #666
-Border Grey: #ddd
-Light Grey: #efefef
-Black: #000
-White: #fff
-*/
 
 
 /* =Structure
