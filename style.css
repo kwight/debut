@@ -431,12 +431,14 @@ textarea {
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 97%;
 }
+
 /* Links */
 a,
 a:visited {
 	color: red;
 	font-weight: 400;
 }
+
 /* Alignment */
 .alignleft {
 	display: inline;
@@ -453,6 +455,7 @@ a:visited {
 	display: block;
 	margin: 0 auto;
 }
+
 /* Text meant only for screen readers */
 .assistive-text {
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
@@ -705,12 +708,14 @@ img[class*="wp-image-"] {
 #content .gallery dd {
 	margin: 0;
 }
+
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
 object {
 	max-width: 100%;
 }
+
 /* Featured images */
 .attachment-thumbnail.wp-post-image {
 	float: left;
@@ -807,6 +812,7 @@ object {
 	font-weight: 400;
 	text-align: center;
 }
+
 /* By post author */
 .bypostauthor {
 	background-color: #efefef;
@@ -816,6 +822,7 @@ object {
 .bypostauthor .comment-content p:last-child {
 	margin-bottom: 0;
 }
+
 /* Reply form */
 #respond {
 	margin-bottom: 1em; /* Correction for Jetpack Comments iframe */
@@ -886,6 +893,7 @@ object {
 .widget_categories select {
 	margin-bottom: 1.5em;
 }
+
 /* Search widget */
 .widget_search .widget-title {
 	display: none;
@@ -908,6 +916,7 @@ object {
 input.searchsubmit {
 	display: none;
 }
+
 /* Calendar widget */
 .widget_calendar caption {
 	text-transform: uppercase;
@@ -923,12 +932,14 @@ input.searchsubmit {
 #next {
 	text-align: right;
 }
+
 /* Recent Comments / Recent Posts */
 .widget.widget_recent_comments > ul,
 .widget.widget_recent_entries > ul {
 	list-style: inherit;
 	margin-left: 1.3em;
 }
+
 /* RSS widget */
 .widget_rss .widget-title img {
 	box-shadow: none;
@@ -951,6 +962,7 @@ input.searchsubmit {
 .widget_rss li a {
 	line-height: 1;
 }
+
 /* Nav Menu widget */
 .widget_nav_menu .menu-item-parent > a:after {
     content: '';
@@ -958,6 +970,7 @@ input.searchsubmit {
 .widget_nav_menu .sub-menu .menu-item-parent > a:after {
     content: '';
 }
+
 /* Error 404 widgets */
 .error404 .entry-content .widget {
 	border: none;
@@ -1029,6 +1042,7 @@ input.searchsubmit {
 #ie9 .menu > li > .sub-menu {
 	top: 1.7em;
 }
+
 /* Show labels, as IE doesn't support placeholder text */
 #unsupported input.searchsubmit,
 #ie9 input.searchsubmit {
@@ -1084,6 +1098,7 @@ input.searchsubmit {
 		max-width: 100%;
 	}
 }
+
 @media screen and ( max-width: 680px ) {
 	html body.custom-background {
 		background-color: #fff;
@@ -1124,6 +1139,7 @@ input.searchsubmit {
 		width: 98%;
 	}
 }
+
 @media screen and ( max-width: 480px ) {
 	#masthead {
 		padding-top: 1.5em;
