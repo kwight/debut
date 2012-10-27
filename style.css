@@ -599,7 +599,8 @@ a:visited {
 	margin-bottom: 1.3em;
 	text-transform: uppercase;
 }
-.entry-meta {
+.entry-meta,
+.debut-credit {
 	color: #aaa;
 	font-size: 12px;
 	font-size: 1.2rem;
@@ -999,6 +1000,11 @@ input.searchsubmit {
 	margin-left: 0;
 	padding-left: 3%;
 	width: 29.333%;
+}
+.debut-credit {
+	margin-bottom: 2.5em;
+	text-align: right;
+	text-transform: none;
 }
 
 

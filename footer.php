@@ -13,18 +13,17 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="widget-area footer-left" role="complementary">
-			<?php if ( ! dynamic_sidebar( 'footer-left' ) ) : ?>
-				<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-			<?php endif; ?>
+			<?php dynamic_sidebar( 'footer-left' ); ?>
 		</div>
 		<div class="widget-area footer-center" role="complementary">
-			<?php if ( ! dynamic_sidebar( 'footer-center' ) ) : ?>
-				<?php the_widget( 'WP_Widget_Recent_Comments' ); ?>
-			<?php endif; ?>
+			<?php dynamic_sidebar( 'footer-center' ); ?>
 		</div>
 		<div class="widget-area footer-right" role="complementary">
-			<?php if ( ! dynamic_sidebar( 'footer-right' ) ) : ?>
-				<?php the_widget( 'WP_Widget_Meta' ); ?>
+			<?php
+			if ( ! dynamic_sidebar( 'footer-right' ) ) : ?>
+				<p class="debut-credit">
+					<?php printf( __( 'Powered by %1$s. %2$s theme by %3$s.', 'debut' ),'<a href="http://wordpress.org/" target="_blank">WordPress</a>', 'Debut', '<a href="http://kwight.ca/" target="_blank">kwight</a>' ); ?>
+				</p>
 			<?php endif; ?>
 		</div>
 	</footer><!-- #colophon .site-footer -->
