@@ -2,7 +2,7 @@
 /**
  * Debut functions and definitions
  *
- * @package debut
+ * @package Debut
  * @since 1.0
  */
 

@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package debut
+ * @package Debut
  * @since 1.0
  */
 

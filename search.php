@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package debut
+ * @package Debut
  * @since 1.0
  */
 

@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package debut
+ * @package Debut
  * @since 1.0
  */
 

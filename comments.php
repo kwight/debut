@@ -7,7 +7,7 @@
  * handled by a callback to _s_comment() which is
  * located in the functions.php file.
  *
- * @package debut
+ * @package Debut
  * @since 1.0
  */
 ?>

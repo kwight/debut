@@ -2,7 +2,7 @@
 /**
  * The template for displaying image attachments.
  *
- * @package debut
+ * @package Debut
  * @since 1.0
  */
 

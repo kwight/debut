@@ -2,7 +2,7 @@
 /**
  * The template for displaying search forms
  *
- * @package debut
+ * @package Debut
  * @since 1.0
  */
 ?>

@@ -4,7 +4,7 @@
  *
  * This template displays the content full-width, with no sidebar.
  *
- * @package debut
+ * @package Debut
  * @since 1.0.4
  */
 

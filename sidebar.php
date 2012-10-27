@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package debut
+ * @package Debut
  * @since 1.0
  */
 ?>

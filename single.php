@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package debut
+ * @package Debut
  * @since 1.0
  */
 

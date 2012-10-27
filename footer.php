@@ -4,7 +4,7 @@
  *
  * (Feel free to remove all links if you choose.)
  *
- * @package debut 
+ * @package Debut 
  * @since 1.0 
  */
 ?>
