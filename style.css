@@ -625,6 +625,13 @@ a:visited {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+.edit-link {
+	clear: both;
+	display: block;
+}
+.entry-meta .edit-link {
+	display: inline;
+}
 
 
 /* =Asides
