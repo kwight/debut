@@ -28,8 +28,6 @@ function debut_setup() {
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'debut', get_template_directory() . '/languages' );
 	$locale = get_locale();
@@ -509,6 +507,7 @@ function debut_lang_switcher() {
 
 /**
  * Output the date with correct formatting per language
+ * (currently supports FR only, all other languages will display as EN)
  *
  * @since 1.05
  */
@@ -524,6 +523,7 @@ function debut_date() {
 
 /**
  * Output the comment timestamp with correct formatting per language
+ * (currently supports FR only, all other languages will display as EN)
  *
  * @since 1.05
  */

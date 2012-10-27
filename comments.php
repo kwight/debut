@@ -3,9 +3,7 @@
  * The template for displaying Comments.
  *
  * The area of the page that contains both current comments
- * and the comment form. The actual display of comments is
- * handled by a callback to _s_comment() which is
- * located in the functions.php file.
+ * and the comment form.
  *
  * @package Debut
  * @since 1.0
@@ -34,12 +32,7 @@
 
 		<ol class="commentlist">
 			<?php
-				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use _s_comment() to format the comments.
-				 * If you want to overload this in a child theme then you can
-				 * define _s_comment() and that will be used instead.
-				 * See _s_comment() in functions.php for more.
-				 */
+				//Loop through and list the comments
 				wp_list_comments( array( 'callback' => 'debut_comment' ) );
 			?>
 		</ol>
