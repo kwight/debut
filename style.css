@@ -209,9 +209,13 @@ article:after,
 /* =Global
 ----------------------------------------------- */
 
+html {
+	height: 100%;
+}
 body {
 	border: solid red;
 	border-width: 4px 0;
+	height: 100%;
 }
 body,
 button,
