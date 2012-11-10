@@ -1049,7 +1049,22 @@ input.searchsubmit {
 
 /* =IE9 and Unsupported
 ----------------------------------------------- */
-     
+
+/* Clearfix */
+#unsupported #page,
+#unsupported #masthead,
+#unsupported .site-navigation,
+#unsupported #primary,
+#unsupported article,
+#unsupported #page ul,
+#unsupported #page ol,
+#unsupported #secondary,
+#unsupported #tertiary,
+#unsupported .widget,
+#unsupported #colophon {
+	zoom: 1;
+}
+
 /* Correct small gap above submenus */
 #unsupported .menu > li > .sub-menu,
 #ie9 .menu > li > .sub-menu {
@@ -1071,6 +1086,7 @@ input.searchsubmit {
 	position: absolute;
 	top: 2px;
 }
+
 #unsupported form.searchform input[type="text"],
 #ie9 form.searchform input[type="text"] {
 	padding-right: 24%;
@@ -1081,6 +1097,9 @@ input.searchsubmit {
 	display: block;
 	font-size: 12px;
 	text-transform: uppercase;
+}
+#unsupported .site-footer .widget-area {
+	width: 31.95%;
 }
 
 
