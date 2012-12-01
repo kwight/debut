@@ -166,15 +166,28 @@ add_action ('admin_menu', 'debut_add_customizer_menu_item');
  */
 function debut_theme_customizer( $wp_customize ) {
     $wp_customize->add_setting( 'debut_link_color', array(
-        'default'        => '#ff0000',
-        'transport' => 'postMessage'
+        'default'   => '#ff0000',
+        'transport' => 'postMessage',
     ) );
  
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'debut_link_color', array(
-        'label'   => 'Link and Highlight Color',
-        'section' => 'colors',
-        'settings'   => 'debut_link_color',
+        'label'	   => 'Link and Highlight Color',
+        'section'  => 'colors',
+        'settings' => 'debut_link_color',
     ) ) );
+
+    // Logo upload
+    $wp_customize->add_section( 'debut_logo_section' , array(
+	    'title'       => __( 'Logo', 'debut' ),
+	    'priority'    => 30,
+	    'description' => 'Upload a logo to replace the default site name and description in the header',
+	) );
+	$wp_customize->add_setting( 'debut_logo' );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'debut_logo', array(
+		'label'        => __( 'Logo', 'debut' ),
+		'section'    => 'debut_logo_section',
+		'settings'   => 'debut_logo',
+	) ) );
 
      // Set site name and description to be previewed in real-time
     $wp_customize->get_setting('blogname')->transport='postMessage';
