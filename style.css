@@ -488,7 +488,6 @@ a:visited {
 }
 .site-logo img {
 	display: block;
-	margin: 0 auto;
 }
 
 /* =Menu
@@ -1162,6 +1161,9 @@ input.searchsubmit {
 	.site-description,
 	.site-logo {
 		margin-bottom: 1.5em;
+	}
+	.site-logo img {
+		margin: 0 auto;
 	}
 	.main-navigation {
 		margin-bottom: 2.5em;
