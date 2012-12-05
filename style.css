@@ -49,6 +49,7 @@ and Blueprint http://www.blueprintcss.org/
 =Footer
 =Plugin integration
 =IE9 and unsupported
+=Colors
 =Responsive
 */
 
@@ -134,7 +135,6 @@ Based on a 12-column, fluid grid
 
 /* Containers */
 #page {
-	background-color: #fff;
 	margin: 0 auto;
 	max-width: 1000px;
 	padding: 0 1%;
@@ -212,14 +212,13 @@ article:after,
 ----------------------------------------------- */
 
 body {
-	border-top: 4px solid red;
+	border-top: 4px solid;
 }
 body,
 button,
 input,
 select,
 textarea {
-	color: #333;
 	font-family: Helvetica, sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
@@ -251,7 +250,6 @@ h4, h5, h6 {
 	text-transform: uppercase;
 }
 hr {
-	background-color: #ddd;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -299,8 +297,7 @@ address {
 	margin: 0 0 1.5em;
 }
 pre {
-	background: #efefef;
-	border: 1px solid #ddd;
+	border: 1px solid;
 	font-family: Courier, monospace;
 	font-size: 15px;
 	font-size: 1.5rem;
@@ -314,11 +311,10 @@ code, kbd, tt, var {
 	font-family: Courier, monospace;
 }
 abbr, acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted;
 	cursor: help;
 }
 mark, ins {
-	background: #fff9c0;
 	text-decoration: none;
 }
 sup,
@@ -369,9 +365,8 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid #ddd;
+	border: 1px solid;
 	border-radius: 3px;
-	background: #efefef;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	font-size: 14px;
@@ -379,12 +374,6 @@ input[type="submit"] {
 	font-weight: 400;
 	padding: .3em .5em;
 	text-shadow: 0 1px 0 rgba(255,255,255,.5);
-}
-button:hover,
-html input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	background: #ddd;
 }
 button:focus,
 html input[type="button"]:focus,
@@ -416,17 +405,12 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 }
 input[type=text],
 textarea {
-	color: #666;
-	border: 1px solid #ddd;
+	border: 1px solid;
 	border-radius: 3px;
 	font-size: 14px;
 	font-size: 1.4rem;
 	padding: 5px;
 	width: 94%;
-}
-input[type=text]:focus,
-textarea:focus {
-	color: #333;
 }
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
@@ -437,7 +421,6 @@ textarea {
 /* Links */
 a,
 a:visited {
-	color: red;
 	font-weight: 400;
 }
 
@@ -494,8 +477,7 @@ a:visited {
 ----------------------------------------------- */
 
 .main-navigation .menu {
-	background-color: #efefef;
-	border: 1px solid #ddd;
+	border: 1px solid;
 	font-weight: 700;
 	position: relative;
 	z-index: 1;
@@ -521,16 +503,10 @@ a:visited {
 	text-transform: uppercase;
 	white-space: nowrap;
 }
-.main-navigation .menu-item-parent:hover,
-.main-navigation .sub-menu a {
-	background-color: #ddd;
-}
 .main-navigation a:hover,
 .main-navigation a:focus,
 .main-navigation a:active,
 .main-navigation .current-menu-item > a {
-	background-color: red;
-	color: #fff;
 	text-shadow: 0 -1px 0 rgba( 0, 0, 0, 0.3 );
 }
 .main-navigation ul ul {
@@ -553,7 +529,6 @@ a:visited {
 	width: 100%;
 }
 .main-navigation .menu-item-parent > a:after {
-    color: #bbb;
     content: '\a0 \a0 \a0 \25bc';
     font-size: 8px;
     font-size: .8rem;
@@ -573,8 +548,7 @@ a:visited {
 
 /* Sticky posts */
 .sticky {
-	background-color: #efefef;
-	border: 1px solid #ddd;
+	border: 1px solid;
 	padding: 1.5465%;
 }
 .sticky .attachment-thumbnail.wp-post-image {
@@ -594,7 +568,6 @@ a:visited {
 	font-size: 2.8rem;
 }
 .page-title {
-	color: #aaa;
 	font-family: inherit;
 	font-size: 12px;
 	font-size: 1.2rem;
@@ -605,7 +578,6 @@ a:visited {
 }
 .entry-meta,
 .debut-credit {
-	color: #aaa;
 	font-size: 12px;
 	font-size: 1.2rem;
 	line-height: 1.2;
@@ -693,7 +665,6 @@ img[class*="wp-image-"] {
 	max-width: 100%;
 }
 .wp-caption-text {
-	color: #aaa;
 	font-size: 14px;
 	font-size: 1.4rem;
 	font-style: italic;
@@ -743,12 +714,12 @@ object {
 	display: none;
 }
 #content .site-navigation {
-	border-top: 1px solid #efefef;
+	border-top: 1px solid;
 	padding: 1em 0;
 	overflow: hidden;
 }
 .comment-navigation {
-	border-bottom: 1px solid #efefef;
+	border-bottom: 1px solid;
 }
 #content .nav-previous,
 #content .previous-image {
@@ -774,7 +745,7 @@ object {
 	padding-top: 1.5em;
 }
 .single .comments-title {
-	border-top: 1px solid #efefef;
+	border-top: 1px solid;
 }
 .commentlist {
 	list-style: none;
@@ -795,7 +766,6 @@ object {
 	margin-left: 80px;
 }
 .comment-meta {
-	color: #aaa;
 	font-size: 12px;
 	font-size: 1.2rem;
 	margin-bottom: 1.5em;
@@ -808,7 +778,6 @@ object {
 }
 .comment-meta h4 {
 	clear: none;
-	color: #555;
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.2em;
@@ -823,8 +792,7 @@ object {
 
 /* By post author */
 .bypostauthor {
-	background-color: #efefef;
-	border: 1px solid #ddd;
+	border: 1px solid;
 	padding: 1.5465%;
 }
 .bypostauthor .comment-content p:last-child {
@@ -857,14 +825,7 @@ object {
 #commentform label {
 	display: none;
 }
-#commentform ::-webkit-input-placeholder {
-   color: #aaa;
-}
-#commentform :-moz-placeholder {  
-   color: #aaa;  
-}
 .form-allowed-tags {
-	color: #aaa;
 	font-size: 14px;
 	font-size: 1.4rem;
 }
@@ -912,7 +873,6 @@ object {
 	width: 100%;
 }
 .widget_search form.searchform input[type="text"] {
-	background-color: #fff;
 	width: 96%;
 }
 .widget_search ::-webkit-input-placeholder { /* Change color of placeholder text */
@@ -955,7 +915,6 @@ input.searchsubmit {
 }
 .widget_rss .rss-date,
 .widget_rss cite {
-	color: #aaa;
 	display: block;
 	font-size: 12px;
 	font-size: 1.2rem;
@@ -994,7 +953,7 @@ input.searchsubmit {
 ----------------------------------------------- */
 
 .site-footer .widget-area {
-	border-top: 1px solid #ddd;
+	border-top: 1px solid;
 	font-size: 14px;
 	font-size: 1.4rem;
 	padding: 2.5em 0 0;
@@ -1027,8 +986,7 @@ input.searchsubmit {
  * http://wpml.org
  */
 .debut-lang-switcher {
-	background-color: #efefef;
-	border: 1px solid #ddd;
+	border: 1px solid;
 	border-top: none;
 	position: absolute;
 	right: 1%;
@@ -1045,8 +1003,6 @@ input.searchsubmit {
 	text-transform: uppercase;
 }
 .debut-lang:hover {
-	background-color: red;
-	color: #fff;
 	text-shadow: 0 1px 0 rgba(0,0,0,.8);
 }
 
@@ -1079,11 +1035,9 @@ input.searchsubmit {
 #unsupported input.searchsubmit,
 #ie9 input.searchsubmit {
 	background: none;
-	border-color: #ddd;
 	border-radius: 0;
 	border-width: 0 0 0 1px;
 	box-shadow: none;
-	color: #aaa;
 	display: block;
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	right: 1%;
@@ -1104,6 +1058,120 @@ input.searchsubmit {
 }
 #unsupported .site-footer .widget-area {
 	width: 31.95%;
+}
+
+
+/* =Colors
+----------------------------------------------- */
+
+.main-navigation a:hover,
+.main-navigation a:focus,
+.main-navigation a:active,
+.main-navigation .current-menu-item > a,
+.debut-lang:hover {
+	background-color: red;
+}
+hr,
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+.main-navigation .menu-item-parent:hover,
+.main-navigation .sub-menu a {
+	background-color: #ddd;
+}
+pre,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.main-navigation .menu,
+.sticky,
+.bypostauthor,
+.debut-lang-switcher {
+	background-color: #efefef;
+}
+mark,
+ins {
+	background-color: #fff9c0;
+}
+#page,
+.widget_search form.searchform input[type="text"] {
+	background-color: #fff;
+}
+abbr,
+acronym {
+	border-color: #666;
+}
+body {
+	border-color: red;
+}
+pre,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type=text],
+textarea,
+.main-navigation .menu,
+.sticky,
+.bypostauthor,
+.site-footer .widget-area,
+.debut-lang-switcher,
+#unsupported input.searchsubmit,
+#ie9 input.searchsubmit {
+	border-color: #ddd;
+}
+#content .site-navigation,
+.comment-navigation,
+.single .comments-title {
+	border-color: #efefef;
+}
+body,
+button,
+input,
+select,
+textarea,
+input[type=text]:focus,
+textarea:focus {
+	color: #333;
+}
+input[type=text],
+textarea,
+.comment-meta h4 {
+	color: #666;
+}
+a,
+a:visited {
+	color: red;
+}
+.page-title,
+.entry-meta,
+.debut-credit,
+.wp-caption-text,
+.comment-meta,
+.form-allowed-tags,
+.widget_rss .rss-date,
+.widget_rss cite,
+#unsupported input.searchsubmit,
+#ie9 input.searchsubmit {
+	color: #aaa;
+}
+#commentform ::-webkit-input-placeholder {
+   color: #aaa;
+}
+#commentform :-moz-placeholder {  
+   color: #aaa;  
+}
+.main-navigation .menu-item-parent > a:after {
+	color: #bbb;
+}
+.main-navigation a:hover,
+.main-navigation a:focus,
+.main-navigation a:active,
+.main-navigation .current-menu-item > a,
+.debut-lang:hover {
+	color: #fff;
 }
 
 
