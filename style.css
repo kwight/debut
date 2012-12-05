@@ -141,7 +141,7 @@ Based on a 12-column, fluid grid
 	width: 94%;
 }
 /* Elements */
-#masthead hgroup,
+.identity,
 .site-logo,
 form.searchform,
 .main-navigation,
@@ -163,7 +163,7 @@ form.searchform,
 	width: 98.0%;
 }
 /* 8 columns */
-#masthead hgroup,
+.identity,
 .site-logo,
 #primary {
 	width: 64.667%;
@@ -1139,7 +1139,7 @@ input.searchsubmit {
 	html body.custom-background {
 		background-color: #fff;
 	}
-	#masthead hgroup,
+	.identity,
 	.site-logo,
 	.main-navigation,
 	#primary,
@@ -1149,7 +1149,7 @@ input.searchsubmit {
 		width: 100%;
 	}
 	#masthead,
-	#masthead hgroup,
+	.identity,
 	.site-logo,
 	.main-navigation,
 	#primary,
