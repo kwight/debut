@@ -364,6 +364,7 @@ input {
 button,
 html input[type="button"],
 input[type="reset"],
+input[type="email"],
 input[type="submit"] {
 	border: 1px solid;
 	border-radius: 3px;
@@ -378,10 +379,12 @@ input[type="submit"] {
 button:focus,
 html input[type="button"]:focus,
 input[type="reset"]:focus,
+input[type="email"]:focus,
 input[type="submit"]:focus,
 button:active,
 html input[type="button"]:active,
 input[type="reset"]:active,
+input[type="email"]:active,
 input[type="submit"]:active {
 }
 input[type="checkbox"],
