@@ -189,6 +189,26 @@ function debut_theme_customizer( $wp_customize ) {
 		'settings'   => 'debut_logo',
 	) ) );
 
+    // Choose excerpt or full content on blog
+    $wp_customize->add_section( 'debut_layout_section' , array(
+	    'title'       => __( 'Layout', 'debut' ),
+	    'priority'    => 30,
+	    'description' => 'Change how Debut displays posts',
+	) );
+	$wp_customize->add_setting( 'debut_post_content', array(
+		'default'	=> 'option1',
+	) );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'debut_post_content', array(
+		'label'		=> __( 'Post content', 'debut' ),
+		'section'	=> 'debut_layout_section',
+		'settings'	=> 'debut_post_content',
+		'type'		=> 'radio',
+		'choices'	=> array(
+			'option1'	=> 'Excerpts',
+			'option2'	=> 'Full content',
+			),
+	) ) );
+
      // Set site name and description to be previewed in real-time
     $wp_customize->get_setting('blogname')->transport='postMessage';
 	$wp_customize->get_setting('blogdescription')->transport='postMessage';

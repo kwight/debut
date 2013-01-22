@@ -25,11 +25,11 @@
 
 	<div class="entry-content">
 		<?php
-		if ( has_excerpt() ) {
-			the_excerpt();
-		} else {
+		if ( 'option2' == get_theme_mod( 'debut_post_content' ) ) :
 			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'debut' ) );
-		}
+		else :
+			the_excerpt();
+		endif;
 		?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'debut' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
