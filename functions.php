@@ -209,8 +209,8 @@ function debut_theme_customizer( $wp_customize ) {
 			),
 	) ) );
 
-     // Set site name and description to be previewed in real-time
-    $wp_customize->get_setting('blogname')->transport='postMessage';
+	// Set site name and description to be previewed in real-time
+	$wp_customize->get_setting('blogname')->transport='postMessage';
 	$wp_customize->get_setting('blogdescription')->transport='postMessage';
 
 	// Enqueue scripts for real-time preview
