@@ -69,4 +69,6 @@
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</nav>
 
+	<?php if ( is_home() ) get_template_part( 'slider' ); ?>
+
 	<div id="main">

@@ -52,6 +52,13 @@ function debut_setup() {
 	) );
 
 	/**
+	 * Add support for Jetpack's Featured Content
+	 */
+	add_theme_support( 'featured-content', array(
+		'featured_content_filter' => 'debut_featured_content',
+	) );
+
+	/**
 	 * Add image sizes
 	 */
 	add_image_size( 'debut-featured', 646, 363, true ); // 16:9
@@ -128,6 +135,11 @@ function debut_scripts() {
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
+
+	if ( is_home() && debut_get_featured_content() ) {
+		wp_enqueue_style( 'debut-flexslider-style', get_template_directory_uri() . '/js/flexslider/flexslider.css' );
+		wp_enqueue_script( 'debut-flexslider-script', get_template_directory_uri() . '/js/flexslider/jquery.flexslider-min.js', array( 'jquery' ) );
 	}
 	
 }
@@ -568,3 +580,19 @@ function debut_comment_time() {
     }
     return $timestamp;
 }
+
+
+/**
+ * Jetpack Featured Content
+ *
+ * @since 1.0
+ */
+function debut_get_featured_content() {
+	return apply_filters( 'debut_featured_content', false );
+}
+
+function testing( $content ) {
+	dbgx_trace_var( $content );
+	return $content;
+}
+add_filter( 'debut_featured_content', 'testing', 11 );
