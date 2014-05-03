@@ -12,7 +12,24 @@
  *
  * @since 1.0
  */
-if ( ! isset( $content_width ) ) $content_width = 646; // pixels, at 1000px wide
+if ( ! isset( $content_width ) ) {
+	$content_width = 646; // pixels, at 1000px wide
+}
+
+
+/**
+ * Adjust content width for the full-width template.
+ *
+ * @since 2.0
+ */
+function debut_content_width() {
+	if ( is_page_template( 'full-width.php' ) ) {
+		global $content_width;
+
+		$content_width = 980;
+	}
+}
+add_action( 'template_redirect', 'debut_content_width' );
 
 
 /**
