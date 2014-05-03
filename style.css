@@ -514,7 +514,8 @@ a:visited {
 .main-navigation a:hover,
 .main-navigation a:focus,
 .main-navigation a:active,
-.main-navigation .current-menu-item > a {
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a {
 	text-shadow: 0 -1px 0 rgba( 0, 0, 0, 0.3 );
 }
 .main-navigation ul ul {
@@ -532,20 +533,24 @@ a:visited {
 .main-navigation ul li:hover > ul {
 	display: block;
 }
-.sub-menu li {
+.sub-menu li,
+.children li {
 	clear: left;
 	width: 100%;
 }
-.main-navigation .menu-item-parent > a:after {
+.main-navigation .menu-item-parent > a:after,
+.main-navigation .page_item_has_children > a:after {
     content: '\a0 \a0 \a0 \25bc';
     font-size: 8px;
     font-size: .8rem;
     vertical-align: 1px;
 }
-.main-navigation .sub-menu .menu-item-parent > a:after {
+.main-navigation .sub-menu .menu-item-parent > a:after,
+.main-navigation .children .page_item_has_children > a:after {
     content: '\a0 \a0 \a0 \a0 \25b6';
 }
-.main-navigation .sub-menu li:last-child {
+.main-navigation .sub-menu li:last-child,
+.main-navigation .children li:last-child {
 	box-shadow: 0 8px 8px -5px rgba(0, 0, 0, .4);
 	z-index: 9999999; /* Do I really need to do this? Really?.. */
 }
@@ -1077,6 +1082,9 @@ input.searchsubmit {
 .main-navigation a:focus,
 .main-navigation a:active,
 .main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a,
+.main-navigation .sub-menu a:hover,
+.main-navigation .children a:hover,
 .debut-lang:hover {
 	background-color: red;
 }
@@ -1086,7 +1094,9 @@ html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 .main-navigation .menu-item-parent:hover,
-.main-navigation .sub-menu a {
+.main-navigation .page_item_has_children:hover,
+.main-navigation .sub-menu a,
+.main-navigation .children a {
 	background-color: #ddd;
 }
 pre,
@@ -1172,13 +1182,15 @@ a:visited {
 #commentform :-moz-placeholder {  
    color: #aaa;  
 }
-.main-navigation .menu-item-parent > a:after {
+.main-navigation .menu-item-parent > a:after,
+.main-navigation .page_item_has_children > a:after {
 	color: #bbb;
 }
 .main-navigation a:hover,
 .main-navigation a:focus,
 .main-navigation a:active,
 .main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a,
 .debut-lang:hover {
 	color: #fff;
 }
