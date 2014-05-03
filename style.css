@@ -1014,41 +1014,6 @@ input.searchsubmit {
 	text-shadow: 0 1px 0 rgba(0,0,0,.8);
 }
 
-/**
- * WooThemes FlexSlider 2
- */
- body .flexslider {
- 	background: none;
- 	border: none;
- 	-webkit-border-radius: none;
- 	-moz-border-radius: none;
- 	-o-border-radius: none;
- 	border-radius: none;
- 	-webkit-box-shadow: none;
- 	-moz-box-shadow: none;
- 	-o-box-shadow: none;
- 	box-shadow: none;
-	display: inline;
-	float: left;
-	margin: 0 1%;
-	width: 98%;
- }
- .flexslider .post-title {
- 	margin-top: 1em;
- }
- .flexslider .slide p {
- 	margin-bottom: 0;
- }
- .site .flex-control-nav {
- 	margin-top: 1.5em;
- 	position: static;
- }
- .site .flex-control-paging li a {
- 	height: 16px;
- 	width: 16px;
- }
-
-
 
 /* =IE9 and Unsupported
 ----------------------------------------------- */

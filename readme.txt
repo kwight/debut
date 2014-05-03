@@ -18,8 +18,6 @@ CSS3 Media Queries do not work in IE8 or below.
 
 [html5shiv](http://code.google.com/p/html5shiv/) script by Remy Sharp, and is dual-licensed under the MIT or GPL Version 2 licenses.
 
-[FlexSlider](http://www.woothemes.com/flexslider/) script by Tyler Smith and WooThemes, released under the GPL v2.0.
-
 Lily image in screenshot.png by Flickr user [shaferlens](http://www.flickr.com/photos/opera-nut/), used by permission (CC BY 2.0).
 
 == Browser Support ==
@@ -29,6 +27,10 @@ Chrome, Firefox, Safari and IE9+ are supported. IE7 and IE8 are not supported, b
 == Changelog ==
 
 More detail on the theme [commit page](https://github.com/kwight/debut/commits?page=1).
+
+= 2.0 =
+
+* Enhancement: removed the silly slider
 
 = 1.6 =
 
