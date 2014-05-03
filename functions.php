@@ -273,6 +273,11 @@ if ( ! function_exists( 'debut_content_nav' ) ):
 function debut_content_nav( $nav_id ) {
 	global $wp_query;
 
+	// Don't print empty markup if there's only one page.
+	if ( $wp_query->max_num_pages < 2 ) {
+		return;
+	}
+
 	$nav_class = 'site-navigation paging-navigation';
 	if ( is_single() )
 		$nav_class = 'site-navigation post-navigation';
