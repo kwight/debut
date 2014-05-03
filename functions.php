@@ -136,11 +136,6 @@ function debut_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-	if ( is_home() && debut_get_featured_content() ) {
-		wp_enqueue_style( 'debut-flexslider-style', get_template_directory_uri() . '/js/flexslider/flexslider.css' );
-		wp_enqueue_script( 'debut-flexslider-script', get_template_directory_uri() . '/js/flexslider/jquery.flexslider-min.js', array( 'jquery' ) );
-	}
 	
 }
 add_action( 'wp_enqueue_scripts', 'debut_scripts' );
