@@ -156,12 +156,12 @@ add_action( 'wp_enqueue_scripts', 'debut_scripts' );
  *
  * @since 1.0.4
  */
-function debut_ie_html5_js() { ?>
+function debut_html5shiv() { ?>
 	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.min.js"></script>
 	<![endif]-->
 <?php }
-add_action('wp_head', 'debut_ie_html5_js');
+add_action('wp_head', 'debut_html5shiv');
 
 
 /**
