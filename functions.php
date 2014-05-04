@@ -75,6 +75,7 @@ function debut_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'debut' ),
+		'social'  => __( 'Social Icons', 'debut' ),
 	) );
 }
 add_action( 'after_setup_theme', 'debut_setup' );
@@ -135,6 +136,8 @@ add_action( 'widgets_init', 'debut_widgets_init' );
  */
 function debut_scripts() {
 	wp_enqueue_style( 'debut-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );
 
 	wp_enqueue_script( 'debut-scripts', get_template_directory_uri() . '/js/debut.js', array( 'jquery' ) );
 

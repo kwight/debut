@@ -6,6 +6,16 @@
  */
 ?>
 		<div id="tertiary" class="widget-area" role="complementary">
+			<?php wp_nav_menu(
+				array(
+					'theme_location' => 'social',
+					'container'      => false,
+					'menu_class'     => 'menu-social',
+					'depth'          => '1',
+					'link_before'     => '<span class="assistive-text">',
+					'link_after'      => '</span>',
+			) ); ?>
+
 			<?php if ( ! dynamic_sidebar( 'header' ) ) : ?>
 
 				<aside id="search" class="widget widget_search">

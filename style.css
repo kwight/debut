@@ -41,6 +41,7 @@ and Blueprint http://www.blueprintcss.org/
 =Global
 =Header
 =Menu
+=Social
 =Content
 =Asides
 =Media
@@ -553,6 +554,49 @@ a:visited {
 .main-navigation .children li:last-child {
 	box-shadow: 0 8px 8px -5px rgba(0, 0, 0, .4);
 	z-index: 9999999; /* Do I really need to do this? Really?.. */
+}
+
+
+/* =Social
+----------------------------------------------- */
+
+.menu-social {
+	float: right;
+	margin: 0 0 1em;
+}
+.menu-social .menu-item {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: block;
+	float: left;
+	min-width: 40px;
+	text-align: right;
+	width: 14.28%;
+}
+.menu-social .menu-item a:before {
+	font: normal 32px/1 Genericons;
+}
+.menu-social .menu-item a[href*="twitter.com"]:before {
+	content: '\f202';
+}
+.menu-social .menu-item a[href*="facebook.com"]:before {
+	content: '\f204';
+}
+.menu-social .menu-item a[href*="plus.google.com"]:before {
+	content: '\f218';
+}
+.menu-social .menu-item a[href*="youtube.com"]:before {
+	content: '\f213';
+}
+.menu-social .menu-item a[href*="instagram.com"]:before {
+	content: '\f215';
+}
+.menu-social .menu-item a[href*="flickr.com"]:before {
+	content: '\f211';
+}
+.menu-social .menu-item a[href*="pinterest.com"]:before {
+	content: '\f210';
 }
 
 
