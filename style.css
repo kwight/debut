@@ -648,6 +648,14 @@ a:visited {
 .debut-has-thumb .entry-content {
 	margin-left: 25.774%;
 }
+.single .debut-has-thumb .entry-title,
+.single .debut-has-thumb .entry-meta,
+.single .debut-has-thumb .entry-content,
+.page .debut-has-thumb .entry-title,
+.page .debut-has-thumb .entry-meta,
+.page .debut-has-thumb .entry-content {
+	margin-left: 0;
+}
 .byline {
 	display: none;
 }
