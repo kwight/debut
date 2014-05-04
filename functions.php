@@ -47,9 +47,6 @@ function debut_setup() {
 	 * Translations can be filed in the /languages/ directory
 	 */
 	load_theme_textdomain( 'debut', get_template_directory() . '/languages' );
-	$locale = get_locale();
-    $locale_file = get_template_directory() . '/languages/$locale.php';
-    if ( is_readable( $locale_file ) ) require_once( $locale_file );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
