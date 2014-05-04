@@ -13,9 +13,11 @@
  * @since 1.5
  */
 function debut_theme_customizer( $wp_customize ) {
+
+	// Highlight and link color
     $wp_customize->add_setting( 'debut_link_color', array(
-        'default'   => '#ff0000',
-        'transport' => 'postMessage',
+        'default'           => '#ff0000',
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'sanitize_hex_color',
     ) );
  
@@ -31,13 +33,15 @@ function debut_theme_customizer( $wp_customize ) {
 	    'priority'    => 30,
 	    'description' => 'Upload a logo to replace the default site name and description in the header',
 	) );
+
 	$wp_customize->add_setting( 'debut_logo', array(
 		'sanitize_callback' => 'esc_url_raw',
 	) );
+
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'debut_logo', array(
-		'label'        => __( 'Logo', 'debut' ),
-		'section'    => 'debut_logo_section',
-		'settings'   => 'debut_logo',
+		'label'    => __( 'Logo', 'debut' ),
+		'section'  => 'debut_logo_section',
+		'settings' => 'debut_logo',
 	) ) );
 
     // Choose excerpt or full content on blog
@@ -46,18 +50,20 @@ function debut_theme_customizer( $wp_customize ) {
 	    'priority'    => 30,
 	    'description' => 'Change how Debut displays posts',
 	) );
+
 	$wp_customize->add_setting( 'debut_post_content', array(
-		'default'	=> 'option1',
+		'default'	        => 'option1',
 		'sanitize_callback' => 'debut_sanitize_index_content',
 	) );
+
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'debut_post_content', array(
-		'label'		=> __( 'Post content', 'debut' ),
-		'section'	=> 'debut_layout_section',
-		'settings'	=> 'debut_post_content',
-		'type'		=> 'radio',
-		'choices'	=> array(
-			'option1'	=> 'Excerpts',
-			'option2'	=> 'Full content',
+		'label'    => __( 'Post content', 'debut' ),
+		'section'  => 'debut_layout_section',
+		'settings' => 'debut_post_content',
+		'type'     => 'radio',
+		'choices'  => array(
+			'option1' => 'Excerpts',
+			'option2' => 'Full content',
 			),
 	) ) );
 

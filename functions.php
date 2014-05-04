@@ -20,7 +20,7 @@ if ( ! isset( $content_width ) ) {
 /**
  * Adjust content width for the full-width template.
  *
- * @since 2.0
+ * @since 1.7
  */
 function debut_content_width() {
 	if ( is_page_template( 'full-width.php' ) ) {
@@ -147,7 +147,7 @@ add_action( 'wp_enqueue_scripts', 'debut_scripts' );
 
 
 /**
- * Add html5.js script to <head> conditionally for IE8 and under
+ * Add html5shiv script to <head> conditionally for IE8 and under
  *
  * @since 1.0.4
  */
@@ -225,49 +225,6 @@ endif;
 
 
 /**
- * Returns true if a blog has more than one category
- *
- * @since 1.0
- */
-if ( ! function_exists( 'debut_categorized_blog' ) ) :
-function debut_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
-		// Create an array of all the categories that are attached to posts
-		$all_the_cool_cats = get_categories( array(
-			'hide_empty' => 1,
-		) );
-
-		// Count the number of categories that are attached to the posts
-		$all_the_cool_cats = count( $all_the_cool_cats );
-
-		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
-	}
-
-	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so debut_categorized_blog should return true
-		return true;
-	} else {
-		// This blog has only 1 category so debut_categorized_blog should return false
-		return false;
-	}
-}
-endif;
-
-
-/**
- * Flush out the transients used in debut_categorized_blog
- *
- * @since 1.0
- */
-function debut_category_transient_flusher() {
-	// Like, beat it. Dig?
-	delete_transient( 'all_the_cool_cats' );
-}
-add_action( 'edit_category', 'debut_category_transient_flusher' );
-add_action( 'save_post', 'debut_category_transient_flusher' );
-
-
-/**
  * Generate comment HTML
  * Based on the P2 theme by Automattic
  * http://wordpress.org/extend/themes/p2
@@ -334,18 +291,21 @@ add_filter( 'comment_form_defaults', 'debut_comment_form_args' );
  * @since 1.0
  */
 function debut_remove_caption_width( $current_html, $attr, $content ) {
-    extract(shortcode_atts(array(
+    extract( shortcode_atts( array(
         'id'    => '',
         'align' => 'alignnone',
         'width' => '',
-        'caption' => ''
-    ), $attr));
-    if ( 1 > (int) $width || empty($caption) )
-        return $content;
+        'caption' => '',
+    ), $attr ) );
+    if ( 1 > (int) $width || empty( $caption ) ) {
+		return $content;
+    }
 
-    if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
+    if ( $id ) {
+		$id = 'id="' . esc_attr( $id ) . '" ';
+    }
 
-    return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (int) $width . 'px">'
+    return '<div ' . $id . 'class="wp-caption ' . esc_attr( $align ) . '" style="width: ' . (int) $width . 'px">'
 . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
 }
 add_filter( 'img_caption_shortcode', 'debut_remove_caption_width', 10, 3 );
@@ -521,6 +481,49 @@ function debut_setup_author() {
 	}
 }
 add_action( 'wp', 'debut_setup_author' );
+
+
+/**
+ * Returns true if a blog has more than one category
+ *
+ * @since 1.0
+ */
+if ( ! function_exists( 'debut_categorized_blog' ) ) :
+function debut_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+		// Create an array of all the categories that are attached to posts
+		$all_the_cool_cats = get_categories( array(
+			'hide_empty' => 1,
+		) );
+
+		// Count the number of categories that are attached to the posts
+		$all_the_cool_cats = count( $all_the_cool_cats );
+
+		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
+	}
+
+	if ( '1' != $all_the_cool_cats ) {
+		// This blog has more than 1 category so debut_categorized_blog should return true
+		return true;
+	} else {
+		// This blog has only 1 category so debut_categorized_blog should return false
+		return false;
+	}
+}
+endif;
+
+
+/**
+ * Flush out the transients used in debut_categorized_blog
+ *
+ * @since 1.0
+ */
+function debut_category_transient_flusher() {
+	// Like, beat it. Dig?
+	delete_transient( 'all_the_cool_cats' );
+}
+add_action( 'edit_category', 'debut_category_transient_flusher' );
+add_action( 'save_post', 'debut_category_transient_flusher' );
 
 
 /**
