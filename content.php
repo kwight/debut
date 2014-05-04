@@ -5,8 +5,7 @@
  */
 ?>
 
-<?php $class = ( has_post_thumbnail() ) ? 'debut-has-thumb' : NULL; ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
 		if ( has_post_thumbnail() ) { ?>

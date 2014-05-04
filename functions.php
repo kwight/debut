@@ -519,6 +519,20 @@ add_filter( 'body_class', 'debut_body_classes' );
 
 
 /**
+ * Adds custom classes to the array of post classes.
+ *
+ * @since 1.7
+ */
+function debut_post_classes( $classes ) {
+	if ( has_post_thumbnail() ) {
+		$classes[] = 'debut-has-thumb';
+	}
+	return $classes;
+}
+add_filter( 'post_class', 'debut_post_classes' );
+
+
+/**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  *
  * @since 1.0
