@@ -24,7 +24,7 @@
 
 	<div class="entry-content">
 		<?php
-		if ( 'option2' == get_theme_mod( 'debut_post_content' ) ) :
+		if ( 'option2' == debut_sanitize_index_content( get_theme_mod( 'debut_post_content' ) ) ) :
 			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'debut' ) );
 		else :
 			the_excerpt();

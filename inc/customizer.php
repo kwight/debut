@@ -16,6 +16,7 @@ function debut_theme_customizer( $wp_customize ) {
     $wp_customize->add_setting( 'debut_link_color', array(
         'default'   => '#ff0000',
         'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
     ) );
  
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'debut_link_color', array(
@@ -30,7 +31,9 @@ function debut_theme_customizer( $wp_customize ) {
 	    'priority'    => 30,
 	    'description' => 'Upload a logo to replace the default site name and description in the header',
 	) );
-	$wp_customize->add_setting( 'debut_logo' );
+	$wp_customize->add_setting( 'debut_logo', array(
+		'sanitize_callback' => 'esc_url_raw',
+	) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'debut_logo', array(
 		'label'        => __( 'Logo', 'debut' ),
 		'section'    => 'debut_logo_section',
@@ -45,6 +48,7 @@ function debut_theme_customizer( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'debut_post_content', array(
 		'default'	=> 'option1',
+		'sanitize_callback' => 'debut_sanitize_index_content',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'debut_post_content', array(
 		'label'		=> __( 'Post content', 'debut' ),
@@ -70,18 +74,54 @@ add_action('customize_register', 'debut_theme_customizer');
 
 
 /**
+ * Sanitizes a hex color. Identical to core's sanitize_hex_color(), which is not available on the wp_head hook.
+ *
+ * Returns either '', a 3 or 6 digit hex color (with #), or null.
+ * For sanitizing values without a #, see sanitize_hex_color_no_hash().
+ *
+ * @since 1.7
+ */
+function debut_sanitize_hex_color( $color ) {
+	if ( '' === $color )
+		return '';
+
+	// 3 or 6 hex digits, or the empty string.
+	if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) )
+		return $color;
+
+	return null;
+}
+
+
+/**
+ * Sanitizes our post content value (either excerpts or full post content).
+ *
+ * @since 1.7
+ */
+function debut_sanitize_index_content( $content ) {
+	if ( 'option2' == $content ) {
+		return 'option2';
+	} else {
+		return 'option1';
+	}
+}
+
+
+/**
  * Add CSS in <head> for styles handled by the theme customizer
  *
  * @since 1.5
  */
-function debut_add_customizer_css() { ?>
+function debut_add_customizer_css() {
+	$color = debut_sanitize_hex_color( get_theme_mod( 'debut_link_color' ) );
+	?>
 	<!-- Debut customizer CSS -->
 	<style>
 		body {
-			border-color: <?php echo get_theme_mod( 'debut_link_color' ); ?>;
+			border-color: <?php echo $color; ?>;
 		}
 		a, a:visited {
-			color: <?php echo get_theme_mod( 'debut_link_color' ); ?>;
+			color: <?php echo $color; ?>;
 		}
 		.main-navigation a:hover,
 		.main-navigation .sub-menu a:hover,
@@ -91,7 +131,7 @@ function debut_add_customizer_css() { ?>
 		.main-navigation .current-menu-item > a,
 		.main-navigation .current_page_item > a,
 		.debut-lang:hover {
-			background-color: <?php echo get_theme_mod( 'debut_link_color' ); ?>;
+			background-color: <?php echo $color; ?>;
 		}
 	</style>
 <?php }
