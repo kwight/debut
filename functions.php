@@ -134,8 +134,6 @@ add_action( 'widgets_init', 'debut_widgets_init' );
  * Enqueue scripts and styles
  */
 function debut_scripts() {
-	global $post;
-
 	wp_enqueue_style( 'debut-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'debut-scripts', get_template_directory_uri() . '/js/debut.js', array( 'jquery' ) );
