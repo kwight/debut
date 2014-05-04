@@ -160,17 +160,6 @@ add_action('wp_head', 'debut_html5shiv');
 
 
 /**
- * Add a menu item for the theme customizer
- *
- * @since 1.5
- */
-function debut_add_customizer_menu_item() {
-    add_theme_page( 'Customize', 'Customize', 'edit_theme_options', 'customize.php' );
-}
-add_action ('admin_menu', 'debut_add_customizer_menu_item');
-
-
-/**
  * Theme customizer with real-time update
  * Very helpful: http://ottopress.com/2012/theme-customizer-part-deux-getting-rid-of-options-pages/
  *
