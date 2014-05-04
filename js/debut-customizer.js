@@ -14,8 +14,8 @@ jQuery( document ).ready( function( $ ) {
     wp.customize( 'debut_link_color', function( value ) {
         value.bind( function( to ) {
             $('body').css('border-color', to );
-            $('a').not('.main-navigation .current-menu-item > a').css('color', to );
-            $('.main-navigation .current-menu-item > a').css({
+            $('a').not('.main-navigation .current-menu-item > a, .main-navigation .current_page_item > a').css('color', to );
+            $('.main-navigation .current-menu-item > a, .main-navigation .current_page_item > a').css({
             	'background-color': to,
             	'color': '#fff'
             });
@@ -33,7 +33,7 @@ jQuery( document ).ready( function( $ ) {
 						'color': to,
 						'text-shadow': 'none'
 					});
-					$('.main-navigation .current-menu-item > a').css({
+					$('.main-navigation .current-menu-item > a, .main-navigation .current_page_item > a').css({
 		            	'background-color': to,
 		            	'color': '#fff'
 		            });
