@@ -22,7 +22,7 @@ get_header(); ?>
 					if ( comments_open() || '0' != get_comments_number() ) {
 						comments_template( '', true );
 					} elseif ( ! comments_open() ) { ?>
-						<p class="nocomments"><?php _e( 'Comments are closed.', 'debut' ); ?></p>
+						<p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'debut' ); ?></p>
 					<?php } 
 				?>
 

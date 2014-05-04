@@ -39,8 +39,8 @@
 		 */
 		?>
 		<nav role="navigation" class="site-navigation small-navigation">
-			<h1 class="assistive-text"><?php _e( 'Menu', 'debut' ); ?></h1>
-			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'debut' ); ?>"><?php _e( 'Skip to content', 'debut' ); ?></a></div>
+			<h1 class="assistive-text"><?php esc_html_e( 'Menu', 'debut' ); ?></h1>
+			<div class="assistive-text skip-link"><a href="#content"><?php esc_html_e( 'Skip to content', 'debut' ); ?></a></div>
 			<button class="menu-button">Menu</button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav>
@@ -53,7 +53,7 @@
 			</div>
 		<?php else : ?>
 			<hgroup class="identity">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</hgroup>
 		<?php endif; ?>
@@ -63,8 +63,8 @@
 	</header><!-- #masthead .site-header -->
 	
 	<nav role="navigation" class="site-navigation main-navigation">
-		<h1 class="assistive-text"><?php _e( 'Menu', 'debut' ); ?></h1>
-		<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'debut' ); ?>"><?php _e( 'Skip to content', 'debut' ); ?></a></div>
+		<h1 class="assistive-text"><?php esc_html_e( 'Menu', 'debut' ); ?></h1>
+		<div class="assistive-text skip-link"><a href="#content"><?php esc_html_e( 'Skip to content', 'debut' ); ?></a></div>
 
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</nav>

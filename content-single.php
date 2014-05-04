@@ -17,7 +17,7 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'debut' ), 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'debut' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
@@ -50,11 +50,11 @@
 				$meta_text,
 				$category_list,
 				$tag_list,
-				get_permalink(),
+				esc_url( get_permalink() ),
 				the_title_attribute( 'echo=0' )
 			);
 		?>
 
-		<?php edit_post_link( __( 'Edit', 'debut' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'debut' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -290,7 +290,7 @@ function debut_comment( $comment, $args, $depth ) {
 		<?php echo get_avatar( $comment, 60 ); ?>
 		<div class="comment-meta">
 			<div class="perma-reply-edit">
-				<a href="<?php echo esc_url( get_comment_link() ); ?>"><?php _e( 'Permalink', 'debut' ); ?></a>
+				<a href="<?php echo esc_url( get_comment_link() ); ?>"><?php esc_html_e( 'Permalink', 'debut' ); ?></a>
 				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '&nbsp;&sdot;&nbsp;' ) ) );
 				if ( $can_edit_post ) { edit_comment_link( __( 'Edit', 'debut' ), '&nbsp;&sdot;&nbsp;' ); } ?>
 			</div><!-- .perma-reply-edit -->
@@ -460,7 +460,7 @@ function debut_lang_switcher() {
 		$html = '<div class="debut-lang-switcher">';
 		foreach( $lang as $value ) {
 			if ( 0 == $value[ 'active' ] ) {
-				$html .= '<a class="debut-lang" href="' . $value[ 'url' ] . '">' . $value[ 'language_code' ]  . '</a>';
+				$html .= '<a class="debut-lang" href="' . esc_url( $value[ 'url' ] ) . '">' . esc_html( $value[ 'language_code' ] )  . '</a>';
 			}
 		}
 		$html .= '</div><!-- end .debut-lang-switcher -->';

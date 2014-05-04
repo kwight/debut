@@ -24,14 +24,14 @@ get_header();
 								printf( __( 'Published <span class="entry-date"><time class="entry-date" datetime="%1$s" pubdate>%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'debut' ),
 									esc_attr( get_the_date( 'c' ) ),
 									esc_html( get_the_date() ),
-									wp_get_attachment_url(),
+									esc_url( wp_get_attachment_url() ),
 									$metadata['width'],
 									$metadata['height'],
-									get_permalink( $post->post_parent ),
-									get_the_title( $post->post_parent )
+									esc_url( get_permalink( $post->post_parent ) ),
+									esc_html( get_the_title( $post->post_parent ) )
 								);
 							?>
-							<?php edit_post_link( __( 'Edit', 'debut' ), '<span class="sep">&nbsp&nbsp&bull;&nbsp&nbsp</span> <span class="edit-link">', '</span>' ); ?>
+							<?php edit_post_link( esc_html__( 'Edit', 'debut' ), '<span class="sep">&nbsp&nbsp&bull;&nbsp&nbsp</span> <span class="edit-link">', '</span>' ); ?>
 						</div><!-- .entry-meta -->
 
 						<nav id="image-navigation">
@@ -69,7 +69,7 @@ get_header();
 									}
 								?>
 
-								<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
+								<a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
 									$attachment_size = apply_filters( 'debut_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
 									echo wp_get_attachment_image( $post->ID, $attachment_size );
 								?></a>
@@ -95,9 +95,9 @@ get_header();
 						<?php elseif ( comments_open() && ! pings_open() ) : // Only comments open ?>
 							<?php _e( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'debut' ); ?>
 						<?php elseif ( ! comments_open() && ! pings_open() ) : // Comments and trackbacks closed ?>
-							<?php _e( 'Both comments and trackbacks are currently closed.', 'debut' ); ?>
+							<?php esc_html_e( 'Both comments and trackbacks are currently closed.', 'debut' ); ?>
 						<?php endif; ?>
-						<?php edit_post_link( __( 'Edit', 'debut' ), ' <span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( esc_html__( 'Edit', 'debut' ), ' <span class="edit-link">', '</span>' ); ?>
 					</footer><!-- .entry-meta -->
 				</article><!-- #post-<?php the_ID(); ?> -->
 
