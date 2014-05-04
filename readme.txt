@@ -1,10 +1,12 @@
 === Debut ===
 
-[Debut](https://github.com/kwight/debut/) is a solid and clean responsive theme, for sharing your ideas with the world. Make Debut your own by changing the background, colors and more with the new Theme Customizer and real-time preview. Based on _s by Automattic, Debut is translation-ready (French is already included), supports featured images, has five widget areas and includes a sliding menu for mobile screens. Debut also includes a full-width page template.
+[Debut](https://github.com/kwight/debut/) is a solid and clean responsive theme, for sharing your ideas with the world. Make Debut your own by changing the background, colors and more with the new Theme Customizer and real-time preview. Based on _s by Automattic, Debut is translation-ready (French is already included), supports featured images, has five widget areas and includes a sliding menu for mobile screens. Debut also includes a full-width page template, and a special menu for adding social media icons.
 
 == Instructions ==
 
 Make sure to create and set a menu under Appearance > Menus. Once you've made your menu, select it under Theme Locations > Primary Menu (this is necessary for the sub-menu indicators to appear).
+
+To enable the social icons, create a menu under Appearance > Menus, and assign it to the Social Icons location. Then create menu items using the Links section on the left, with the URLs to your accounts. Debut will assign the correct icon automatically, based on the URL that's been entered.
 
 Any default widgets in widget areas can be removed or replaced by simply adding your own widgets.
 
@@ -18,7 +20,7 @@ CSS3 Media Queries do not work in IE8 or below.
 
 [html5shiv](http://code.google.com/p/html5shiv/) script by Remy Sharp, and is dual-licensed under the MIT or GPL Version 2 licenses.
 
-Lily image in screenshot.png by Flickr user [shaferlens](http://www.flickr.com/photos/opera-nut/), used by permission (CC BY 2.0).
+Screenshot images courtesy of user EdiNugraha on Pixabay, licensed CC0.
 
 == Browser Support ==
 
@@ -30,7 +32,9 @@ More detail on the theme [commit page](https://github.com/kwight/debut/commits?p
 
 = 1.7 =
 
+* Enhancement: added social icon menu
 * Enhancement: removed the slider (was never publicly released)
+* Bug fix: updated scripts and imporved escaping
 * Bug fix: styling fixes
 
 = 1.6 =
