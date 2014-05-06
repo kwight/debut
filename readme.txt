@@ -30,11 +30,15 @@ Chrome, Firefox, Safari and IE9+ are supported. IE7 and IE8 are not supported, b
 
 More detail on the theme [commit page](https://github.com/kwight/debut/commits?page=1).
 
+= 1.7.1 =
+
+* Bug fix: Remove the social menu when no menu is assigned
+
 = 1.7 =
 
 * Enhancement: added social icon menu
 * Enhancement: removed the slider (was never publicly released)
-* Bug fix: updated scripts and imporved escaping
+* Bug fix: updated scripts and improved escaping
 * Bug fix: styling fixes
 
 = 1.6 =
