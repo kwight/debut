@@ -12,8 +12,9 @@
 					'container'      => false,
 					'menu_class'     => 'menu-social',
 					'depth'          => '1',
-					'link_before'     => '<span class="assistive-text">',
-					'link_after'      => '</span>',
+					'fallback_cb'    => false,
+					'link_before'    => '<span class="assistive-text">',
+					'link_after'     => '</span>',
 			) ); ?>
 
 			<?php if ( ! dynamic_sidebar( 'header' ) ) : ?>
