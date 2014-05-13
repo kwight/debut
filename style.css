@@ -191,6 +191,35 @@ form.searchform,
 	margin-right: 0;
 }
 /* Clearfix */
+#page:before,
+#page:after,
+#masthead:before,
+#masthead:after,
+.site-navigation:before,
+.site-navigation:after,
+.features:before,
+.features:after,
+#main:before,
+#main:after,
+#primary:before,
+#primary:after,
+article:before,
+article:after,
+#page ul:before,
+#page ul:after,
+#page ol:before,
+#page ol:after,
+#secondary:before,
+#secondary:after,
+#tertiary:before,
+#tertiary:after,
+.widget:before,
+.widget:after,
+#colophon:before,
+#colophon:after {
+	content: '';
+	display: table;
+}
 #page:after,
 #masthead:after,
 .site-navigation:after,
@@ -204,12 +233,7 @@ article:after,
 #tertiary:after,
 .widget:after,
 #colophon:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: '\0020';
 	clear: both;
-	height: 0;
 }
 
 
