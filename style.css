@@ -947,6 +947,9 @@ object {
 	list-style: none;
 	margin-left: 0;
 }
+.widget select {
+	max-width: 100%;
+}
 .widget_archive select,
 .widget_categories select {
 	margin-bottom: 1.5em;
