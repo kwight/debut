@@ -30,6 +30,10 @@ Chrome, Firefox, Safari and IE9+ are supported. IE7 and IE8 are not supported, b
 
 More detail on the theme [commit page](https://github.com/kwight/debut/commits?page=1).
 
+= 1.7.3 =
+
+* Bug fix: Prevent layout from collapsing when content area is empty.
+
 = 1.7.2 =
 
 * Bug fix: Updated the clearfix
